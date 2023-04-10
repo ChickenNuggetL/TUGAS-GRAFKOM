@@ -26,7 +26,6 @@ public class Main {
             = new ArrayList<>();
 
     private MouseInput mouseInput;
-    private MouseInput mouseInput2;
     EasyCreateObject easyCreateObject = new EasyCreateObject();
     Camera cam = new Camera();
 
