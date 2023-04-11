@@ -37,27 +37,26 @@ public class Main {
         mouseInput = window.getMouseInput();
         cam.setPosition(0,0,1.953f);
 
-
         //code
-        objects.add(new Object(
-            Arrays.asList(
-                //shaderFile lokasi menyesuaikan objectnya
-                new ShaderProgram.ShaderModuleData
-                ("resources/shaders/scene.vert"
-                , GL_VERTEX_SHADER),
-                new ShaderProgram.ShaderModuleData
-                ("resources/shaders/scene.frag"
-                        , GL_FRAGMENT_SHADER)
-            ),
-          new ArrayList<>(
-               List.of(
-                   new Vector3f(0.0f,0.5f,0.0f),
-                    new Vector3f(-0.5f,-0.5f,0.0f),
-                    new Vector3f(0.5f,-0.5f,0.0f)
-               )
-            ),
-            new Vector4f(0.0f,1.0f,1.0f,1.0f)
-        ));
+//        objects.add(new Object(
+//            Arrays.asList(
+//                //shaderFile lokasi menyesuaikan objectnya
+//                new ShaderProgram.ShaderModuleData
+//                ("resources/shaders/scene.vert"
+//                , GL_VERTEX_SHADER),
+//                new ShaderProgram.ShaderModuleData
+//                ("resources/shaders/scene.frag"
+//                        , GL_FRAGMENT_SHADER)
+//            ),
+//          new ArrayList<>(
+//               List.of(
+//                   new Vector3f(0.0f,0.5f,0.0f),
+//                    new Vector3f(-0.5f,-0.5f,0.0f),
+//                    new Vector3f(0.5f,-0.5f,0.0f)
+//               )
+//            ),
+//            new Vector4f(0.0f,1.0f,1.0f,1.0f)
+//        ));
 //        objects.add(new Object(
 //            Arrays.asList(
 //                //shaderFile lokasi menyesuaikan objectnya
@@ -107,43 +106,49 @@ public class Main {
 //            Arrays.asList(0,1,2,1,2,3)
 //        ));
 
-//        objectsPointsControl.add(new Object(
-//            Arrays.asList(
-//                //shaderFile lokasi menyesuaikan objectnya
-//                new ShaderProgram.ShaderModuleData
-//                ("resources/shaders/scene.vert"
-//                , GL_VERTEX_SHADER),
-//                new ShaderProgram.ShaderModuleData
-//                ("resources/shaders/scene.frag"
-//                , GL_FRAGMENT_SHADER)
-//            ),
-//            new ArrayList<>(),
-//            new Vector4f(0.0f,1.0f,1.0f,1.0f)
-//        objects.add(new Sphere(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.0f, 1.0f, 0.0f, 1.0f),
-//                Arrays.asList(0.0f, 0.0f, 0.0f),
-//                0.5f,
-//                0.5f,
-//                0.5f,
-//                36,
-//                18
-//        ));
-        easyCreateObject.Sphere(objects);
+        objectsPointsControl.add(new Object(
+                Arrays.asList(
+                        //shaderFile lokasi menyesuaikan objectnya
+                        new ShaderProgram.ShaderModuleData
+                                ("resources/shaders/scene.vert"
+                                        , GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData
+                                ("resources/shaders/scene.frag"
+                                        , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.0f,1.0f,1.0f,1.0f)
+        ));
+
+        objects.add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.0f, 1.0f, 0.0f, 1.0f),
+                Arrays.asList(0.0f, 0.0f, 0.0f),
+                0.5f,
+                0.5f,
+                0.5f,
+                36,
+                18
+        ));
+//        easyCreateObject.Sphere(objects);
     }
 
     public void input() {
+//        if (window.isKeyPressed(GLFW_KEY_F)) {
+//            System.out.println("F");
+//        }
+//        if (window.isKeyPressed(GLFW_KEY_W)) {
+//            objects.get(0).getChildObject().get(0);
+//        }
+//
         if (window.isKeyPressed(GLFW_KEY_F)) {
-            System.out.println("F");
+            objects.get(0).rotateObject((float)Math.toRadians(1f),2f,2f,2f);
         }
-        if (window.isKeyPressed(GLFW_KEY_W)) {
-            objects.get(0).getChildObject().get(0);
-        }
-        /*
+
         if (mouseInput.isLeftButtonPressed()) {
             Vector2f pos = mouseInput.getCurrentPos();
 //            System.out.println("x : "+pos.x+" y : "+pos.y);
@@ -158,8 +163,6 @@ public class Main {
                 objectsPointsControl.get(0).addVertices(new Vector3f(pos.x, pos.y, 0));
             }
         }
-        */
-
     }
 
     public void loop() {
@@ -178,9 +181,9 @@ public class Main {
 //            for (Object object : objectsRectangle) {
 //                object.draw(cam, projection);
 //            }
-//            for (Object object : objectsPointsControl) {
-//                object.drawLine();
-//            }
+            for (Object object : objectsPointsControl) {
+                object.drawLine(cam,projection);
+            }
 
             // Restore state
             glDisableVertexAttribArray(0);
