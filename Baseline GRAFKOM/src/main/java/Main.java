@@ -34,15 +34,16 @@ public class Main {
     private ArrayList<Object> objectsPointsControl
             = new ArrayList<>();
 
-
-
+    // Inisialisasi Model disini
     public void init() {
         window.init();
         GL.createCapabilities();
         mouseInput = window.getMouseInput();
         cam.setPosition(0,0,1.953f);
 
+        // Render model lewat easyCreateObject
         easyCreateObject.Sphere(objects);
+        easyCreateObject.Rectangle(objects);
     }
 
     public void input() {
