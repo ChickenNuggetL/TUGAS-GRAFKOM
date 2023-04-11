@@ -15,9 +15,9 @@ public class EasyCreateObject {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
                 ),
-                new ArrayList<>(),
-                new Vector4f(0.0f, 1.0f, 0.0f, 1.0f),
-                Arrays.asList(0.0f, 0.0f, 0.0f),
+                new ArrayList<>(), //Verticces
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f), //Warna
+                Arrays.asList(0.0f, 0.0f, 0.0f), //Coord center point
                 0.5f,
                 0.5f,
                 0.5f,
@@ -26,18 +26,18 @@ public class EasyCreateObject {
         ));
     }
 
-    public void SphereModify(ArrayList<Object> object, float x, float y, float z){
+    public void SphereModify(ArrayList<Object> object, float radx, float rady, float radz){
         object.add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
                 ),
-                new ArrayList<>(),
-                new Vector4f(0.0f, 1.0f, 0.0f, 1.0f),
-                Arrays.asList(0.0f, 0.0f, 0.0f),
-                x,
-                y,
-                z,
+                new ArrayList<>(),//Verticces
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),//Warna
+                Arrays.asList(0.0f, 0.0f, 0.0f),//Coord center point
+                radx,
+                rady,
+                radz,
                 36,
                 18
         ));
