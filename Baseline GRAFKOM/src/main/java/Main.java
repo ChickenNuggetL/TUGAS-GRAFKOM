@@ -34,6 +34,15 @@ public class Main {
     private ArrayList<Object> objectsPointsControl
             = new ArrayList<>();
 
+    private ArrayList<Awoofy> objectsAwoofy
+            = new ArrayList<>();
+
+    private ArrayList<BroomHatter> objectBroomHatter
+            = new ArrayList<>();
+
+    private ArrayList<LinkKirby> objectsLinkKirby
+            = new ArrayList<>();
+
     // Inisialisasi Model disini
     public void init() {
         window.init();
@@ -43,7 +52,6 @@ public class Main {
 
         // Render model lewat easyCreateObject
         easyCreateObject.Sphere(objects);
-        easyCreateObject.Rectangle(objects);
     }
 
     public void input() {
@@ -59,16 +67,20 @@ public class Main {
         }
 
         if (mouseInput.isLeftButtonPressed()) {
-            Vector2f pos = mouseInput.getCurrentPos();
+            Vector3f pos = mouseInput.getCurrentPos();
 //            System.out.println("x : "+pos.x+" y : "+pos.y);
             pos.x = (pos.x - (window.getWidth()) / 2.0f) /
                     (window.getWidth() / 2.0f);
             pos.y = (pos.y - (window.getHeight()) / 2.0f) /
                     (-window.getHeight() / 2.0f);
+            pos.z = (pos.z - (window.getHeight()) / 2.0f) /
+                    (-window.getHeight() / 2.0f);
+
             //System.out.println("x : "+pos.x+" y : "+pos.y);
 
-            if ((!(pos.x > 1 || pos.x < -0.97) && !(pos.y > 0.97 || pos.y < -1))) {
-                System.out.println("x : " + pos.x + " y : " + pos.y);
+            if ((!(pos.x > 1 || pos.x < -0.97) && !(pos.y > 0.97 || pos.y < -1)
+            && !(pos.z > 1 || pos.z < -0.97))) {
+                System.out.println("x : " + pos.x + " y : " + pos.y + " z : " + pos.z);
                 //objectsPointsControl.get(0).addVertices(new Vector3f(pos.x, pos.y, 0));
             }
         }
@@ -84,8 +96,11 @@ public class Main {
             input();
 
             //code
-            for (Object object : objects) {
-                object.draw(cam, projection);
+//            for (Object object : objects) {
+//                object.draw(cam, projection);
+//            }
+            for (Awoofy awoofy : objectsAwoofy){
+                awoofy.draw(cam,projection);
             }
 //            for (Object object : objectsRectangle) {
 //                object.draw(cam, projection);

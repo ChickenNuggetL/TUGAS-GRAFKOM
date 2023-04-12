@@ -1,24 +1,25 @@
 package Engine;
 
 import org.joml.Vector2f;
+import org.joml.Vector3f;
 
 import static org.lwjgl.glfw.GLFW.*;
 
 public class MouseInput {
 
-    private Vector2f currentPos;
-    private Vector2f displVec;
-    private Vector2f scroll;
+    private Vector3f currentPos;
+    private Vector3f displVec;
+    private Vector3f scroll;
     private boolean inWindow;
     private boolean leftButtonPressed;
-    private Vector2f previousPos;
+    private Vector3f previousPos;
     private boolean rightButtonPressed;
 
     public MouseInput(long windowHandle) {
-        previousPos = new Vector2f(-1, -1);
-        currentPos = new Vector2f();
-        scroll = new Vector2f();
-        displVec = new Vector2f();
+        previousPos = new Vector3f(-1, -1,-1);
+        currentPos = new Vector3f();
+        scroll = new Vector3f();
+        displVec = new Vector3f();
         leftButtonPressed = false;
         rightButtonPressed = false;
         inWindow = false;
@@ -37,15 +38,15 @@ public class MouseInput {
         });
     }
 
-    public Vector2f getCurrentPos() {
+    public Vector3f getCurrentPos() {
         return currentPos;
     }
 
-    public Vector2f getScroll() {
+    public Vector3f getScroll() {
         return scroll;
     }
 
-    public Vector2f getDisplVec() {
+    public Vector3f getDisplVec() {
         return displVec;
     }
 
