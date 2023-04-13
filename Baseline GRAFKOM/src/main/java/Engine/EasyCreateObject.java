@@ -11,58 +11,64 @@ import static org.lwjgl.opengl.GL20.GL_FRAGMENT_SHADER;
 import static org.lwjgl.opengl.GL20.GL_VERTEX_SHADER;
 
 public class EasyCreateObject {
+    Object Objectnya;
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+    // CARA PAKENYA CONTOH Sphere(ArrayObject, radius X, radius Y, radius Z)                //
+    // KALO MAU DEFAULTNYA CUMAN PERLU Sphere(ArrayObject)                                  //
+    // Contoh kalo mau ngewarna Sphere(ArrayObject, radius X, radius Y, radius Z, r, g, b)  //
+    // CEK YG ADA DI INIT di main                                                           //
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+    //ELIPSE DAN SPHERE
     public void Sphere(ArrayList<Object> object){
-        object.add(new Sphere(
+        object.add(new Sphere2(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
                 ),
                 new ArrayList<>(), //Verticces
-                new Vector4f(1.0f, 0.3f, 1.0f, 1.0f), //Warna
+                new Vector4f(255/255,215/255, 0.0f, 1.0f), //Warna
                 Arrays.asList(0.0f, 0.0f, 0.0f), //Coord center point
-                0.12f,
-                0.12f,
-                0.12f,
+                0.055f,
+                0.055f,
+                0.055f,
                 36,
                 18
         ));
-    }
-    public void Rectangle(ArrayList<Object> object){
-        object.add(new Rectangle(
-            Arrays.asList(
-                //shaderFile lokasi menyesuaikan objectnya
-                new ShaderProgram.ShaderModuleData
-                ("resources/shaders/scene.vert"
-                , GL_VERTEX_SHADER),
-                new ShaderProgram.ShaderModuleData
-                ("resources/shaders/scene.frag"
-                , GL_FRAGMENT_SHADER)
-            ),
-            new ArrayList<>(
-                List.of(
-                    new Vector3f(0.0f,0.0f,0.0f),
-                    new Vector3f(0.5f,0.0f,0.0f),
-                    new Vector3f(0.0f,0.5f,0.0f),
-                    new Vector3f( 0.5f,0.5f,0.0f)
-                )
-            ),
-            new Vector4f(0.0f,1.0f,1.0f,1.0f),
-            Arrays.asList(0,1,2,1,2,3)
-        ));
-    }
 
-    public void SphereModify(ArrayList<Object> object, float radx, float rady, float radz){
-        object.add(new Sphere(
+    }
+    public void Sphere(ArrayList<Object> object, float radx, float rady, float radz){
+        object.add(new Sphere2(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
                 ),
-                new ArrayList<>(),//Verticces
-                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),//Warna
-                Arrays.asList(0.0f, 0.0f, 0.0f),//Coord center point
-                radx,
-                rady,
-                radz,
+                new ArrayList<>(), //Verticces
+                new Vector4f(255/255f,215/255f, 0.0f, 1.0f), //Warna
+                Arrays.asList(0.0f, 0.0f, 0.0f), //Coord center point
+                radx/1000f,
+                rady/1000f,
+                radz/1000f,
+                36,
+                18
+        ));
+    }
+
+    public void Sphere(ArrayList<Object> object, float radx, float rady, float radz, float red, float green, float blue){
+        object.add(new Sphere2(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(), //Verticces
+                new Vector4f(red, green, blue, 1.0f), //Warna
+                Arrays.asList(0.0f, 0.0f, 0.0f), //Coord center point
+                radx/1000f,
+                rady/1000f,
+                radz/1000f,
                 36,
                 18
         ));

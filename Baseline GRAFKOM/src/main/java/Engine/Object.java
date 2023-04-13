@@ -46,23 +46,26 @@ public class Object extends ShaderProgram{
         this.color = color;
         model = new Matrix4f().identity();
         childObject = new ArrayList<>();
-        centerPoint = Arrays.asList(0f,0f,0f);
+        centerPoint = Arrays.asList(0f,0f,-0.1f);
+        //centerPoint = Arrays.asList(0f,0f,0f);
     }
 
     public List<Object> getChildObject(){
         return childObject;
     }
 
-    public Object(List<ShaderModuleData> shaderModuleDataList,
-                  List<Vector3f> vertices,
-                  List<Vector3f> verticesColor) {
-        super(shaderModuleDataList);
-        this.vertices = vertices;
-        this.verticesColor = verticesColor;
-        setupVAOVBOWithVerticesColor();
+
+    public void updateCenterPoint(){
+        Vector3f destTemp = new Vector3f();
+        model.transformPosition(0.0f,0.0f,0.0f,destTemp);
+        centerPoint.set(0,destTemp.x);
+        centerPoint.set(1,destTemp.y);
+        centerPoint.set(2,destTemp.z);
     }
     public void rotateObject(Float Degree, Float x, Float y, Float z){
-        model = new Matrix4f().rotation((float) Math.toRadians(Degree), x, y, z). mul(new Matrix4f(model));
+        //model = new Matrix4f().rotation((float) Math.toRadians(Degree), x, y, z). mul(new Matrix4f(model));
+        model = new Matrix4f().rotate(Degree,x,y,z).mul(new Matrix4f(model));
+        updateCenterPoint();
         for (Object child:childObject) {
             child.rotateObject(Degree, x, y, z);
         }
@@ -70,6 +73,7 @@ public class Object extends ShaderProgram{
 
     public void translateObject(Float offsetX, Float offsetY, Float offsetZ){
         model = new Matrix4f().translate(offsetX,offsetY,offsetZ).mul(new Matrix4f(model));
+        updateCenterPoint();
         for (Object child:childObject){
             child.translateObject(offsetX,offsetY,offsetZ);
         }
@@ -78,17 +82,12 @@ public class Object extends ShaderProgram{
     public void scaleObject(Float scaleX, Float scaleY, Float scaleZ){
         model = new Matrix4f().scale(scaleX, scaleY, scaleZ).mul(new Matrix4f(model));
         for (Object child:childObject){
-            child.translateObject(scaleX,scaleY,scaleZ);
+            child.scaleObject(scaleX,scaleY,scaleZ);
         }
     }
 
-    public void updateCenterPoint(float Degree){
-        float newX = (float) (centerPoint.get(0) * Math.cos(Math.toRadians(Degree)));
-        float newY = (float) (centerPoint.get(0) * Math.sin(Math.toRadians(Degree)));
-        centerPoint = new ArrayList<>(Arrays.asList(newX,newY, 0.0f));
-    }
-
-    public List<Float> getCenterPoint(){
+    public List<Float> getCenterPoint() {
+        updateCenterPoint();
         return centerPoint;
     }
 
@@ -147,22 +146,6 @@ public class Object extends ShaderProgram{
 
     }
 
-    public void drawSetup(){
-        bind();
-        uniformsMap.setUniform(
-                "uni_color", color);
-        uniformsMap.setUniform(
-                "model", model);
-        // Bind VBO
-        glEnableVertexAttribArray(0);
-        glBindBuffer(GL_ARRAY_BUFFER, vbo);
-        glVertexAttribPointer(0, 3,
-                GL_FLOAT,
-                false,
-                0, 0);
-
-    }
-
     public void drawSetupWithVerticesColor(){
         bind();
         // Bind VBO
@@ -185,36 +168,29 @@ public class Object extends ShaderProgram{
         drawSetup(camera, projection);
         // Draw the vertices
         //optional
-        glLineWidth(10); //ketebalan garis
-        glPointSize(10); //besar kecil vertex
+        glLineWidth(5); //ketebalan garis
+        glPointSize(5); //besar kecil vertex
         //wajib
-        //GL_LINES
-        //GL_LINE_STRIP
-        //GL_LINE_LOOP
-        //GL_TRIANGLES
-        //GL_TRIANGLE_FAN
-        //GL_POINT
-        glDrawArrays(GL_POLYGON,
+        //GL_LINES //GL_LINE_STRIP//GL_LINE_LOOP
+        //GL_TRIANGLES//GL_TRIANGLE_FAN//GL_POINT
+        glDrawArrays(GL_LINE_STRIP,
                 0,
                 vertices.size());
         for(Object child:childObject) {
-            child.draw();
+            child.drawC(camera, projection);
         }
     }
 
     public void draw(){
         // Draw the vertices
         //optional
-        glLineWidth(10); //ketebalan garis
-        glPointSize(10); //besar kecil vertex
+        glLineWidth(5); //ketebalan garis
+        glPointSize(5); //besar kecil vertex
         //wajib
-        //GL_LINES
-        //GL_LINE_STRIP
-        //GL_LINE_LOOP
-        //GL_TRIANGLES
-        //GL_TRIANGLE_FAN
-        //GL_POINT
-        glDrawArrays(GL_POLYGON,
+        //GL_LINES //GL_LINE_STRIP//GL_LINE_LOOP
+        //GL_TRIANGLES//GL_TRIANGLE_FAN//GL_POINT
+
+        glDrawArrays(GL_LINE_STRIP,
                 0,
                 vertices.size());
         for(Object child:childObject) {

@@ -1,7 +1,20 @@
 package Engine;
 
+import org.joml.Vector3f;
+
+import java.util.List;
+
 public class OBSOLETE_MAIN {
     //code
+
+//    public Object(List<ShaderProgram.ShaderModuleData> shaderModuleDataList,
+//                  List<Vector3f> vertices,
+//                  List<Vector3f> verticesColor) {
+//        super(shaderModuleDataList);
+//        this.vertices = vertices;
+//        this.verticesColor = verticesColor;
+//        setupVAOVBOWithVerticesColor();
+//    }
     //objectsPointsControl.get(0).addVertices(new Vector3f(pos.x, pos.y, 0));
     //            System.out.println("x : "+pos.x+" y : "+pos.y);
 
