@@ -24,7 +24,7 @@ public class EasyCreateObject {
 
     //ELIPSE DAN SPHERE
     public void Sphere(ArrayList<Object> object){
-        object.add(new Sphere2(
+        Objectnya = new Sphere2(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
@@ -37,11 +37,11 @@ public class EasyCreateObject {
                 0.055f,
                 36,
                 18
-        ));
-
+        );
+        object.add(Objectnya);
     }
     public void Sphere(ArrayList<Object> object, float radx, float rady, float radz){
-        object.add(new Sphere2(
+        Objectnya = new Sphere2(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
@@ -54,11 +54,12 @@ public class EasyCreateObject {
                 radz/1000f,
                 36,
                 18
-        ));
+        );
+        object.add(Objectnya);
     }
 
     public void Sphere(ArrayList<Object> object, float radx, float rady, float radz, float red, float green, float blue){
-        object.add(new Sphere2(
+        Objectnya = new Sphere2(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
@@ -71,7 +72,12 @@ public class EasyCreateObject {
                 radz/1000f,
                 36,
                 18
-        ));
+        );
+        object.add(Objectnya);
+    }
+
+    public void AddChild(Object X){
+        Objectnya.addChild(X);
     }
 
 }

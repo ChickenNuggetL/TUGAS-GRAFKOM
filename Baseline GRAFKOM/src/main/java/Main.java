@@ -1,7 +1,5 @@
 import Engine.*;
-import Engine.Characters.Awoofy;
-import Engine.Characters.BroomHatter;
-import Engine.Characters.LinkKirby;
+import Engine.Characters.*;
 import Engine.Object;
 import org.joml.Vector3f;
 import org.lwjgl.opengl.GL;
@@ -16,14 +14,17 @@ import static org.lwjgl.opengl.GL30.*;
 public class Main {
     //MODULE SCRIPTS---------------------------------------------------------------------------
     private MouseInput mouseInput;
-    EasyCreateObject elips = new EasyCreateObject();
-    EasyCreateObject Sphere = new EasyCreateObject();
+   // EasyCreateObject elips = new EasyCreateObject();
+//    EasyCreateObject Spherex = new EasyCreateObject();
+//    EasyCreateObject Sphere2x = new EasyCreateObject();
+
+    LinkKirby Kirby = new LinkKirby();
     Camera cam = new Camera();
 
     //MODULE SCRIPT BOLEH DIRUBAH---------------------------------------------------
     private Window window =
             new Window
-                    (900, 800, "Hello World");
+                    (900, 900, "Kirby");
     Projection projection = new Projection(window.getWidth(), window.getHeight());
 
     //Deklarasi Array---------------------------------------------------
@@ -46,33 +47,47 @@ public class Main {
         window.init();
         GL.createCapabilities();
         mouseInput = window.getMouseInput();
-
-        //Cam initialize
-        cam.setPosition(0,0,1f);
-        cam.setRotation((float)Math.toRadians(0.0f),(float)Math.toRadians(0.0f));
-
         // Render model lewat easyCreateObject
-        elips.Sphere(objects, 80, 55, 55);  //Contoh Pake easyCreate
-        Sphere.Sphere(objects, 55, 55, 55, 155/255f, 191/255f,11/255f);  //Contoh Pake easyCreate
-        objects.get(0).translateObject(0f,0f,-0.1f);
-        objects.get(1).translateObject(0f,0f,-0.1f);
+        //elips.Sphere(objects, 80, 55, 55);  //Contoh Pake easyCreate
+        //Spherex.Sphere(objects, 155, 155, 155, 155/255f, 191/255f,11/255f);  //Contoh Pake easyCreate
 
+        Kirby.create();
+        Kirby.MoveContents(objects);
+
+        objects.get(0).translateObject(0.0f,0.0f,0f);
+        //objects.get(1).translateObject(0.0f,0.0f,-0.1f);
+        //Cam initialize
+        cam.setRotation((float)Math.toRadians(0.0f),(float)Math.toRadians(0.0f));
+        cam.setPosition(0f,0f,0f);
     }
 
     public void input() {
 
         if (window.isKeyPressed(GLFW_KEY_D)) {
-            objects.get(0).rotateObject((float)Math.toRadians(0.5f),0f,1f,0f);
+            objects.get(0).rotateObject((float)Math.toRadians(1f),0f,1f,0f);
+            //objects.get(0).translateObject(0.0f,0.0f,0.00015f);
         }
         if (window.isKeyPressed(GLFW_KEY_A)) {
             objects.get(0).rotateObject((float)Math.toRadians(0.5f),0f,-1f,0f);
         }
-        if (window.isKeyPressed(GLFW_KEY_W)) {
+        if (window.isKeyPressed(GLFW_KEY_S)) {
             objects.get(0).rotateObject((float)Math.toRadians(0.5f),1f,0f,0f);
+        }
+        if (window.isKeyPressed(GLFW_KEY_W)) {
+            objects.get(0).rotateObject((float)Math.toRadians(0.5f),-1f,0f,0f);
         }
         if (window.isKeyPressed(GLFW_KEY_F)) {
             objects.get(0).rotateObject((float)Math.toRadians(1f),0f,0f,1f);
         }
+        if (window.isKeyPressed(GLFW_KEY_Q)) {
+            //cam.moveBackwards(0.1f);
+            //objects.get(0).translateObject(0.0f,0.0f,-0.01f);
+        }
+        if (window.isKeyPressed(GLFW_KEY_E)) {
+            //cam.moveForward(0.1f);
+            //objects.get(0).translateObject(0.0f,0.0f,0.01f);
+        }
+
 
         if (mouseInput.isLeftButtonPressed()) {
             Vector3f pos = mouseInput.getCurrentPos();
@@ -94,9 +109,9 @@ public class Main {
     public void loop() {
         while (window.isOpen()) {
             window.update();
-            glClearColor(0.0f,
-                    0.0f, 0.0f,
-                    0.0f);
+            glClearColor(0.2f,
+                    0.2f, 0.2f,
+                    0.5f);
             GL.createCapabilities();
             input();
 
@@ -109,9 +124,10 @@ public class Main {
  //               object.drawLine(cam,projection);
  //           }
             for (Object object : objects) {
-                object.drawC(cam,projection);
+                object.draw();
+                //object.drawC(cam,projection);
             }
-
+            //Kirby.draw();
             // Restore state
             glDisableVertexAttribArray(0);
 
@@ -123,7 +139,6 @@ public class Main {
     }
 
     public void run() {
-
         init();
         loop();
 

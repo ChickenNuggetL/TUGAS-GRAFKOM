@@ -39,15 +39,14 @@ public class Object extends ShaderProgram{
                 "uni_color");
         uniformsMap.createUniform(
                 "model");
-        uniformsMap.createUniform(
-                "view");
-        uniformsMap.createUniform(
-                "projection");
+//        uniformsMap.createUniform(
+//                "view");
+//        uniformsMap.createUniform(
+//                "projection");
         this.color = color;
         model = new Matrix4f().identity();
         childObject = new ArrayList<>();
-        centerPoint = Arrays.asList(0f,0f,-0.1f);
-        //centerPoint = Arrays.asList(0f,0f,0f);
+        centerPoint = Arrays.asList(0f,0f,0f);
     }
 
     public List<Object> getChildObject(){
@@ -89,6 +88,10 @@ public class Object extends ShaderProgram{
     public List<Float> getCenterPoint() {
         updateCenterPoint();
         return centerPoint;
+    }
+
+    public void addChild(Object x) {
+        childObject.add(x);
     }
 
     public void setCenterPoint(List<Float> centerPoint){
@@ -143,7 +146,21 @@ public class Object extends ShaderProgram{
                 GL_FLOAT,
                 false,
                 0, 0);
+    }
 
+    public void drawSetup(){
+        bind();
+        uniformsMap.setUniform(
+                "uni_color", color);
+        uniformsMap.setUniform(
+                "model", model);
+        // Bind VBO
+        glEnableVertexAttribArray(0);
+        glBindBuffer(GL_ARRAY_BUFFER, vbo);
+        glVertexAttribPointer(0, 3,
+                GL_FLOAT,
+                false,
+                0, 0);
     }
 
     public void drawSetupWithVerticesColor(){
@@ -184,13 +201,14 @@ public class Object extends ShaderProgram{
     public void draw(){
         // Draw the vertices
         //optional
+        drawSetup();
         glLineWidth(5); //ketebalan garis
         glPointSize(5); //besar kecil vertex
         //wajib
         //GL_LINES //GL_LINE_STRIP//GL_LINE_LOOP
         //GL_TRIANGLES//GL_TRIANGLE_FAN//GL_POINT
 
-        glDrawArrays(GL_LINE_STRIP,
+        glDrawArrays(GL_POLYGON,
                 0,
                 vertices.size());
         for(Object child:childObject) {

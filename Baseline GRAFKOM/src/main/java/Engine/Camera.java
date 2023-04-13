@@ -70,10 +70,10 @@ public class Camera {
     }
 
     private void recalculate() {
-        viewMatrix.identity()
-                .rotateX(rotation.x)
-                .rotateY(rotation.y)
-                .translate(-position.x, -position.y, -position.z);
+        viewMatrix.identity();
+        viewMatrix.rotateX(rotation.x);
+        viewMatrix.rotateY(rotation.y);
+        viewMatrix.translate(-position.x, -position.y, -position.z);
     }
 
     public void setPosition(float x, float y, float z) {
