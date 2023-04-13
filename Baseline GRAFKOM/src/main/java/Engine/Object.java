@@ -17,7 +17,7 @@ import static org.lwjgl.opengl.GL30.glGenVertexArrays;
 
 public class Object extends ShaderProgram{
 
-    List<Vector3f> vertices;
+    public List<Vector3f> vertices;
     int vao;
     int vbo;
     UniformsMap uniformsMap;
@@ -146,6 +146,23 @@ public class Object extends ShaderProgram{
                 0, 0);
 
     }
+
+    public void drawSetup(){
+        bind();
+        uniformsMap.setUniform(
+                "uni_color", color);
+        uniformsMap.setUniform(
+                "model", model);
+        // Bind VBO
+        glEnableVertexAttribArray(0);
+        glBindBuffer(GL_ARRAY_BUFFER, vbo);
+        glVertexAttribPointer(0, 3,
+                GL_FLOAT,
+                false,
+                0, 0);
+
+    }
+
     public void drawSetupWithVerticesColor(){
         bind();
         // Bind VBO
@@ -164,7 +181,7 @@ public class Object extends ShaderProgram{
                 false,
                 0, 0);
     }
-    public void draw(Camera camera, Projection projection){
+    public void drawC(Camera camera, Projection projection){
         drawSetup(camera, projection);
         // Draw the vertices
         //optional
@@ -180,7 +197,31 @@ public class Object extends ShaderProgram{
         glDrawArrays(GL_POLYGON,
                 0,
                 vertices.size());
+        for(Object child:childObject) {
+            child.draw();
+        }
     }
+
+    public void draw(){
+        // Draw the vertices
+        //optional
+        glLineWidth(10); //ketebalan garis
+        glPointSize(10); //besar kecil vertex
+        //wajib
+        //GL_LINES
+        //GL_LINE_STRIP
+        //GL_LINE_LOOP
+        //GL_TRIANGLES
+        //GL_TRIANGLE_FAN
+        //GL_POINT
+        glDrawArrays(GL_POLYGON,
+                0,
+                vertices.size());
+        for(Object child:childObject) {
+            child.draw();
+        }
+    }
+
     public void drawWithVerticesColor(){
         drawSetupWithVerticesColor();
         // Draw the vertices

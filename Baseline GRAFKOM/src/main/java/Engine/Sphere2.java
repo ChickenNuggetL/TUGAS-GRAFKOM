@@ -9,16 +9,17 @@ import java.util.List;
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL11.GL_POLYGON;
 
-public class Sphere extends Circle{
+public class Sphere2 extends Circle{
     float radiusZ;
     int stackCount;
     int sectorCount;
-    public Sphere(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color, List<Float> centerPoint, Float radiusX, Float radiusY, Float radiusZ,
+    public Sphere2(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color, List<Float> centerPoint, Float radiusX, Float radiusY, Float radiusZ,
                   int sectorCount,int stackCount) {
         super(shaderModuleDataList, vertices, color, centerPoint, radiusX, radiusY);
         this.radiusZ = radiusZ;
         this.stackCount = stackCount;
         this.sectorCount = sectorCount;
+        //createBox();
         createSphere();
         setupVAOVBO();
     }
@@ -107,11 +108,11 @@ public class Sphere extends Circle{
         vertices.add(tempVertices.get(6));
     }
     public void draw(Camera cam,Projection projection){
+        //drawSetup(cam, projection);
         drawSetup(cam, projection);
-        //drawSetup();
-        glLineWidth(10); //ketebalan garis
-        glPointSize(10); //besar kecil vertex
-        glDrawArrays(GL_POLYGON,
+        glLineWidth(2); //ketebalan garis
+        glPointSize(2); //besar kecil vertex
+        glDrawArrays(GL_LINE_STRIP,
                 0,
                 vertices.size());
     }

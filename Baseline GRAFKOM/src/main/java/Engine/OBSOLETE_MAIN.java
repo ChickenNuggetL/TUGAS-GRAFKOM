@@ -2,6 +2,23 @@ package Engine;
 
 public class OBSOLETE_MAIN {
     //code
+    //objectsPointsControl.get(0).addVertices(new Vector3f(pos.x, pos.y, 0));
+    //            System.out.println("x : "+pos.x+" y : "+pos.y);
+
+//            for (Object object : objectsRectangle) {
+//                object.draw(cam, projection);
+//            }
+
+//            for (Object object : objects) {
+//                object.draw(cam, projection);
+//            }
+    //        if (window.isKeyPressed(GLFW_KEY_F)) {
+//            System.out.println("F");
+//        }
+//        if (window.isKeyPressed(GLFW_KEY_W)) {
+//            objects.get(0).getChildObject().get(0);
+//        }
+//
 //        objects.add(new Object(
 //            Arrays.asList(
 //                //shaderFile lokasi menyesuaikan objectnya

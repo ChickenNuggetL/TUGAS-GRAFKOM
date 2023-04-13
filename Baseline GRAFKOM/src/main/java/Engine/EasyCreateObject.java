@@ -18,11 +18,11 @@ public class EasyCreateObject {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
                 ),
                 new ArrayList<>(), //Verticces
-                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f), //Warna
+                new Vector4f(1.0f, 0.3f, 1.0f, 1.0f), //Warna
                 Arrays.asList(0.0f, 0.0f, 0.0f), //Coord center point
-                0.5f,
-                0.5f,
-                0.5f,
+                0.12f,
+                0.12f,
+                0.12f,
                 36,
                 18
         ));

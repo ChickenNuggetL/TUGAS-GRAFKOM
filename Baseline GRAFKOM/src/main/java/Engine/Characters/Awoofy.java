@@ -1,5 +1,6 @@
-package Engine;
+package Engine.Characters;
 
+import Engine.Sphere;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 

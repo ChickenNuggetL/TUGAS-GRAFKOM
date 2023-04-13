@@ -1,13 +1,12 @@
 import Engine.*;
+import Engine.Characters.Awoofy;
+import Engine.Characters.BroomHatter;
+import Engine.Characters.LinkKirby;
 import Engine.Object;
-import org.joml.Vector2f;
 import org.joml.Vector3f;
-import org.joml.Vector4f;
 import org.lwjgl.opengl.GL;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.glClearColor;
@@ -22,15 +21,12 @@ public class Main {
     //MODULE SCRIPT BOLEH DIRUBAH---------------------------------------------------
     private Window window =
             new Window
-                    (800, 800, "Hello World");
+                    (900, 600, "Hello World");
     Projection projection = new Projection(window.getWidth(), window.getHeight());
 
     //Deklarasi Array---------------------------------------------------
     private ArrayList<Object> objects
             = new ArrayList<>();
-    private ArrayList<Object> objectsRectangle
-            = new ArrayList<>();
-
     private ArrayList<Object> objectsPointsControl
             = new ArrayList<>();
 
@@ -48,27 +44,22 @@ public class Main {
         window.init();
         GL.createCapabilities();
         mouseInput = window.getMouseInput();
-        cam.setPosition(0,0,1.953f);
+        cam.setPosition(0,0,1.79f);
+        cam.setRotation((float)Math.toRadians(0.0f),(float)Math.toRadians(0.0f));
 
         // Render model lewat easyCreateObject
         easyCreateObject.Sphere(objects);
     }
 
     public void input() {
-//        if (window.isKeyPressed(GLFW_KEY_F)) {
-//            System.out.println("F");
-//        }
-//        if (window.isKeyPressed(GLFW_KEY_W)) {
-//            objects.get(0).getChildObject().get(0);
-//        }
-//
+
         if (window.isKeyPressed(GLFW_KEY_F)) {
-            objects.get(0).rotateObject((float)Math.toRadians(1f),2f,4f,2f);
+            objects.get(0).rotateObject((float)Math.toRadians(1f),0f,10f,0f);
         }
 
         if (mouseInput.isLeftButtonPressed()) {
             Vector3f pos = mouseInput.getCurrentPos();
-//            System.out.println("x : "+pos.x+" y : "+pos.y);
+
             pos.x = (pos.x - (window.getWidth()) / 2.0f) /
                     (window.getWidth() / 2.0f);
             pos.y = (pos.y - (window.getHeight()) / 2.0f) /
@@ -76,12 +67,10 @@ public class Main {
             pos.z = (pos.z - (window.getHeight()) / 2.0f) /
                     (-window.getHeight() / 2.0f);
 
-            //System.out.println("x : "+pos.x+" y : "+pos.y);
-
             if ((!(pos.x > 1 || pos.x < -0.97) && !(pos.y > 0.97 || pos.y < -1)
             && !(pos.z > 1 || pos.z < -0.97))) {
                 System.out.println("x : " + pos.x + " y : " + pos.y + " z : " + pos.z);
-                //objectsPointsControl.get(0).addVertices(new Vector3f(pos.x, pos.y, 0));
+
             }
         }
     }
@@ -96,17 +85,15 @@ public class Main {
             input();
 
             //code
-//            for (Object object : objects) {
-//                object.draw(cam, projection);
-//            }
-            for (Awoofy awoofy : objectsAwoofy){
-                awoofy.draw(cam,projection);
-            }
-//            for (Object object : objectsRectangle) {
-//                object.draw(cam, projection);
-//            }
-            for (Object object : objectsPointsControl) {
-                object.drawLine(cam,projection);
+           //INI CARA PAKENYA SALAH TAPI JGN DIHAPUS DLU
+ //           for (Awoofy awoofy : objectsAwoofy){
+ //               awoofy.draw(cam,projection);
+ //           }
+ //           for (Object object : objectsPointsControl) {
+ //               object.drawLine(cam,projection);
+ //           }
+            for (Object object : objects) {
+                object.draw();
             }
 
             // Restore state
