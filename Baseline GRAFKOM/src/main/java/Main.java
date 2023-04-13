@@ -46,6 +46,7 @@ public class Main {
     public void init() {
         window.init();
         GL.createCapabilities();
+        glEnable(GL_DEPTH_TEST);
         mouseInput = window.getMouseInput();
         // Render model lewat easyCreateObject
         //elips.Sphere(objects, 80, 55, 55);  //Contoh Pake easyCreate
@@ -58,7 +59,7 @@ public class Main {
         //objects.get(1).translateObject(0.0f,0.0f,-0.1f);
         //Cam initialize
         cam.setRotation((float)Math.toRadians(0.0f),(float)Math.toRadians(0.0f));
-        cam.setPosition(0f,0f,0f);
+        cam.setPosition(0f,0f,1f);
     }
 
     public void input() {

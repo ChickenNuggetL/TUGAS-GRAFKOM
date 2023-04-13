@@ -27,8 +27,8 @@ public class LinkKirby {
         KirbyRootBody.get(0).getChildObject().get(1).translateObject(-135/1000f, -180/1000f, 3/100f);
         KirbyRootBody.get(0).getChildObject().get(2).translateObject(215/1000f, -10/1000f, 0f);
         KirbyRootBody.get(0).getChildObject().get(3).translateObject(-215/1000f, 55/1000f, 0f);
-        KirbyRootBody.get(0).getChildObject().get(4).translateObject(40/1000f, 55/1000f, 15/100f);
-        KirbyRootBody.get(0).getChildObject().get(5).translateObject(-40/1000f, 55/1000f, 15/100f);
+        KirbyRootBody.get(0).getChildObject().get(4).translateObject(40/1000f, 55/1000f, -20/100f);
+        KirbyRootBody.get(0).getChildObject().get(5).translateObject(-40/1000f, 55/1000f, -20/100f);
     }
 
     public void MoveContents(ArrayList<Object> arrayList){
