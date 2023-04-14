@@ -31,7 +31,7 @@ public class Awoofy {
         EasyCreateObject Lefteyes = new EasyCreateObject();
         EasyCreateObject Righteyes = new EasyCreateObject();
 
-        Body.Sphere(AwoofyRootBody, 200, 240, 200, 255/255f,165/255f,0f);
+        Body.Tube(AwoofyRootBody, 200, 240, 200,255/255f,165/255f,0f);
 
         Head.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 200, 200, 200, 255/255f,165/255f,0f);
         Nose.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 50, 30, 20, 15/255f,15/255f,15/255f);

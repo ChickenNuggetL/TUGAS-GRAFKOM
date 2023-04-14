@@ -22,6 +22,8 @@ public class Main {
 
     Awoofy awoofy = new Awoofy();
 
+    BroomHatter broomHatter = new BroomHatter();
+
     Camera cam = new Camera();
 
     //MODULE SCRIPT BOLEH DIRUBAH---------------------------------------------------
@@ -52,6 +54,9 @@ public class Main {
 
         awoofy.create();
         awoofy.MoveContents(objects);
+
+//        broomHatter.create();
+//        broomHatter.MoveContents(objects);
 
         objects.get(0).translateObject(0.0f,0.0f,0f);
         //objects.get(1).translateObject(0.0f,0.0f,-0.1f);
