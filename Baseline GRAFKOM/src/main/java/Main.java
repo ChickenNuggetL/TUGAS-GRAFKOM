@@ -19,6 +19,9 @@ public class Main {
 //    EasyCreateObject Sphere2x = new EasyCreateObject();
 
     LinkKirby Kirby = new LinkKirby();
+
+    Awoofy awoofy = new Awoofy();
+
     Camera cam = new Camera();
 
     //MODULE SCRIPT BOLEH DIRUBAH---------------------------------------------------
@@ -33,14 +36,6 @@ public class Main {
     private ArrayList<Object> objectsPointsControl
             = new ArrayList<>();
 
-    private ArrayList<Awoofy> objectsAwoofy
-            = new ArrayList<>();
-
-    private ArrayList<BroomHatter> objectBroomHatter
-            = new ArrayList<>();
-
-    private ArrayList<LinkKirby> objectsLinkKirby
-            = new ArrayList<>();
 
     // Inisialisasi Model disini
     public void init() {
@@ -52,8 +47,11 @@ public class Main {
         //elips.Sphere(objects, 80, 55, 55);  //Contoh Pake easyCreate
         //Spherex.Sphere(objects, 155, 155, 155, 155/255f, 191/255f,11/255f);  //Contoh Pake easyCreate
 
-        Kirby.create();
-        Kirby.MoveContents(objects);
+//        Kirby.create();
+//        Kirby.MoveContents(objects);
+
+        awoofy.create();
+        awoofy.MoveContents(objects);
 
         objects.get(0).translateObject(0.0f,0.0f,0f);
         //objects.get(1).translateObject(0.0f,0.0f,-0.1f);
