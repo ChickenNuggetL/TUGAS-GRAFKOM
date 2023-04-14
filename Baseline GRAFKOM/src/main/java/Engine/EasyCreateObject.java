@@ -94,6 +94,24 @@ public class EasyCreateObject {
         object.add(Objectnya);
     }
 
+    public void ElipticParaboloid(ArrayList<Object> object, float radx, float rady, float radz, float red, float green, float blue ){
+        Objectnya = new ElipticParaboloid(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(red, green, blue, 1.0f), //Warna
+                Arrays.asList(0.0f, 0.0f, 0.0f), //Coord center point
+                radx/1000f,
+                rady/1000f,
+                radz/1000f,
+                36,
+                18
+        );
+        object.add(Objectnya);
+    }
+
     public void Cone(ArrayList<Object> object, float radx, float rady, float radz, int sides, float red, float green, float blue){
         Objectnya = new Cone(
                 Arrays.asList(
