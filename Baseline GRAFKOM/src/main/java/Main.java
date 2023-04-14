@@ -59,7 +59,7 @@ public class Main {
         //objects.get(1).translateObject(0.0f,0.0f,-0.1f);
         //Cam initialize
         cam.setRotation((float)Math.toRadians(0.0f),(float)Math.toRadians(0.0f));
-        cam.setPosition(0f,0f,1f);
+        cam.setPosition(0f,0f,1.45f);
     }
 
     public void input() {
