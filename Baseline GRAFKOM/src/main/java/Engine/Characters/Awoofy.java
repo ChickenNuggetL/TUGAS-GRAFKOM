@@ -54,7 +54,7 @@ public class Awoofy {
         WhiteBody.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 135, 150, 20, 255/255f,255/255f,255/255f);
         LeftEyesWhite.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 12, 20, 20, 255/255f, 255/255f,255/255f);
         RightEyesWhite.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 12, 20, 20, 255/255f, 255/255f,255/255f);
-        dummy.EllipticCone((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 60, 60, 20, 255/255f, 255/255f,255/255f);
+        dummy.EllipticParaboloid((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 40, 40, 80, 255/255f, 255/255f,255/255f);
 
         // head
         AwoofyRootBody.get(0).getChildObject().get(0).translateObject(0/1000f, 150/1000f, 0/100f);
@@ -100,7 +100,8 @@ public class Awoofy {
         AwoofyRootBody.get(0).getChildObject().get(15).translateObject(-65/1000f, 225/1000f, -21/100f);
 
         // test
-        AwoofyRootBody.get(0).getChildObject().get(16).translateObject(300/1000f, 300/1000f, -21/100f);
+        AwoofyRootBody.get(0).getChildObject().get(16).translateObject(300/1000f, 300/1000f, -20/100f);
+        AwoofyRootBody.get(0).getChildObject().get(16).rotateObject((float)Math.toRadians(90f),1f,0f,0f);
     }
 
     public void MoveContents(ArrayList<Object> arrayList){

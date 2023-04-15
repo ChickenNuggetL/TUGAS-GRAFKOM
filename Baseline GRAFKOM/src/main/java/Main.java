@@ -67,6 +67,8 @@ public class Main {
 
     public void input() {
 
+        // radian awal adalah 0.5f
+        // tak ganti ke 1f supaya cepet aja
         if (window.isKeyPressed(GLFW_KEY_D)) {
             objects.get(0).rotateObject((float)Math.toRadians(1f),0f,1f,0f);
             //objects.get(0).translateObject(0.0f,0.0f,0.00015f);
@@ -75,10 +77,10 @@ public class Main {
             objects.get(0).rotateObject((float)Math.toRadians(1f),0f,-1f,0f);
         }
         if (window.isKeyPressed(GLFW_KEY_S)) {
-            objects.get(0).rotateObject((float)Math.toRadians(0.5f),1f,0f,0f);
+            objects.get(0).rotateObject((float)Math.toRadians(1f),1f,0f,0f);
         }
         if (window.isKeyPressed(GLFW_KEY_W)) {
-            objects.get(0).rotateObject((float)Math.toRadians(0.5f),-1f,0f,0f);
+            objects.get(0).rotateObject((float)Math.toRadians(1f),-1f,0f,0f);
         }
         if (window.isKeyPressed(GLFW_KEY_F)) {
             objects.get(0).rotateObject((float)Math.toRadians(1f),0f,0f,1f);

@@ -62,9 +62,9 @@ public class Object extends ShaderProgram{
         centerPoint.set(2,destTemp.z);
     }
     public void rotateObject(Float Degree, Float x, Float y, Float z){
-        model = new Matrix4f().rotation(Degree, x, y, z).mul(new Matrix4f(model));
+//        model = new Matrix4f().rotation(Degree, x, y, z).mul(new Matrix4f(model));
         //model = new Matrix4f().rotation((float) Math.toRadians(Degree), x, y, z).mul(new Matrix4f(model));
-        //model = new Matrix4f().rotate(Degree,x,y,z).mul(new Matrix4f(model));
+        model = new Matrix4f().rotate(Degree,x,y,z).mul(new Matrix4f(model));
         updateCenterPoint();
         for (Object child:childObject) {
             child.rotateObject(Degree, x, y, z);

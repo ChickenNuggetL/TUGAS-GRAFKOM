@@ -92,8 +92,8 @@ public class EasyCreateObject {
         object.add(Objectnya);
     }
 
-    public void ElipticParaboloid(ArrayList<Object> object, float radx, float rady, float radz, float red, float green, float blue ){
-        Objectnya = new ElipticParaboloid(
+    public void EllipticParaboloid(ArrayList<Object> object, float radx, float rady, float radz, float red, float green, float blue ){
+        Objectnya = new EllipticParaboloid(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
@@ -110,6 +110,7 @@ public class EasyCreateObject {
         object.add(Objectnya);
     }
 
+    // Conenya masih error
     public void EllipticCone(ArrayList<Object> object, float radx, float rady, float radz, float red, float green, float blue){
         Objectnya = new EllipticCone(
                 Arrays.asList(
