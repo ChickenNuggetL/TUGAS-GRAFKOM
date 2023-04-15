@@ -28,12 +28,20 @@ public class Object extends ShaderProgram{
     List<Vector3f> verticesColor;
     List<Object> childObject;
     List<Float> centerPoint;
+    public Vector3f centerpoint;
+    List<Vector3f> curve = new ArrayList<>();
+    boolean isCurve;
+    float radiusX;
+    float radiusY;
+    float radiusZ;
 
     public Object(List<ShaderModuleData> shaderModuleDataList
             , List<Vector3f> vertices
             , Vector4f color) {
         super(shaderModuleDataList);
         this.vertices = vertices;
+        this.color = color;
+        this.isCurve = false;
         setupVAOVBO();
         uniformsMap = new UniformsMap(getProgramId());
         uniformsMap.createUniform(
@@ -44,10 +52,70 @@ public class Object extends ShaderProgram{
 //                "view");
 //        uniformsMap.createUniform(
 //                "projection");
-        this.color = color;
-        model = new Matrix4f().identity();
+
+//        model = new Matrix4f().identity();
+        model = new Matrix4f().scale(1,1,1);
         childObject = new ArrayList<>();
         centerPoint = Arrays.asList(0f,0f,0f);
+    }
+
+    public Object(List<ShaderModuleData> shaderModuleDataList,
+                    List<Vector3f> vertices, Vector4f color, Vector3f centerpoint,
+                    float radiusX, float radiusY, float radiusZ) {
+        super(shaderModuleDataList);
+        this.centerpoint = centerpoint;
+        this.radiusX = radiusX;
+        this.radiusY = radiusY;
+        this.radiusZ = radiusZ;
+        this.vertices = vertices;
+        this.color = color;
+        uniformsMap = new UniformsMap(getProgramId());
+        uniformsMap.createUniform(
+                "uni_color");
+        uniformsMap.createUniform(
+                "model");
+        this.isCurve = false;
+        model = new Matrix4f().scale(1,1,1);
+        childObject = new ArrayList<>();
+        centerPoint = Arrays.asList(0f,0f,0f);
+
+//        setupVAOVBOWithVerticesColor();
+    }
+    public void addVerticesForCurve(Vector3f newVector) {
+        vertices.add(newVector);
+    }
+
+    static int factorial(int n)
+    {
+        if (n == 0)
+            return 1;
+
+        return n*factorial(n-1);
+    }
+    private int combinations(int n, int r){
+        return factorial(n) / factorial(r) / factorial(n - r);
+    }
+    public void createCurve(){
+        curve.clear();
+        for(double i = 0; i <= 1.01; i += 0.01){
+            curve.add(bezierCurve(i));
+        }
+        this.vertices = curve;
+        setupVAOVBO();
+        this.isCurve = true;
+    }
+
+    private Vector3f bezierCurve(double t){
+        int i = 0;
+        int size = vertices.size() - 1;
+        Vector3f result = new Vector3f(0.0f, 0.0f, 0.0f);
+        for(Vector3f vertice : vertices){
+            result.x += combinations(size, i) * Math.pow((1-t), size - i) * vertice.x * Math.pow(t, i);
+            result.y += combinations(size, i) * Math.pow((1-t), size - i) * vertice.y * Math.pow(t, i);
+            result.z += combinations(size, i) * Math.pow((1-t), size - i) * vertice.z * Math.pow(t, i);
+            i += 1;
+        }
+        return result;
     }
 
     public List<Object> getChildObject(){
