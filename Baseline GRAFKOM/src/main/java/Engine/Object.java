@@ -9,6 +9,7 @@ import java.util.Arrays;
 
 
 import static org.lwjgl.opengl.GL15.*;
+import static org.lwjgl.opengl.GL20.*;
 import static org.lwjgl.opengl.GL15.GL_STATIC_DRAW;
 import static org.lwjgl.opengl.GL20.glEnableVertexAttribArray;
 import static org.lwjgl.opengl.GL20.glVertexAttribPointer;
@@ -155,12 +156,13 @@ public class Object extends ShaderProgram{
                 "uni_color", color);
         uniformsMap.setUniform(
                 "model", model);
+
         // Bind VBO
         glEnableVertexAttribArray(0);
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
         glVertexAttribPointer(0, 3,
                 GL_FLOAT,
-                false,
+                true,
                 0, 0);
     }
 
@@ -203,8 +205,8 @@ public class Object extends ShaderProgram{
         // Draw the vertices
         //optional
         drawSetup();
-        glLineWidth(5); //ketebalan garis
-        glPointSize(5); //besar kecil vertex
+        glLineWidth(0.5f); //ketebalan garis
+        glPointSize(0.5f); //besar kecil vertex
         //wajib
         //GL_LINES //GL_LINE_STRIP//GL_LINE_LOOP
         //GL_TRIANGLES//GL_TRIANGLE_FAN//GL_POINT
@@ -230,7 +232,7 @@ public class Object extends ShaderProgram{
         //GL_TRIANGLES
         //GL_TRIANGLE_FAN
         //GL_POINT
-        glDrawArrays(GL_TRIANGLES,
+        glDrawArrays(GL_POLYGON,
                 0,
                 vertices.size());
     }
