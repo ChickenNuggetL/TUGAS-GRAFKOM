@@ -24,6 +24,7 @@ public class Object extends ShaderProgram{
     UniformsMap uniformsMap;
     Vector4f color;
     Matrix4f model;
+    Matrix4f modelz;
     int vboColor;
     List<Vector3f> verticesColor;
     List<Object> childObject;
@@ -54,7 +55,8 @@ public class Object extends ShaderProgram{
 //                "projection");
 
 //        model = new Matrix4f().identity();
-        model = new Matrix4f().scale(1,1,1);
+        modelz = new Matrix4f().scale(1,1,1);
+        //model = new Matrix4f().identity();
         childObject = new ArrayList<>();
         centerPoint = Arrays.asList(0f,0f,0f);
     }
