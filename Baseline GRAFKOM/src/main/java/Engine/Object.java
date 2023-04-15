@@ -56,7 +56,7 @@ public class Object extends ShaderProgram{
 
 //        model = new Matrix4f().identity();
         modelz = new Matrix4f().scale(1,1,1);
-        //model = new Matrix4f().identity();
+        model = new Matrix4f().identity();
         childObject = new ArrayList<>();
         centerPoint = Arrays.asList(0f,0f,0f);
     }
