@@ -55,8 +55,8 @@ public class Awoofy {
         WhiteBody.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 135, 150, 20, 255/255f,255/255f,255/255f);
         LeftEyesWhite.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 12, 20, 20, 255/255f, 255/255f,255/255f);
         RightEyesWhite.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 12, 20, 20, 255/255f, 255/255f,255/255f);
-        LeftEar.EllipticParaboloid((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 40, 40, 80, 255/255f,165/255f,0f);
-        RightEar.EllipticParaboloid((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 40, 40, 80, 255/255f,165/255f,0f);
+        LeftEar.EllipticParaboloid((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 30, 10, 90, 255/255f,165/255f,0f);
+        RightEar.EllipticParaboloid((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 30, 10, 90, 255/255f,165/255f,0f);
 
         // head
         AwoofyRootBody.get(0).getChildObject().get(0).translateObject(0/1000f, 150/1000f, 0/100f);
@@ -78,12 +78,12 @@ public class Awoofy {
         AwoofyRootBody.get(0).getChildObject().get(7).translateObject(-70/1000f, -200/1000f, 0/100f);
 
 
-        // left hand (215 x awal)
-        AwoofyRootBody.get(0).getChildObject().get(8).translateObject(220/1000f, 20/1000f, 0f);
-//        AwoofyRootBody.get(0).getChildObject().get(8).rotateObject((float)Math.toRadians(45f),0f,1f,0f);
+        // left hand (215 x awal, 220x awal 2, )
+        AwoofyRootBody.get(0).getChildObject().get(8).translateObject(180/1000f, -130/1000f, 0f);
+        AwoofyRootBody.get(0).getChildObject().get(8).rotateObject((float)Math.toRadians(30f),0f,0f,1f);
         // right hand
-        AwoofyRootBody.get(0).getChildObject().get(9).translateObject(-220/1000f, 20/1000f, 0f);
-//        AwoofyRootBody.get(0).getChildObject().get(9).rotateObject((float)Math.toRadians(45f),0f,0f,1f);
+        AwoofyRootBody.get(0).getChildObject().get(9).translateObject(-180/1000f, -130/1000f, 0f);
+        AwoofyRootBody.get(0).getChildObject().get(9).rotateObject((float)Math.toRadians(30f),0f,0f,-1f);
 
 
         // left eyes
@@ -102,9 +102,13 @@ public class Awoofy {
         AwoofyRootBody.get(0).getChildObject().get(15).translateObject(-65/1000f, 225/1000f, -21/100f);
 
         // left ear
-        AwoofyRootBody.get(0).getChildObject().get(16).translateObject(300/1000f, 300/1000f, -20/100f);
+        AwoofyRootBody.get(0).getChildObject().get(16).translateObject(100/1000f, 0/1000f, -50/100f);
         AwoofyRootBody.get(0).getChildObject().get(16).rotateObject((float)Math.toRadians(90f),1f,0f,0f);
         // right ear
+        AwoofyRootBody.get(0).getChildObject().get(17).translateObject(-100/1000f, 0/1000f, -50/100f);
+        AwoofyRootBody.get(0).getChildObject().get(17).rotateObject((float)Math.toRadians(90f),1f,0f,0f);
+
+
 
     }
 
