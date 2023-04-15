@@ -18,7 +18,7 @@ public class ElipticParaboloid extends Sphere2{
         ArrayList<Vector3f> temp = new ArrayList<>();
 
         double v = -7 ;
-        while (v<= 0) {
+        while (v <= 0) {
             for(double u = -Math.PI; u<= Math.PI; u+=Math.PI/60){
                 float x = 0.5f * (float)((v) * Math.cos(u));
                 float y = 0.5f * (float)((v) * Math.sin(u));

@@ -30,8 +30,10 @@ public class Awoofy {
         EasyCreateObject RightFoot3 = new EasyCreateObject();
         EasyCreateObject LeftHand = new EasyCreateObject();
         EasyCreateObject RightHand = new EasyCreateObject();
-        EasyCreateObject Lefteyes = new EasyCreateObject();
-        EasyCreateObject Righteyes = new EasyCreateObject();
+        EasyCreateObject LeftEyes = new EasyCreateObject();
+        EasyCreateObject LeftEyesWhite = new EasyCreateObject();
+        EasyCreateObject RightEyes = new EasyCreateObject();
+        EasyCreateObject RightEyesWhite = new EasyCreateObject();
         EasyCreateObject dummy = new EasyCreateObject();
 
         Body.Tube(AwoofyRootBody, 200, 240, 200,255/255f,165/255f,0f);
@@ -46,12 +48,13 @@ public class Awoofy {
         RightFoot3.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 50, 50, 100, 255/255f, 255/255f,0f);
         LeftHand.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 50, 100, 60, 255/255f,165/255f,0f);
         RightHand.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 50, 100, 60, 255/255f,165/255f,0f);
-        Lefteyes.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 25, 50, 20, 15/255f, 15/255f,15/255f);
-        Righteyes.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 25, 50, 20, 15/255f, 15/255f,15/255f);
+        LeftEyes.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 25, 50, 20, 15/255f, 15/255f,15/255f);
+        RightEyes.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 25, 50, 20, 15/255f, 15/255f,15/255f);
         WhiteHead.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 120, 80, 20, 255/255f,255/255f,255/255f);
         WhiteBody.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 135, 150, 20, 255/255f,255/255f,255/255f);
-        dummy.ElipticParaboloid((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 20, 20, 20, 255/255f,255/255f,255/255f);
-
+        LeftEyesWhite.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 12, 20, 20, 255/255f, 255/255f,255/255f);
+        RightEyesWhite.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 12, 20, 20, 255/255f, 255/255f,255/255f);
+        dummy.EllipticCone((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 60, 60, 20, 255/255f, 255/255f,255/255f);
 
         // head
         AwoofyRootBody.get(0).getChildObject().get(0).translateObject(0/1000f, 150/1000f, 0/100f);
@@ -73,12 +76,12 @@ public class Awoofy {
         AwoofyRootBody.get(0).getChildObject().get(7).translateObject(-70/1000f, -200/1000f, 0/100f);
 
 
-        // left hand
-        AwoofyRootBody.get(0).getChildObject().get(8).translateObject(215/1000f, 20/1000f, 0f);
-//        AwoofyRootBody.get(0).getChildObject().get(10).rotateObject((float)Math.toRadians(-20f),1f,0f,0f);
+        // left hand (215 x awal)
+        AwoofyRootBody.get(0).getChildObject().get(8).translateObject(220/1000f, 20/1000f, 0f);
+//        AwoofyRootBody.get(0).getChildObject().get(8).rotateObject((float)Math.toRadians(45f),0f,1f,0f);
         // right hand
-        AwoofyRootBody.get(0).getChildObject().get(9).translateObject(-215/1000f, 20/1000f, 0f);
-//        AwoofyRootBody.get(0).getChildObject().get(11).rotateObject((float)Math.toRadians(1f),0f,1f,0f);
+        AwoofyRootBody.get(0).getChildObject().get(9).translateObject(-220/1000f, 20/1000f, 0f);
+//        AwoofyRootBody.get(0).getChildObject().get(9).rotateObject((float)Math.toRadians(45f),0f,0f,1f);
 
 
         // left eyes
@@ -89,10 +92,15 @@ public class Awoofy {
         // White Head
         AwoofyRootBody.get(0).getChildObject().get(12).translateObject(0/1000f, 80/1000f, -19/100f);
         // White Body
-        AwoofyRootBody.get(0).getChildObject().get(13).translateObject(0/1000f, -70/1000f, -15/100f);
+        AwoofyRootBody.get(0).getChildObject().get(13).translateObject(0/1000f, -70/1000f, -14/100f);
+
+        // left eyes white
+        AwoofyRootBody.get(0).getChildObject().get(14).translateObject(65/1000f, 225/1000f, -21/100f);
+        // right eyes white
+        AwoofyRootBody.get(0).getChildObject().get(15).translateObject(-65/1000f, 225/1000f, -21/100f);
 
         // test
-        AwoofyRootBody.get(0).getChildObject().get(14).translateObject(300/1000f, 300/1000f, 0/100f);
+        AwoofyRootBody.get(0).getChildObject().get(16).translateObject(300/1000f, 300/1000f, -21/100f);
     }
 
     public void MoveContents(ArrayList<Object> arrayList){

@@ -1,11 +1,9 @@
 package Engine;
 
-import org.joml.Vector3f;
 import org.joml.Vector4f;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import static org.lwjgl.opengl.GL20.GL_FRAGMENT_SHADER;
 import static org.lwjgl.opengl.GL20.GL_VERTEX_SHADER;
@@ -112,8 +110,8 @@ public class EasyCreateObject {
         object.add(Objectnya);
     }
 
-    public void Cone(ArrayList<Object> object, float radx, float rady, float radz, int sides, float red, float green, float blue){
-        Objectnya = new Cone(
+    public void EllipticCone(ArrayList<Object> object, float radx, float rady, float radz, float red, float green, float blue){
+        Objectnya = new EllipticCone(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
@@ -125,8 +123,7 @@ public class EasyCreateObject {
                 rady/1000f,
                 radz/1000f,
                 36,
-                18,
-                sides
+                18
         );
         object.add(Objectnya);
     }
