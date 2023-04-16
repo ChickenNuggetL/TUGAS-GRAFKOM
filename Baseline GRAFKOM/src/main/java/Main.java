@@ -152,6 +152,9 @@ public class Main {
 
             Kirby.walkAnim(false);
 
+            awoofy.walkAnim(false);
+//            awoofy.handAnimation();
+
             for (Object object : objects) {
                 object.draw();
                 //object.drawC(cam,projection);
