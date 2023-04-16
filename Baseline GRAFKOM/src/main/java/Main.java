@@ -151,6 +151,7 @@ public class Main {
             Kirby.walkAnim(false);
 
             awoofy.walkAnim(false);
+            awoofy.handAnim(false);
 
             broomHatter.basicAnim(false);
             input();
