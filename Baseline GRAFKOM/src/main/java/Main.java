@@ -142,8 +142,6 @@ public class Main {
                     0.6f, 0.9f,
                     0.75f);
             GL.createCapabilities();
-            input();
-
             //code
            //INI CARA PAKENYA SALAH TAPI JGN DIHAPUS DLU
  //           for (Object object : objectsPointsControl) {
@@ -153,6 +151,9 @@ public class Main {
             Kirby.walkAnim(false);
 
             awoofy.walkAnim(false);
+
+            broomHatter.basicAnim(false);
+            input();
 //            awoofy.handAnimation();
 
             for (Object object : objects) {

@@ -6,13 +6,15 @@ import Engine.Object;
 import java.util.ArrayList;
 
 public class BroomHatter {
-    float animDuration = 12.0f;
-    float animStepsDuration = 1.0f;
+    float animDuration = 32f;
+    float animStepsDuration = 1f;
     float frameTime = animDuration/animStepsDuration;
-    float currentAnimTime = 0.0f;
+    float currentAnimTime = 0f;
+
+    float animspeed = 0.5f;
     //Final position
-    float rightfootpos = 40.0f;
-    float leftfootpos = 10.0f;
+    float rightfootrot = 40.0f;
+    float leftfootrot = 10.0f;
     public ArrayList<Object> BroomHatter
             = new ArrayList<>();
 
@@ -63,42 +65,60 @@ public class BroomHatter {
 
 
     }
-    public void walkAnim(){
-        if(currentAnimTime < animDuration/4) {
-            // 1st Move pos
-            //kirby leftfoot
-            BroomHatter.get(0).getChildObject().get(0).translateObject(0f,1/1000f,0f);
-            //kirby rightfoot
-            BroomHatter.get(0).getChildObject().get(1).translateObject(0f,-1/1000f,0f);
-        }
-        else if (currentAnimTime >= animDuration/4 && currentAnimTime < animDuration*2/4){
-            // 1st Move pos - BACK TO ORI
-            //kirby leftfoot
-            BroomHatter.get(0).getChildObject().get(0).translateObject(0f,0f,0f);
-            //kirby rightfoot
-            BroomHatter.get(0).getChildObject().get(1).translateObject(-0f,0f,0f);;
-        }
-        else if (currentAnimTime >= animDuration*2/4 && currentAnimTime < animDuration*3/4) {
-            // Rev Move pos
-            //kirby leftfoot
-            BroomHatter.get(0).getChildObject().get(0).translateObject(0f,-1/1000f,0f);
-            //kirby rightfoot
-            BroomHatter.get(0).getChildObject().get(1).translateObject(0f,1/1000f,0f);
-        }
-        else if (currentAnimTime >= animDuration*3/4 && currentAnimTime < animDuration){
-            // Rev Move pos - Back to ori
-            //kirby leftfoot
-            BroomHatter.get(0).getChildObject().get(0).translateObject(0f,0f,0f);
-            //kirby rightfoot
-            BroomHatter.get(0).getChildObject().get(1).translateObject(0f,0f,0f);
-        }
-        else if (currentAnimTime > animDuration){
-            currentAnimTime = 0.0f;
-        }
-        currentAnimTime+=0.1f;
-        currentAnimTime+=0.1f;
+//    public void walkAnim(){
+//        if(currentAnimTime < animDuration/4) {
+//            // 1st Move pos
+//            //kirby leftfoot
+//            BroomHatter.get(0).getChildObject().get(0).translateObject(0f,1/1000f,0f);
+//            //kirby rightfoot
+//            BroomHatter.get(0).getChildObject().get(1).translateObject(0f,-1/1000f,0f);
+//        }
+//        else if (currentAnimTime >= animDuration/4 && currentAnimTime < animDuration*2/4){
+//            // 1st Move pos - BACK TO ORI
+//            //kirby leftfoot
+//            BroomHatter.get(0).getChildObject().get(0).translateObject(0f,0f,0f);
+//            //kirby rightfoot
+//            BroomHatter.get(0).getChildObject().get(1).translateObject(-0f,0f,0f);;
+//        }
+//        else if (currentAnimTime >= animDuration*2/4 && currentAnimTime < animDuration*3/4) {
+//            // Rev Move pos
+//            //kirby leftfoot
+//            BroomHatter.get(0).getChildObject().get(0).translateObject(0f,-1/1000f,0f);
+//            //kirby rightfoot
+//            BroomHatter.get(0).getChildObject().get(1).translateObject(0f,1/1000f,0f);
+//        }
+//        else if (currentAnimTime >= animDuration*3/4 && currentAnimTime < animDuration){
+//            // Rev Move pos - Back to ori
+//            //kirby leftfoot
+//            BroomHatter.get(0).getChildObject().get(0).translateObject(0f,0f,0f);
+//            //kirby rightfoot
+//            BroomHatter.get(0).getChildObject().get(1).translateObject(0f,0f,0f);
+//        }
+//        else if (currentAnimTime > animDuration){
+//            currentAnimTime = 0.0f;
+//        }
+//        currentAnimTime+=0.1f;
+//        currentAnimTime+=0.1f;
+//    }
 
-
+    public void basicAnim(boolean isStopped){
+        float speed = 0.025f/frameTime;
+        if(currentAnimTime <= animDuration/4f && isStopped == false) {
+            BroomHatter.get(0).translateObject(0f, speed, 0f);
+        }
+        else if (currentAnimTime > animDuration/4f && currentAnimTime <= animDuration*(2f/4f)){
+            BroomHatter.get(0).translateObject(0f, -speed, 0f);
+        }
+        else if (currentAnimTime > animDuration*2f/4f && currentAnimTime <= animDuration*(3f/4f)) {
+            BroomHatter.get(0).translateObject(0f, speed, 0f);
+        }
+        else if (currentAnimTime > animDuration*3f/4f && currentAnimTime <= animDuration){
+            BroomHatter.get(0).translateObject(0f, -speed, 0f);
+        }
+        else if (currentAnimTime >= animDuration){
+            currentAnimTime = 0f;
+        }
+        currentAnimTime += animspeed;
     }
 
     public void MoveContents(ArrayList<Object> arrayList){

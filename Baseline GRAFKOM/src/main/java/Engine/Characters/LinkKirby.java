@@ -14,6 +14,7 @@ public class LinkKirby {
     float animStepsDuration = 1.0f;
     float frameTime = animDuration/animStepsDuration;
     float currentAnimTime = 0f;
+    float currentAnimTime2 = 0f;
 
     float animspeed = 0.5f;
     //Final position
@@ -123,6 +124,7 @@ public class LinkKirby {
         }
         currentAnimTime += animspeed;
     }
+
 
     public void draw(){
         for (Object object: KirbyRootBody){
