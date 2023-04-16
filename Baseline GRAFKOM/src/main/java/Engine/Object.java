@@ -9,6 +9,7 @@ import java.util.Arrays;
 
 
 import static org.lwjgl.opengl.GL15.*;
+import static org.lwjgl.opengl.GL20.*;
 import static org.lwjgl.opengl.GL15.GL_STATIC_DRAW;
 import static org.lwjgl.opengl.GL20.glEnableVertexAttribArray;
 import static org.lwjgl.opengl.GL20.glVertexAttribPointer;
@@ -23,16 +24,25 @@ public class Object extends ShaderProgram{
     UniformsMap uniformsMap;
     Vector4f color;
     Matrix4f model;
+    Matrix4f modelz;
     int vboColor;
     List<Vector3f> verticesColor;
     List<Object> childObject;
     List<Float> centerPoint;
+    public Vector3f centerpoint;
+    List<Vector3f> curve = new ArrayList<>();
+    boolean isCurve;
+    float radiusX;
+    float radiusY;
+    float radiusZ;
 
     public Object(List<ShaderModuleData> shaderModuleDataList
             , List<Vector3f> vertices
             , Vector4f color) {
         super(shaderModuleDataList);
         this.vertices = vertices;
+        this.color = color;
+        this.isCurve = false;
         setupVAOVBO();
         uniformsMap = new UniformsMap(getProgramId());
         uniformsMap.createUniform(
@@ -43,10 +53,71 @@ public class Object extends ShaderProgram{
 //                "view");
 //        uniformsMap.createUniform(
 //                "projection");
-        this.color = color;
+
+//        model = new Matrix4f().identity();
+        modelz = new Matrix4f().scale(1,1,1);
         model = new Matrix4f().identity();
         childObject = new ArrayList<>();
         centerPoint = Arrays.asList(0f,0f,0f);
+    }
+
+    public Object(List<ShaderModuleData> shaderModuleDataList,
+                    List<Vector3f> vertices, Vector4f color, Vector3f centerpoint,
+                    float radiusX, float radiusY, float radiusZ) {
+        super(shaderModuleDataList);
+        this.centerpoint = centerpoint;
+        this.radiusX = radiusX;
+        this.radiusY = radiusY;
+        this.radiusZ = radiusZ;
+        this.vertices = vertices;
+        this.color = color;
+        uniformsMap = new UniformsMap(getProgramId());
+        uniformsMap.createUniform(
+                "uni_color");
+        uniformsMap.createUniform(
+                "model");
+        this.isCurve = false;
+        model = new Matrix4f().scale(1,1,1);
+        childObject = new ArrayList<>();
+        centerPoint = Arrays.asList(0f,0f,0f);
+
+//        setupVAOVBOWithVerticesColor();
+    }
+    public void addVerticesForCurve(Vector3f newVector) {
+        vertices.add(newVector);
+    }
+
+    static int factorial(int n)
+    {
+        if (n == 0)
+            return 1;
+
+        return n*factorial(n-1);
+    }
+    private int combinations(int n, int r){
+        return factorial(n) / factorial(r) / factorial(n - r);
+    }
+    public void createCurve(){
+        curve.clear();
+        for(double i = 0; i <= 1.01; i += 0.01){
+            curve.add(bezierCurve(i));
+        }
+        this.vertices = curve;
+        setupVAOVBO();
+        this.isCurve = true;
+    }
+
+    private Vector3f bezierCurve(double t){
+        int i = 0;
+        int size = vertices.size() - 1;
+        Vector3f result = new Vector3f(0.0f, 0.0f, 0.0f);
+        for(Vector3f vertice : vertices){
+            result.x += combinations(size, i) * Math.pow((1-t), size - i) * vertice.x * Math.pow(t, i);
+            result.y += combinations(size, i) * Math.pow((1-t), size - i) * vertice.y * Math.pow(t, i);
+            result.z += combinations(size, i) * Math.pow((1-t), size - i) * vertice.z * Math.pow(t, i);
+            i += 1;
+        }
+        return result;
     }
 
     public List<Object> getChildObject(){
@@ -155,12 +226,13 @@ public class Object extends ShaderProgram{
                 "uni_color", color);
         uniformsMap.setUniform(
                 "model", model);
+
         // Bind VBO
         glEnableVertexAttribArray(0);
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
         glVertexAttribPointer(0, 3,
                 GL_FLOAT,
-                false,
+                true,
                 0, 0);
     }
 
@@ -203,8 +275,8 @@ public class Object extends ShaderProgram{
         // Draw the vertices
         //optional
         drawSetup();
-        glLineWidth(5); //ketebalan garis
-        glPointSize(5); //besar kecil vertex
+        glLineWidth(0.5f); //ketebalan garis
+        glPointSize(0.5f); //besar kecil vertex
         //wajib
         //GL_LINES //GL_LINE_STRIP//GL_LINE_LOOP
         //GL_TRIANGLES//GL_TRIANGLE_FAN//GL_POINT
@@ -230,7 +302,7 @@ public class Object extends ShaderProgram{
         //GL_TRIANGLES
         //GL_TRIANGLE_FAN
         //GL_POINT
-        glDrawArrays(GL_TRIANGLES,
+        glDrawArrays(GL_POLYGON,
                 0,
                 vertices.size());
     }

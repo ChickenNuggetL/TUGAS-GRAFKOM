@@ -44,22 +44,25 @@ public class Main {
         window.init();
         GL.createCapabilities();
         glEnable(GL_DEPTH_TEST);
+        glEnable(GL_LINE_SMOOTH);
+        glShadeModel(GL_SMOOTH);
         mouseInput = window.getMouseInput();
         // Render model lewat easyCreateObject
         //elips.Sphere(objects, 80, 55, 55);  //Contoh Pake easyCreate
         //Spherex.Sphere(objects, 155, 155, 155, 155/255f, 191/255f,11/255f);  //Contoh Pake easyCreate
 
-//        Kirby.create();
-//        Kirby.MoveContents(objects);
+        Kirby.create();
+        Kirby.MoveContents(objects);
 
         awoofy.create();
         awoofy.MoveContents(objects);
 
-//        broomHatter.create();
-//        broomHatter.MoveContents(objects);
+        broomHatter.create();
+        broomHatter.MoveContents(objects);
 
-        objects.get(0).translateObject(0.0f,0.0f,0f);
-        //objects.get(1).translateObject(0.0f,0.0f,-0.1f);
+        objects.get(0).translateObject(0.0f,0.0f,0f); //Kirby
+        objects.get(1).translateObject(0.69f,0.0f,0f); //Awoofy
+        objects.get(2).translateObject(-0.69f,0.0f,0f); //BroomHatter
         //Cam initialize
         cam.setRotation((float)Math.toRadians(0.0f),(float)Math.toRadians(0.0f));
         cam.setPosition(0f,0f,1.45f);
@@ -70,17 +73,25 @@ public class Main {
         // radian awal adalah 0.5f
         // tak ganti ke 1f supaya cepet aja
         if (window.isKeyPressed(GLFW_KEY_D)) {
-            objects.get(0).rotateObject((float)Math.toRadians(1f),0f,1f,0f);
+            for(int zi= 0; zi < objects.size(); zi++) {
+                objects.get(zi).rotateObject((float) Math.toRadians(1f), 0f, 1f, 0f);
+            }
             //objects.get(0).translateObject(0.0f,0.0f,0.00015f);
         }
         if (window.isKeyPressed(GLFW_KEY_A)) {
-            objects.get(0).rotateObject((float)Math.toRadians(1f),0f,-1f,0f);
+            for(int zi= 0; zi < objects.size(); zi++) {
+                objects.get(zi).rotateObject((float) Math.toRadians(1f), 0f, -1f, 0f);
+            }
         }
         if (window.isKeyPressed(GLFW_KEY_S)) {
-            objects.get(0).rotateObject((float)Math.toRadians(1f),1f,0f,0f);
+            for(int zi= 0; zi < objects.size(); zi++) {
+                objects.get(zi).rotateObject((float)Math.toRadians(1f),1f,0f,0f);
+            }
         }
         if (window.isKeyPressed(GLFW_KEY_W)) {
-            objects.get(0).rotateObject((float)Math.toRadians(1f),-1f,0f,0f);
+            for(int zi= 0; zi < objects.size(); zi++) {
+                objects.get(zi).rotateObject((float)Math.toRadians(1f),-1f,0f,0f);
+            }
         }
         if (window.isKeyPressed(GLFW_KEY_F)) {
             objects.get(0).rotateObject((float)Math.toRadians(1f),0f,0f,1f);
@@ -113,19 +124,17 @@ public class Main {
     }
 
     public void loop() {
+        //SKYBOX
         while (window.isOpen()) {
             window.update();
-            glClearColor(0.2f,
-                    0.2f, 0.2f,
-                    0.5f);
+            glClearColor(0.6f,
+                    0.6f, 0.9f,
+                    0.75f);
             GL.createCapabilities();
             input();
 
             //code
            //INI CARA PAKENYA SALAH TAPI JGN DIHAPUS DLU
- //           for (Awoofy awoofy : objectsAwoofy){
- //               awoofy.draw(cam,projection);
- //           }
  //           for (Object object : objectsPointsControl) {
  //               object.drawLine(cam,projection);
  //           }
@@ -133,7 +142,6 @@ public class Main {
                 object.draw();
                 //object.drawC(cam,projection);
             }
-            //Kirby.draw();
             // Restore state
             glDisableVertexAttribArray(0);
 
