@@ -150,10 +150,12 @@ public class Main {
  //               object.drawLine(cam,projection);
  //           }
 
+            // Kirby Animation
             Kirby.walkAnim(false);
 
+            // Awoofy Animation
             awoofy.walkAnim(false);
-//            awoofy.handAnimation();
+            awoofy.handAnim(false);
 
             for (Object object : objects) {
                 object.draw();
