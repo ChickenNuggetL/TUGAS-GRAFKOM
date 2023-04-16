@@ -143,18 +143,14 @@ public class Main {
                     0.75f);
             GL.createCapabilities();
             //code
-           //INI CARA PAKENYA SALAH TAPI JGN DIHAPUS DLU
- //           for (Object object : objectsPointsControl) {
- //               object.drawLine(cam,projection);
- //           }
-
+            // Kirby Animation
             Kirby.walkAnim(false);
-
+            // Awoofy Animation
             awoofy.walkAnim(false);
-
+            awoofy.handAnim(false);
+            // Broomhatter Animation
             broomHatter.basicAnim(false);
             input();
-//            awoofy.handAnimation();
 
             for (Object object : objects) {
                 object.draw();
