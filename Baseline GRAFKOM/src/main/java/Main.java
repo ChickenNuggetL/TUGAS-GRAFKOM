@@ -149,6 +149,9 @@ public class Main {
  //           for (Object object : objectsPointsControl) {
  //               object.drawLine(cam,projection);
  //           }
+
+            Kirby.walkAnim();
+
             for (Object object : objects) {
                 object.draw();
                 //object.drawC(cam,projection);
