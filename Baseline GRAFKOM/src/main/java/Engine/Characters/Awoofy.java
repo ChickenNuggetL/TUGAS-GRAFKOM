@@ -13,9 +13,18 @@ import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL11.GL_POLYGON;
 
 public class Awoofy {
-
+    // Deklarasi objek untuk menjadi root
     public ArrayList<Object> AwoofyRootBody
             = new ArrayList<>();
+
+    //Animation duration SETUPS
+    float animDuration = 12.0f;
+    float animStepsDuration = 1.0f;
+    float frameTime = animDuration/animStepsDuration;
+    float currentAnimTime = 0.0f;
+    //Final position
+    float rightfootpos = 40.0f;
+    float leftfootpos = 10.0f;
     public void create(){
         EasyCreateObject Head = new EasyCreateObject();
         EasyCreateObject Nose = new EasyCreateObject();
@@ -38,17 +47,21 @@ public class Awoofy {
         EasyCreateObject RightEar = new EasyCreateObject();
         EasyCreateObject dummy = new EasyCreateObject();
 
+        // Body sebagai parent
         Body.Tube(AwoofyRootBody, 200, 240, 200,255/255f,165/255f,0f);
 
+        // head sebagai child dari body dan mempunyai child seperti dibawah
         Head.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 200, 200, 200, 255/255f,165/255f,0f);
         // Nose -> Child dari Head
         Nose.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject().get(0).getChildObject(), 50, 30, 20, 150/255f,75/255f,0f);
+        // left foot 1 sebagai child dari body dan mempunyai child lf2-lf3
         LeftFoot1.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 50, 50, 100, 255/255f, 255/255f,0f);
-        LeftFoot2.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 50, 70, 100, 255/255f, 255/255f,0f);
-        LeftFoot3.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 50, 50, 100, 255/255f, 255/255f,0f);
+        LeftFoot2.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject().get(1).getChildObject(), 50, 70, 100, 255/255f, 255/255f,0f);
+        LeftFoot3.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject().get(1).getChildObject(), 50, 50, 100, 255/255f, 255/255f,0f);
+        // right foot 1 sebagai child dari body dan punya child rf2-rf3
         RightFoot1.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 50, 50, 100, 255/255f, 255/255f,0f);
-        RightFoot2.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 50, 70, 100, 255/255f, 255/255f,0f);
-        RightFoot3.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 50, 50, 100, 255/255f, 255/255f,0f);
+        RightFoot2.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject().get(2).getChildObject(), 50, 70, 100, 255/255f, 255/255f,0f);
+        RightFoot3.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject().get(2).getChildObject(), 50, 50, 100, 255/255f, 255/255f,0f);
         LeftHand.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 50, 100, 60, 255/255f,165/255f,0f);
         RightHand.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 50, 100, 60, 255/255f,165/255f,0f);
         // eyes black -> child dari head
@@ -65,7 +78,8 @@ public class Awoofy {
         RightEar.EllipticParaboloid((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject().get(0).getChildObject(), 30, 30, 90, 255/255f,165/255f,0f);
 //        dummy.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 100, 100, 100, 255/255f,165/255f,0f);
 
-        // get kedua itu niru child parentnya
+        // get pertama -> index arraylist body (parent)
+        // get kedua ->  itu niru child parentnya
         // get ketiga itu array list dari child parent jadi mulai lagi dari 0
 
         // head
@@ -73,26 +87,26 @@ public class Awoofy {
         // nose index 0 -> child dari head ke 0
         AwoofyRootBody.get(0).getChildObject().get(0).getChildObject().get(0).translateObject(0/1000f, -25/1000f, -25/100f);
 
-        // kaki done (awalnya 20 supaya lebih bagus 2dnya, 0 kalo mau bagus 3dnya)
+        // kaki (awalnya 20 supaya lebih bagus 2dnya, 0 kalo mau bagus 3dnya)
         // left foot1 (original position)
         AwoofyRootBody.get(0).getChildObject().get(1).translateObject(110/1000f, -200/1000f, 0/100f);
-        // left foot2
-        AwoofyRootBody.get(0).getChildObject().get(2).translateObject(150/1000f, -180/1000f, 0/100f);
-        // left foot3
-        AwoofyRootBody.get(0).getChildObject().get(3).translateObject(70/1000f, -200/1000f, 0/100f);
+        // left foot2 index 1 -> child dari left foot1 ke 0 (oval)
+        AwoofyRootBody.get(0).getChildObject().get(1).getChildObject().get(0).translateObject(45/1000f, 20/1000f, 0/100f);
+        // left foot3 index 1 -> child dari left foot1 ke 1 (bulat)
+        AwoofyRootBody.get(0).getChildObject().get(1).getChildObject().get(1).translateObject(-45/1000f, 0/1000f, 0/100f);
         // right foot1 (original position)
-        AwoofyRootBody.get(0).getChildObject().get(4).translateObject(-110/1000f, -200/1000f, 0/100f);
-        // right foot2
-        AwoofyRootBody.get(0).getChildObject().get(5).translateObject(-150/1000f, -180/1000f, 0/100f);
-        // right foot3
-        AwoofyRootBody.get(0).getChildObject().get(6).translateObject(-70/1000f, -200/1000f, 0/100f);
+        AwoofyRootBody.get(0).getChildObject().get(2).translateObject(-110/1000f, -200/1000f, 0/100f);
+        // right foot2 index 2 -> child dari right foot1 ke 0
+        AwoofyRootBody.get(0).getChildObject().get(2).getChildObject().get(0).translateObject(-45/1000f, 20/1000f, 0/100f);
+        // right foot3 index 2 -> child dari right foot1 ke 1
+        AwoofyRootBody.get(0).getChildObject().get(2).getChildObject().get(1).translateObject(45/1000f, 0/1000f, 0/100f);
 
         // left hand (215 x awal, 220x awal 2, )
-        AwoofyRootBody.get(0).getChildObject().get(7).translateObject(180/1000f, -130/1000f, 0f);
-        AwoofyRootBody.get(0).getChildObject().get(7).rotateObject((float)Math.toRadians(30f),0f,0f,1f);
+        AwoofyRootBody.get(0).getChildObject().get(3).translateObject(180/1000f, -130/1000f, 0f);
+        AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((float)Math.toRadians(30f),0f,0f,1f);
         // right hand
-        AwoofyRootBody.get(0).getChildObject().get(8).translateObject(-180/1000f, -130/1000f, 0f);
-        AwoofyRootBody.get(0).getChildObject().get(8).rotateObject((float)Math.toRadians(30f),0f,0f,-1f);
+        AwoofyRootBody.get(0).getChildObject().get(4).translateObject(-180/1000f, -130/1000f, 0f);
+        AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((float)Math.toRadians(30f),0f,0f,-1f);
 
         // left eyes index 0 -> child dari head ke-1
         AwoofyRootBody.get(0).getChildObject().get(0).getChildObject().get(1).translateObject(60/1000f, 50/1000f, -20/100f);
@@ -102,7 +116,7 @@ public class Awoofy {
         // White Head index 0 -> child dari head ke 3
         AwoofyRootBody.get(0).getChildObject().get(0).getChildObject().get(3).translateObject(0/1000f, -70/1000f, -20/100f);
         // White Body
-        AwoofyRootBody.get(0).getChildObject().get(9).translateObject(0/1000f, -70/1000f, -15/100f);
+        AwoofyRootBody.get(0).getChildObject().get(5).translateObject(0/1000f, -70/1000f, -15/100f);
 
         // left eyes white index 0 -> child dari head ke 4
         AwoofyRootBody.get(0).getChildObject().get(0).getChildObject().get(4).translateObject(65/1000f, 75/1000f, -21/100f);
@@ -123,15 +137,77 @@ public class Awoofy {
 //        AwoofyRootBody.get(0).getChildObject().get(18).addVerticesForCurve(new Vector3f(0.5f, -0.15f, -0.1f));
 //        AwoofyRootBody.get(0).getChildObject().get(18).createCurve();
 //        AwoofyRootBody.get(0).getChildObject().get(18).translateObject(300/1000f, 300/1000f, -20/100f);
-
-
-
     }
 
     public void MoveContents(ArrayList<Object> arrayList){
         for (Object object: AwoofyRootBody){
             arrayList.add(object);
         }
+    }
+    public void walkAnim(){
+        //STEP DARI PERFECT LOOP WALKING ANIM: ORIGINAL POS(ORI), 1st MOVE POSITION, ORI, REVERSE MOVE POSITION
+        //STEP DARI ONE TIME MOVEMENT ANIM(SEPERTI MENYERANG DSBGNYA): ORIGINAL POS(ORI), MOVE POSITION, ORI
+
+        //Animation processes
+        if(currentAnimTime <= animDuration/4f) {
+            // 1st Move pos
+            //Awoofy leftfoot
+            AwoofyRootBody.get(0).getChildObject().get(1).rotateObject((float) Math.toRadians(leftfootpos / frameTime), 0f, -1f, 0f);
+            //Awoofy rightfoot
+            AwoofyRootBody.get(0).getChildObject().get(2).rotateObject((float) Math.toRadians(leftfootpos / frameTime), 1f, 0f, 0f);
+        }
+        if (currentAnimTime > animDuration/4f && currentAnimTime <= animDuration*2f/4f){
+            // 1st Move pos - BACK TO ORI
+            //Awoofy leftfoot
+            AwoofyRootBody.get(0).getChildObject().get(1).rotateObject((float) Math.toRadians(leftfootpos / frameTime), 0f, 1f, 0f);
+            //Awoofy rightfoot
+            AwoofyRootBody.get(0).getChildObject().get(2).rotateObject((float) Math.toRadians(leftfootpos / frameTime), -1f, 0f, 0f);
+        }
+        else if (currentAnimTime > animDuration*2f/4f && currentAnimTime <= animDuration*3f/4f) {
+            // Rev Move pos
+            //Awoofy leftfoot
+            AwoofyRootBody.get(0).getChildObject().get(1).rotateObject((float) Math.toRadians(leftfootpos / frameTime), 1f, 0f, 0f);
+            //Awoofy rightfoot
+            AwoofyRootBody.get(0).getChildObject().get(2).rotateObject((float) Math.toRadians(leftfootpos / frameTime), 0f, -1f, 0f);
+        }
+        else if (currentAnimTime > animDuration*3f/4f && currentAnimTime <= animDuration){
+            // Rev Move pos - Back to ori
+            //Awoofy leftfoot
+            AwoofyRootBody.get(0).getChildObject().get(1).rotateObject((float) Math.toRadians(leftfootpos / frameTime), -1f, 0f, 0f);
+            //Awoofy rightfoot
+            AwoofyRootBody.get(0).getChildObject().get(2).rotateObject((float) Math.toRadians(leftfootpos / frameTime), 0f, 1f, 0f);
+        }
+        else if (currentAnimTime > animDuration){
+            currentAnimTime = 0.0f;
+        }
+        currentAnimTime+=0.1f;
+    }
+
+    public void handAnimation(){
+        if(currentAnimTime < animDuration/4f) {
+            // 1st Move pos
+            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((float) Math.toRadians(leftfootpos / frameTime), 0f, -1f, 0f);
+            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((float) Math.toRadians(leftfootpos / frameTime), 1f, 0f, 0f);
+        }
+        if (currentAnimTime >= animDuration/4f && currentAnimTime < animDuration*2f/4f){
+            // 1st Move pos - BACK TO ORI
+            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((float) Math.toRadians(leftfootpos / frameTime), 0f, 1f, 0f);
+            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((float) Math.toRadians(leftfootpos / frameTime), -1f, 0f, 0f);
+        }
+        else if (currentAnimTime >= animDuration*2f/4f && currentAnimTime < animDuration*3f/4f) {
+            // Rev Move pos
+            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((float) Math.toRadians(leftfootpos / frameTime), 1f, 0f, 0f);
+            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((float) Math.toRadians(leftfootpos / frameTime), 0f, -1f, 0f);
+        }
+        else if (currentAnimTime >= animDuration*3f/4f && currentAnimTime < animDuration){
+            // Rev Move pos - Back to ori
+            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((float) Math.toRadians(leftfootpos / frameTime), -1f, 0f, 0f);
+            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((float) Math.toRadians(leftfootpos / frameTime), 0f, 1f, 0f);
+        }
+        else if (currentAnimTime > animDuration){
+            currentAnimTime = 0.0f;
+        }
+        currentAnimTime+=0.1f;
     }
 
     public void draw(){

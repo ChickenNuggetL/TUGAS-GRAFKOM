@@ -142,11 +142,28 @@ public class Object extends ShaderProgram{
         }
     }
 
+    public void rotationObject(Float Degree, Float x, Float y, Float z){
+//        model = new Matrix4f().rotation(Degree, x, y, z).mul(new Matrix4f(model));
+        //model = new Matrix4f().rotation((float) Math.toRadians(Degree), x, y, z).mul(new Matrix4f(model));
+        model = new Matrix4f().rotation(Degree,x,y,z).mul(new Matrix4f(model));
+        updateCenterPoint();
+        for (Object child:childObject) {
+            child.rotationObject(Degree, x, y, z);
+        }
+    }
+
     public void translateObject(Float offsetX, Float offsetY, Float offsetZ){
         model = new Matrix4f().translate(offsetX,offsetY,offsetZ).mul(new Matrix4f(model));
         updateCenterPoint();
         for (Object child:childObject){
             child.translateObject(offsetX,offsetY,offsetZ);
+        }
+    }
+    public void setRotate(Float offsetX, Float offsetY, Float offsetZ){
+        model = new Matrix4f().setRotationXYZ(offsetX,offsetY,offsetZ).mul(new Matrix4f(model));
+        updateCenterPoint();
+        for (Object child:childObject){
+            child.setRotate(offsetX,offsetY,offsetZ);
         }
     }
 

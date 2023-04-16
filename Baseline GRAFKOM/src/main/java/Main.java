@@ -74,7 +74,7 @@ public class Main {
         // tak ganti ke 1f supaya cepet aja
         if (window.isKeyPressed(GLFW_KEY_D)) {
             for(int zi= 0; zi < objects.size(); zi++) {
-                objects.get(zi).rotateObject((float) Math.toRadians(1f), 0f, 1f, 0f);
+                objects.get(zi).rotationObject((float) Math.toRadians(1f), 0f, 1f, 0f);
             }
             //objects.get(0).translateObject(0.0f,0.0f,0.00015f);
         }
@@ -150,7 +150,7 @@ public class Main {
  //               object.drawLine(cam,projection);
  //           }
 
-            Kirby.walkAnim();
+            Kirby.walkAnim(false);
 
             for (Object object : objects) {
                 object.draw();
