@@ -88,41 +88,39 @@ public class LinkKirby {
         //STEP DARI PERFECT LOOP WALKING ANIM: ORIGINAL POS(ORI), 1st MOVE POSITION, ORI, REVERSE MOVE POSITION
         //STEP DARI ONE TIME MOVEMENT ANIM(SEPERTI MENYERANG DSBGNYA): ORIGINAL POS(ORI), MOVE POSITION, ORI
 
-        //Animation processes
-        if(currentAnimTime <= animDuration/4f && isStopped == false) {
-            // 1st Move pos
-            //kirby leftfoot
-            KirbyRootBody.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(leftFootFrameTime), 0f, -1f, 0f);
-            //kirby rightfoot
-            KirbyRootBody.get(0).getChildObject().get(1).rotateObject((float) Math.toRadians(rightFootFrameTime), 1f, 0f, 0f);
+        if(!isStopped) {
+            //Animation processes
+            if (currentAnimTime <= animDuration / 4f) {
+                // 1st Move pos
+                //kirby leftfoot
+                KirbyRootBody.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(leftFootFrameTime), 0f, -1f, 0f);
+                //kirby rightfoot
+                KirbyRootBody.get(0).getChildObject().get(1).rotateObject((float) Math.toRadians(rightFootFrameTime), 1f, 0f, 0f);
+            } else if (currentAnimTime > animDuration / 4f && currentAnimTime <= animDuration * (2f / 4f)) {
+                // 1st Move pos - BACK TO ORI
+                //kirby leftfoot
+                KirbyRootBody.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(leftFootFrameTime), 0f, 1f, 0f);
+                //kirby rightfoot
+                KirbyRootBody.get(0).getChildObject().get(1).rotateObject((float) Math.toRadians(rightFootFrameTime), -1f, 0f, 0f);
+            } else if (currentAnimTime > animDuration * 2f / 4f && currentAnimTime <= animDuration * (3f / 4f)) {
+                // Rev Move pos
+                //kirby leftfoot
+                KirbyRootBody.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(rightFootFrameTime), 1f, 0f, 0f);
+                //kirby rightfoot
+                KirbyRootBody.get(0).getChildObject().get(1).rotateObject((float) Math.toRadians(leftFootFrameTime), 0f, -1f, 0f);
+            } else if (currentAnimTime > animDuration * 3f / 4f && currentAnimTime <= animDuration) {
+                // Rev Move pos - Back to ori
+                //kirby leftfoot
+                KirbyRootBody.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(rightFootFrameTime), -1f, 0f, 0f);
+                //kirby rightfoot
+                KirbyRootBody.get(0).getChildObject().get(1).rotateObject((float) Math.toRadians(leftFootFrameTime), 0f, 1f, 0f);
+            } else if (currentAnimTime >= animDuration) {
+                KirbyRootBody.get(0).getChildObject().get(0).setRotate(0f, 0f, 0f);
+                KirbyRootBody.get(0).getChildObject().get(1).setRotate(0f, 0f, 0f);
+                currentAnimTime = 0f;
+            }
+            currentAnimTime += animspeed;
         }
-        else if (currentAnimTime > animDuration/4f && currentAnimTime <= animDuration*(2f/4f)){
-            // 1st Move pos - BACK TO ORI
-            //kirby leftfoot
-            KirbyRootBody.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(leftFootFrameTime), 0f, 1f, 0f);
-            //kirby rightfoot
-            KirbyRootBody.get(0).getChildObject().get(1).rotateObject((float) Math.toRadians(rightFootFrameTime), -1f, 0f, 0f);
-        }
-        else if (currentAnimTime > animDuration*2f/4f && currentAnimTime <= animDuration*(3f/4f)) {
-            // Rev Move pos
-            //kirby leftfoot
-            KirbyRootBody.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(rightFootFrameTime), 1f, 0f, 0f);
-            //kirby rightfoot
-            KirbyRootBody.get(0).getChildObject().get(1).rotateObject((float) Math.toRadians(leftFootFrameTime), 0f, -1f, 0f);
-        }
-        else if (currentAnimTime > animDuration*3f/4f && currentAnimTime <= animDuration){
-            // Rev Move pos - Back to ori
-            //kirby leftfoot
-            KirbyRootBody.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(rightFootFrameTime), -1f, 0f, 0f);
-            //kirby rightfoot
-            KirbyRootBody.get(0).getChildObject().get(1).rotateObject((float) Math.toRadians(leftFootFrameTime), 0f, 1f, 0f);
-        }
-        else if (currentAnimTime >= animDuration){
-            KirbyRootBody.get(0).getChildObject().get(0).setRotate(0f, 0f, 0f);
-            KirbyRootBody.get(0).getChildObject().get(1).setRotate(0f, 0f, 0f);
-            currentAnimTime = 0f;
-        }
-        currentAnimTime += animspeed;
     }
 
 
