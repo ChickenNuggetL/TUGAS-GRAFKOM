@@ -93,8 +93,19 @@ public class Main {
                 objects.get(zi).rotateObject((float)Math.toRadians(1f),-1f,0f,0f);
             }
         }
+        if (window.isKeyPressed(GLFW_KEY_T)) {
+            for(int i = 0; i < objects.size(); i++){
+                objects.get(i).rotateObject((float)Math.toRadians(1f),0f,0f,1f);
+            }
+        }
         if (window.isKeyPressed(GLFW_KEY_F)) {
+            objects.get(2).rotateObject((float)Math.toRadians(1f),0f,0f,1f);
+        }
+        if (window.isKeyPressed(GLFW_KEY_G)) {
             objects.get(0).rotateObject((float)Math.toRadians(1f),0f,0f,1f);
+        }
+        if (window.isKeyPressed(GLFW_KEY_H)) {
+            objects.get(1).rotateObject((float)Math.toRadians(1f),0f,0f,1f);
         }
         if (window.isKeyPressed(GLFW_KEY_Q)) {
             //cam.moveBackwards(0.1f);
