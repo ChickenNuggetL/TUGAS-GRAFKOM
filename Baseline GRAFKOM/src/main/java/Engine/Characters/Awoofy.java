@@ -25,6 +25,8 @@ public class Awoofy {
     float animspeed = 0.5f;
     float rightfootrot = 40.0f;
     float leftfootrot = 10.0f;
+    float righthandrot = 70.0f;
+    float lefthandrot = 40.0f;
     public void create(){
         EasyCreateObject Head = new EasyCreateObject();
         EasyCreateObject Nose = new EasyCreateObject();
@@ -187,31 +189,47 @@ public class Awoofy {
         currentAnimTime += animspeed;
     }
 
-    public void handAnimation(){
-        if(currentAnimTime < animDuration/4f) {
+    float leftHandFrameTime = (float) Math.toRadians(lefthandrot/frameTime);
+    float rightHandFrameTime = (float) Math.toRadians(righthandrot/frameTime) ;
+    public void handAnim(boolean isStopped){
+        //STEP DARI PERFECT LOOP WALKING ANIM: Oleftfootrot(ORI), 1leftfootrotITION, ORI, REVERleftfootrotITION
+        //STEP DARI ONE TIME MOVEMENT ANIM(SEPERTI MENYERANG DSBGNYA): Oleftfootrot(ORIleftfootrotITION, ORI
+
+        //Animation processes
+        if(currentAnimTime <= animDuration/4f && isStopped == false) {
             // 1leftfootrot
-            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((float) Math.toRadians(leftfootrot / frameTime), 0f, -1f, 0f);
-            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((float) Math.toRadians(leftfootrot / frameTime), 1f, 0f, 0f);
+            //Awoofy leftfoot
+            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((leftHandFrameTime), 0f, -1f, 0f);
+            //Awoofy rightfoot
+            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((rightHandFrameTime), 1f, 0f, 0f);
         }
-        if (currentAnimTime >= animDuration/4f && currentAnimTime < animDuration*2f/4f){
+        else if (currentAnimTime > animDuration/4f && currentAnimTime <= animDuration*(2f/4f)){
             // 1leftfootrot - BACK TO ORI
-            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((float) Math.toRadians(leftfootrot / frameTime), 0f, 1f, 0f);
-            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((float) Math.toRadians(leftfootrot / frameTime), -1f, 0f, 0f);
+            //Awoofy leftfoot
+            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((leftHandFrameTime), 0f, 1f, 0f);
+            //Awoofy rightfoot
+            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((rightHandFrameTime), -1f, 0f, 0f);
         }
-        else if (currentAnimTime >= animDuration*2f/4f && currentAnimTime < animDuration*3f/4f) {
+        else if (currentAnimTime > animDuration*2f/4f && currentAnimTime <= animDuration*(3f/4f)) {
             // Rleftfootrot
-            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((float) Math.toRadians(leftfootrot / frameTime), 1f, 0f, 0f);
-            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((float) Math.toRadians(leftfootrot / frameTime), 0f, -1f, 0f);
+            //Awoofy leftfoot
+            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((rightHandFrameTime), 1f, 0f, 0f);
+            //Awoofy rightfoot
+            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((leftHandFrameTime), 0f, -1f, 0f);
         }
-        else if (currentAnimTime >= animDuration*3f/4f && currentAnimTime < animDuration){
+        else if (currentAnimTime > animDuration*3f/4f && currentAnimTime <= animDuration){
             // Rleftfootrot - Back to ori
-            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((float) Math.toRadians(leftfootrot / frameTime), -1f, 0f, 0f);
-            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((float) Math.toRadians(leftfootrot / frameTime), 0f, 1f, 0f);
+            //Awoofy leftfoot
+            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((rightHandFrameTime), -1f, 0f, 0f);
+            //Awoofy rightfoot
+            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((leftHandFrameTime), 0f, 1f, 0f);
         }
         else if (currentAnimTime > animDuration){
-            currentAnimTime = 0.0f;
+            AwoofyRootBody.get(0).getChildObject().get(3).setRotate(0f, 0f, 0f);
+            AwoofyRootBody.get(0).getChildObject().get(4).setRotate(0f, 0f, 0f);
+            currentAnimTime = 0f;
         }
-        currentAnimTime+=0.1f;
+        currentAnimTime += animspeed;
     }
 
     public void draw(){
