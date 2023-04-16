@@ -78,7 +78,7 @@ public class Awoofy {
         // ears -> child dari head
         LeftEar.EllipticParaboloid((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject().get(0).getChildObject(), 30, 30, 90, 255/255f,165/255f,0f);
         RightEar.EllipticParaboloid((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject().get(0).getChildObject(), 30, 30, 90, 255/255f,165/255f,0f);
-//        dummy.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 100, 100, 100, 255/255f,165/255f,0f);
+        dummy.Sphere((ArrayList<Object>) AwoofyRootBody.get(0).getChildObject(), 100, 100, 100, 255/255f,165/255f,0f);
 
         // get pertama -> index arraylist body (parent)
         // get kedua ->  itu niru child parentnya
@@ -133,12 +133,12 @@ public class Awoofy {
         AwoofyRootBody.get(0).getChildObject().get(0).getChildObject().get(7).rotateObject((float)Math.toRadians(90f),1f,0f,0f);
 
         // test
-//        AwoofyRootBody.get(0).getChildObject().get(18).addVerticesForCurve(new Vector3f(-0.5f, -0.2f, -0.1f));
-//        AwoofyRootBody.get(0).getChildObject().get(18).addVerticesForCurve(new Vector3f(-0.25f, -0.5f, 0));
-//        AwoofyRootBody.get(0).getChildObject().get(18).addVerticesForCurve(new Vector3f(0.25f, -0.5f, 0));
-//        AwoofyRootBody.get(0).getChildObject().get(18).addVerticesForCurve(new Vector3f(0.5f, -0.15f, -0.1f));
-//        AwoofyRootBody.get(0).getChildObject().get(18).createCurve();
-//        AwoofyRootBody.get(0).getChildObject().get(18).translateObject(300/1000f, 300/1000f, -20/100f);
+//        AwoofyRootBody.get(0).getChildObject().get(6).addVerticesForCurve(new Vector3f(-0.5f, -0.2f, -0.1f));
+//        AwoofyRootBody.get(0).getChildObject().get(6).addVerticesForCurve(new Vector3f(-0.25f, -0.5f, 0));
+//        AwoofyRootBody.get(0).getChildObject().get(6).addVerticesForCurve(new Vector3f(0.25f, -0.5f, 0));
+//        AwoofyRootBody.get(0).getChildObject().get(6).addVerticesForCurve(new Vector3f(0.5f, -0.15f, -0.1f));
+//        AwoofyRootBody.get(0).getChildObject().get(6).createCurve();
+//        AwoofyRootBody.get(0).getChildObject().get(6).translateObject(300/1000f, 300/1000f, -20/100f);
     }
 
     public void MoveContents(ArrayList<Object> arrayList){
