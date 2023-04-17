@@ -34,7 +34,7 @@ public class EasyCreateObject {
                 0.055f,
                 0.055f,
                 36,
-                18
+                800
         );
         object.add(Objectnya);
     }

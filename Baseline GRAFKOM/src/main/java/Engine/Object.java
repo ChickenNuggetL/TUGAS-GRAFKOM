@@ -49,10 +49,10 @@ public class Object extends ShaderProgram{
                 "uni_color");
         uniformsMap.createUniform(
                 "model");
-//        uniformsMap.createUniform(
-//                "view");
-//        uniformsMap.createUniform(
-//                "projection");
+        uniformsMap.createUniform(
+                "view");
+        uniformsMap.createUniform(
+                "projection");
 
 //        model = new Matrix4f().identity();
         modelz = new Matrix4f().scale(1,1,1);
@@ -61,28 +61,28 @@ public class Object extends ShaderProgram{
         centerPoint = Arrays.asList(0f,0f,0f);
     }
 
-    public Object(List<ShaderModuleData> shaderModuleDataList,
-                    List<Vector3f> vertices, Vector4f color, Vector3f centerpoint,
-                    float radiusX, float radiusY, float radiusZ) {
-        super(shaderModuleDataList);
-        this.centerpoint = centerpoint;
-        this.radiusX = radiusX;
-        this.radiusY = radiusY;
-        this.radiusZ = radiusZ;
-        this.vertices = vertices;
-        this.color = color;
-        uniformsMap = new UniformsMap(getProgramId());
-        uniformsMap.createUniform(
-                "uni_color");
-        uniformsMap.createUniform(
-                "model");
-        this.isCurve = false;
-        model = new Matrix4f().scale(1,1,1);
-        childObject = new ArrayList<>();
-        centerPoint = Arrays.asList(0f,0f,0f);
-
-//        setupVAOVBOWithVerticesColor();
-    }
+//    public Object(List<ShaderModuleData> shaderModuleDataList,
+//                    List<Vector3f> vertices, Vector4f color, Vector3f centerpoint,
+//                    float radiusX, float radiusY, float radiusZ) {
+//        super(shaderModuleDataList);
+//        this.centerpoint = centerpoint;
+//        this.radiusX = radiusX;
+//        this.radiusY = radiusY;
+//        this.radiusZ = radiusZ;
+//        this.vertices = vertices;
+//        this.color = color;
+//        uniformsMap = new UniformsMap(getProgramId());
+//        uniformsMap.createUniform(
+//                "uni_color");
+//        uniformsMap.createUniform(
+//                "model");
+//        this.isCurve = false;
+//        model = new Matrix4f().scale(1,1,1);
+//        childObject = new ArrayList<>();
+//        centerPoint = Arrays.asList(0f,0f,0f);
+//
+////        setupVAOVBOWithVerticesColor();
+//    }
     public void addVerticesForCurve(Vector3f newVector) {
         vertices.add(newVector);
     }
@@ -271,20 +271,20 @@ public class Object extends ShaderProgram{
                 false,
                 0, 0);
     }
-    public void drawC(Camera camera, Projection projection){
+    public void draw(Camera camera, Projection projection){
         drawSetup(camera, projection);
         // Draw the vertices
         //optional
-        glLineWidth(5); //ketebalan garis
-        glPointSize(5); //besar kecil vertex
+        glLineWidth(0.5f); //ketebalan garis
+        glPointSize(0.5f); //besar kecil vertex
         //wajib
         //GL_LINES //GL_LINE_STRIP//GL_LINE_LOOP
         //GL_TRIANGLES//GL_TRIANGLE_FAN//GL_POINT
-        glDrawArrays(GL_LINE_STRIP,
+        glDrawArrays(GL_POLYGON,
                 0,
                 vertices.size());
         for(Object child:childObject) {
-            child.drawC(camera, projection);
+            child.draw(camera, projection);
         }
     }
 

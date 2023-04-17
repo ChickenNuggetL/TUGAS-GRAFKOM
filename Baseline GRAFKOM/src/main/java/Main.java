@@ -45,11 +45,12 @@ public class Main {
         GL.createCapabilities();
         glEnable(GL_DEPTH_TEST);
         glEnable(GL_LINE_SMOOTH);
-        glShadeModel(GL_SMOOTH);
+        //glShadeModel(GL_SMOOTH);
         mouseInput = window.getMouseInput();
         // Render model lewat easyCreateObject
         //elips.Sphere(objects, 80, 55, 55);  //Contoh Pake easyCreate
         //Spherex.Sphere(objects, 155, 155, 155, 155/255f, 191/255f,11/255f);  //Contoh Pake easyCreate
+        cam.setPosition(0,0,4f);
 
         Kirby.create();
         Kirby.MoveContents(objects);
@@ -61,11 +62,11 @@ public class Main {
         broomHatter.MoveContents(objects);
 
         objects.get(0).translateObject(0.0f,0.0f,0f); //Kirby
-        objects.get(1).translateObject(0.69f,0.0f,0f); //Awoofy
-        objects.get(2).translateObject(-0.69f,0.0f,0f); //BroomHatter
+        objects.get(1).translateObject(-0.69f,0.0f,0f); //Awoofy
+        objects.get(2).translateObject(0.69f,0.0f,0f); //BroomHatter
         //Cam initialize
         cam.setRotation((float)Math.toRadians(0.0f),(float)Math.toRadians(0.0f));
-        cam.setPosition(0f,0f,1.45f);
+        cam.setPosition(0f,0f,2f);
     }
 
     public void input() {
@@ -73,25 +74,29 @@ public class Main {
         // radian awal adalah 0.5f
         // tak ganti ke 1f supaya cepet aja
         if (window.isKeyPressed(GLFW_KEY_D)) {
-            for(int zi= 0; zi < objects.size(); zi++) {
-                objects.get(zi).rotationObject((float) Math.toRadians(1f), 0f, 1f, 0f);
-            }
+            cam.addRotation((float) Math.toRadians(0f), (float) Math.toRadians(2f));
+//            for(int zi= 0; zi < objects.size(); zi++) {
+//                objects.get(zi).rotationObject((float) Math.toRadians(1f), 0f, 1f, 0f);
+//            }
             //objects.get(0).translateObject(0.0f,0.0f,0.00015f);
         }
         if (window.isKeyPressed(GLFW_KEY_A)) {
-            for(int zi= 0; zi < objects.size(); zi++) {
-                objects.get(zi).rotateObject((float) Math.toRadians(1f), 0f, -1f, 0f);
-            }
+            cam.addRotation((float) Math.toRadians(0f), (float) Math.toRadians(-2f));
+//            for(int zi= 0; zi < objects.size(); zi++) {
+//                objects.get(zi).rotateObject((float) Math.toRadians(1f), 0f, -1f, 0f);
+//            }
         }
         if (window.isKeyPressed(GLFW_KEY_S)) {
-            for(int zi= 0; zi < objects.size(); zi++) {
-                objects.get(zi).rotateObject((float)Math.toRadians(1f),1f,0f,0f);
-            }
+            cam.moveBackwards((float) Math.toRadians(2f));
+//            for(int zi= 0; zi < objects.size(); zi++) {
+//                objects.get(zi).rotateObject((float)Math.toRadians(1f),1f,0f,0f);
+//            }
         }
         if (window.isKeyPressed(GLFW_KEY_W)) {
-            for(int zi= 0; zi < objects.size(); zi++) {
-                objects.get(zi).rotateObject((float)Math.toRadians(1f),-1f,0f,0f);
-            }
+            cam.moveForward((float) Math.toRadians(2f));
+//            for(int zi= 0; zi < objects.size(); zi++) {
+//                objects.get(zi).rotateObject((float)Math.toRadians(1f),-1f,0f,0f);
+//            }
         }
         if (window.isKeyPressed(GLFW_KEY_T)) {
             for(int i = 0; i < objects.size(); i++){
@@ -158,7 +163,7 @@ public class Main {
 //            awoofy.handAnimation();
 
             for (Object object : objects) {
-                object.draw();
+                object.draw(cam,projection);
                 //object.drawC(cam,projection);
             }
             // Restore state
