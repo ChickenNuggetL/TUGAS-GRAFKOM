@@ -2,7 +2,6 @@ package Engine.Characters;
 
 import Engine.EasyCreateObject;
 import Engine.Object;
-import Engine.Sphere;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 
