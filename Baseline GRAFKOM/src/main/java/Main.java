@@ -29,7 +29,7 @@ public class Main {
     //MODULE SCRIPT BOLEH DIRUBAH---------------------------------------------------
     private Window window =
             new Window
-                    (900, 900, "Kirby");
+                    (1920, 1080, "Kirby");
     Projection projection = new Projection(window.getWidth(), window.getHeight());
 
     //Deklarasi Array---------------------------------------------------
