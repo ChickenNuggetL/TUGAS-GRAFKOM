@@ -24,12 +24,14 @@ public class Main {
 
     BroomHatter broomHatter = new BroomHatter();
 
+    Lolipop lolipop = new Lolipop();
+
     Camera cam = new Camera();
 
     //MODULE SCRIPT BOLEH DIRUBAH---------------------------------------------------
     private Window window =
             new Window
-                    (1920, 1080, "Kirby");
+                    (900, 800, "Kirby");
     Projection projection = new Projection(window.getWidth(), window.getHeight());
 
     //Deklarasi Array---------------------------------------------------
@@ -61,9 +63,13 @@ public class Main {
         broomHatter.create();
         broomHatter.MoveContents(objects);
 
+        lolipop.create();
+        lolipop.MoveContents(objects);
+
         objects.get(0).translateObject(0.0f,0.0f,0f); //Kirby
         objects.get(1).translateObject(-0.69f,0.0f,0f); //Awoofy
         objects.get(2).translateObject(0.69f,0.0f,0f); //BroomHatter
+        objects.get(3).translateObject(0.0f, -0.2f,-0.3f); //Lolipop
         //Cam initialize
         cam.setRotation((float)Math.toRadians(0.0f),(float)Math.toRadians(0.0f));
         cam.setPosition(0f,0f,2f);

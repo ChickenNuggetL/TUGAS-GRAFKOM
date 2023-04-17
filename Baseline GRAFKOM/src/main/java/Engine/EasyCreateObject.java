@@ -92,6 +92,24 @@ public class EasyCreateObject {
         object.add(Objectnya);
     }
 
+    public void Box(ArrayList<Object> object, float radx, float rady, float radz, float red, float green, float blue){
+        Objectnya = new Box(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(red, green, blue, 1.0f), //Warna
+                Arrays.asList(0.0f, 0.0f, 0.0f), //Coord center point
+                radx/1000f,
+                rady/1000f,
+                radz/1000f,
+                36,
+                18
+        );
+        object.add(Objectnya);
+    }
+
     public void Tube(ArrayList<Object> object, float radx, float rady, float radz){
         Objectnya = new Tube(
                 Arrays.asList(
