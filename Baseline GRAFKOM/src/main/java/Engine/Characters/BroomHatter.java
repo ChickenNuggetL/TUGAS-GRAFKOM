@@ -102,23 +102,22 @@ public class BroomHatter {
 //    }
 
     public void basicAnim(boolean isStopped){
+
         float speed = 0.025f/frameTime;
-        if(currentAnimTime <= animDuration/4f && isStopped == false) {
-            BroomHatter.get(0).translateObject(0f, speed, 0f);
+        if(!isStopped) {
+            if (currentAnimTime <= animDuration / 4f) {
+                BroomHatter.get(0).translateObject(0f, speed, 0f);
+            } else if (currentAnimTime > animDuration / 4f && currentAnimTime <= animDuration * (2f / 4f)) {
+                BroomHatter.get(0).translateObject(0f, -speed, 0f);
+            } else if (currentAnimTime > animDuration * 2f / 4f && currentAnimTime <= animDuration * (3f / 4f)) {
+                BroomHatter.get(0).translateObject(0f, speed, 0f);
+            } else if (currentAnimTime > animDuration * 3f / 4f && currentAnimTime <= animDuration) {
+                BroomHatter.get(0).translateObject(0f, -speed, 0f);
+            } else if (currentAnimTime >= animDuration) {
+                currentAnimTime = 0f;
+            }
+            currentAnimTime += animspeed;
         }
-        else if (currentAnimTime > animDuration/4f && currentAnimTime <= animDuration*(2f/4f)){
-            BroomHatter.get(0).translateObject(0f, -speed, 0f);
-        }
-        else if (currentAnimTime > animDuration*2f/4f && currentAnimTime <= animDuration*(3f/4f)) {
-            BroomHatter.get(0).translateObject(0f, speed, 0f);
-        }
-        else if (currentAnimTime > animDuration*3f/4f && currentAnimTime <= animDuration){
-            BroomHatter.get(0).translateObject(0f, -speed, 0f);
-        }
-        else if (currentAnimTime >= animDuration){
-            currentAnimTime = 0f;
-        }
-        currentAnimTime += animspeed;
     }
 
     public void MoveContents(ArrayList<Object> arrayList){

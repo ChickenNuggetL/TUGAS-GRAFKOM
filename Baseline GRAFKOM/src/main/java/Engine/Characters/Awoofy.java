@@ -152,40 +152,38 @@ public class Awoofy {
         //STEP DARI ONE TIME MOVEMENT ANIM(SEPERTI MENYERANG DSBGNYA): Oleftfootrot(ORIleftfootrotITION, ORI
 
         //Animation processes
-        if(currentAnimTime <= animDuration/4f && isStopped == false) {
-            // 1leftfootrot
-            //Awoofy leftfoot
-            AwoofyRootBody.get(0).getChildObject().get(1).rotateObject((leftFootFrameTime), 0f, -1f, 0f);
-            //Awoofy rightfoot
-            AwoofyRootBody.get(0).getChildObject().get(2).rotateObject((rightFootFrameTime), 1f, 0f, 0f);
+        if(!isStopped) {
+            if (currentAnimTime <= animDuration / 4f && isStopped == false) {
+                // 1leftfootrot
+                //Awoofy leftfoot
+                AwoofyRootBody.get(0).getChildObject().get(1).rotateObject((leftFootFrameTime), 0f, -1f, 0f);
+                //Awoofy rightfoot
+                AwoofyRootBody.get(0).getChildObject().get(2).rotateObject((rightFootFrameTime), 1f, 0f, 0f);
+            } else if (currentAnimTime > animDuration / 4f && currentAnimTime <= animDuration * (2f / 4f)) {
+                // 1leftfootrot - BACK TO ORI
+                //Awoofy leftfoot
+                AwoofyRootBody.get(0).getChildObject().get(1).rotateObject((leftFootFrameTime), 0f, 1f, 0f);
+                //Awoofy rightfoot
+                AwoofyRootBody.get(0).getChildObject().get(2).rotateObject((rightFootFrameTime), -1f, 0f, 0f);
+            } else if (currentAnimTime > animDuration * 2f / 4f && currentAnimTime <= animDuration * (3f / 4f)) {
+                // Rleftfootrot
+                //Awoofy leftfoot
+                AwoofyRootBody.get(0).getChildObject().get(1).rotateObject((rightFootFrameTime), 1f, 0f, 0f);
+                //Awoofy rightfoot
+                AwoofyRootBody.get(0).getChildObject().get(2).rotateObject((leftFootFrameTime), 0f, -1f, 0f);
+            } else if (currentAnimTime > animDuration * 3f / 4f && currentAnimTime <= animDuration) {
+                // Rleftfootrot - Back to ori
+                //Awoofy leftfoot
+                AwoofyRootBody.get(0).getChildObject().get(1).rotateObject((rightFootFrameTime), -1f, 0f, 0f);
+                //Awoofy rightfoot
+                AwoofyRootBody.get(0).getChildObject().get(2).rotateObject((leftFootFrameTime), 0f, 1f, 0f);
+            } else if (currentAnimTime > animDuration) {
+                AwoofyRootBody.get(0).getChildObject().get(1).setRotate(0f, 0f, 0f);
+                AwoofyRootBody.get(0).getChildObject().get(2).setRotate(0f, 0f, 0f);
+                currentAnimTime = 0f;
+            }
+            currentAnimTime += animspeed;
         }
-        else if (currentAnimTime > animDuration/4f && currentAnimTime <= animDuration*(2f/4f)){
-            // 1leftfootrot - BACK TO ORI
-            //Awoofy leftfoot
-            AwoofyRootBody.get(0).getChildObject().get(1).rotateObject((leftFootFrameTime), 0f, 1f, 0f);
-            //Awoofy rightfoot
-            AwoofyRootBody.get(0).getChildObject().get(2).rotateObject((rightFootFrameTime), -1f, 0f, 0f);
-        }
-        else if (currentAnimTime > animDuration*2f/4f && currentAnimTime <= animDuration*(3f/4f)) {
-            // Rleftfootrot
-            //Awoofy leftfoot
-            AwoofyRootBody.get(0).getChildObject().get(1).rotateObject((rightFootFrameTime), 1f, 0f, 0f);
-            //Awoofy rightfoot
-            AwoofyRootBody.get(0).getChildObject().get(2).rotateObject((leftFootFrameTime), 0f, -1f, 0f);
-        }
-        else if (currentAnimTime > animDuration*3f/4f && currentAnimTime <= animDuration){
-            // Rleftfootrot - Back to ori
-            //Awoofy leftfoot
-            AwoofyRootBody.get(0).getChildObject().get(1).rotateObject((rightFootFrameTime), -1f, 0f, 0f);
-            //Awoofy rightfoot
-            AwoofyRootBody.get(0).getChildObject().get(2).rotateObject((leftFootFrameTime), 0f, 1f, 0f);
-        }
-        else if (currentAnimTime > animDuration){
-            AwoofyRootBody.get(0).getChildObject().get(1).setRotate(0f, 0f, 0f);
-            AwoofyRootBody.get(0).getChildObject().get(2).setRotate(0f, 0f, 0f);
-            currentAnimTime = 0f;
-        }
-        currentAnimTime += animspeed;
     }
 
     float leftHandFrameTime = (float) Math.toRadians(lefthandrot/frameTime);
@@ -195,40 +193,38 @@ public class Awoofy {
         //STEP DARI ONE TIME MOVEMENT ANIM(SEPERTI MENYERANG DSBGNYA): Oleftfootrot(ORIleftfootrotITION, ORI
 
         //Animation processes
-        if(currentAnimTime <= animDuration/4f && isStopped == false) {
-            // 1leftfootrot
-            //Awoofy leftfoot
-            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((leftHandFrameTime), 0f, -1f, 0f);
-            //Awoofy rightfoot
-            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((rightHandFrameTime), 1f, 0f, 0f);
+        if(!isStopped) {
+            if (currentAnimTime <= animDuration / 4f) {
+                // 1leftfootrot
+                //Awoofy leftfoot
+                AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((leftHandFrameTime), 0f, -1f, 0f);
+                //Awoofy rightfoot
+                AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((rightHandFrameTime), 1f, 0f, 0f);
+            } else if (currentAnimTime > animDuration / 4f && currentAnimTime <= animDuration * (2f / 4f)) {
+                // 1leftfootrot - BACK TO ORI
+                //Awoofy leftfoot
+                AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((leftHandFrameTime), 0f, 1f, 0f);
+                //Awoofy rightfoot
+                AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((rightHandFrameTime), -1f, 0f, 0f);
+            } else if (currentAnimTime > animDuration * 2f / 4f && currentAnimTime <= animDuration * (3f / 4f)) {
+                // Rleftfootrot
+                //Awoofy leftfoot
+                AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((rightHandFrameTime), 1f, 0f, 0f);
+                //Awoofy rightfoot
+                AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((leftHandFrameTime), 0f, -1f, 0f);
+            } else if (currentAnimTime > animDuration * 3f / 4f && currentAnimTime <= animDuration) {
+                // Rleftfootrot - Back to ori
+                //Awoofy leftfoot
+                AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((rightHandFrameTime), -1f, 0f, 0f);
+                //Awoofy rightfoot
+                AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((leftHandFrameTime), 0f, 1f, 0f);
+            } else if (currentAnimTime > animDuration) {
+                AwoofyRootBody.get(0).getChildObject().get(3).setRotate(0f, 0f, 0f);
+                AwoofyRootBody.get(0).getChildObject().get(4).setRotate(0f, 0f, 0f);
+                currentAnimTime = 0f;
+            }
+            currentAnimTime += animspeed;
         }
-        else if (currentAnimTime > animDuration/4f && currentAnimTime <= animDuration*(2f/4f)){
-            // 1leftfootrot - BACK TO ORI
-            //Awoofy leftfoot
-            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((leftHandFrameTime), 0f, 1f, 0f);
-            //Awoofy rightfoot
-            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((rightHandFrameTime), -1f, 0f, 0f);
-        }
-        else if (currentAnimTime > animDuration*2f/4f && currentAnimTime <= animDuration*(3f/4f)) {
-            // Rleftfootrot
-            //Awoofy leftfoot
-            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((rightHandFrameTime), 1f, 0f, 0f);
-            //Awoofy rightfoot
-            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((leftHandFrameTime), 0f, -1f, 0f);
-        }
-        else if (currentAnimTime > animDuration*3f/4f && currentAnimTime <= animDuration){
-            // Rleftfootrot - Back to ori
-            //Awoofy leftfoot
-            AwoofyRootBody.get(0).getChildObject().get(3).rotateObject((rightHandFrameTime), -1f, 0f, 0f);
-            //Awoofy rightfoot
-            AwoofyRootBody.get(0).getChildObject().get(4).rotateObject((leftHandFrameTime), 0f, 1f, 0f);
-        }
-        else if (currentAnimTime > animDuration){
-            AwoofyRootBody.get(0).getChildObject().get(3).setRotate(0f, 0f, 0f);
-            AwoofyRootBody.get(0).getChildObject().get(4).setRotate(0f, 0f, 0f);
-            currentAnimTime = 0f;
-        }
-        currentAnimTime += animspeed;
     }
 
     public void draw(){

@@ -34,7 +34,7 @@ public class EasyCreateObject {
                 0.055f,
                 0.055f,
                 36,
-                800
+                180
         );
         object.add(Objectnya);
     }
@@ -51,7 +51,7 @@ public class EasyCreateObject {
                 rady/1000f,
                 radz/1000f,
                 36,
-                18
+                180
         );
         object.add(Objectnya);
     }
@@ -69,7 +69,7 @@ public class EasyCreateObject {
                 rady/1000f,
                 radz/1000f,
                 36,
-                18
+                180
         );
         object.add(Objectnya);
     }
@@ -87,7 +87,7 @@ public class EasyCreateObject {
                 rady/1000f,
                 radz/1000f,
                 36,
-                18
+                180
         );
         object.add(Objectnya);
     }
@@ -105,7 +105,7 @@ public class EasyCreateObject {
                 rady/1000f,
                 radz/1000f,
                 36,
-                18
+                180
         );
         object.add(Objectnya);
     }
@@ -123,7 +123,7 @@ public class EasyCreateObject {
                 rady/1000f,
                 radz/1000f,
                 36,
-                18
+                180
         );
         object.add(Objectnya);
     }
@@ -141,7 +141,7 @@ public class EasyCreateObject {
                 rady/1000f,
                 radz/1000f,
                 36,
-                18
+                180
         );
         object.add(Objectnya);
     }
@@ -159,7 +159,7 @@ public class EasyCreateObject {
                 rady/1000f,
                 radz/1000f,
                 36,
-                18
+                180
         );
         object.add(Objectnya);
     }

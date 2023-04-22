@@ -123,6 +123,25 @@ public class LinkKirby {
         }
     }
 
+    public void upDownAnim(boolean isStopped){
+
+        float speed = 0.025f/frameTime;
+        if(!isStopped) {
+            if (currentAnimTime <= animDuration / 4f) {
+                KirbyRootBody.get(0).translateObject(0f, speed, 0f);
+            } else if (currentAnimTime > animDuration / 4f && currentAnimTime <= animDuration * (2f / 4f)) {
+                KirbyRootBody.get(0).translateObject(0f, -speed, 0f);
+            } else if (currentAnimTime > animDuration * 2f / 4f && currentAnimTime <= animDuration * (3f / 4f)) {
+                KirbyRootBody.get(0).translateObject(0f, speed, 0f);
+            } else if (currentAnimTime > animDuration * 3f / 4f && currentAnimTime <= animDuration) {
+                KirbyRootBody.get(0).translateObject(0f, -speed, 0f);
+            } else if (currentAnimTime >= animDuration) {
+                currentAnimTime = 0f;
+            }
+            currentAnimTime += animspeed;
+        }
+    }
+
 
     public void draw(){
         for (Object object: KirbyRootBody){
