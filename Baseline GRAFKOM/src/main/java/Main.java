@@ -251,8 +251,9 @@ public class Main {
 
             awoofy.walkAnim(false);
             awoofy.handAnim(false);
+d
 
-            broomHatter.basicAnim(false);
+            broomHatter.splat(false);
         }
     }
 

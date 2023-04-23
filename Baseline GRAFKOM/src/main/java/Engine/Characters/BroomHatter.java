@@ -62,44 +62,8 @@ public class BroomHatter {
         BroomHatter.get(0).getChildObject().get(6).translateObject(1/1000f, 1/4.3f, 1/4f);
 
         BroomHatter.get(0).getChildObject().get(2).getChildObject().get(0).translateObject(-0f, 0/1000f, -1/100f);
-
-
     }
-//    public void walkAnim(){
-//        if(currentAnimTime < animDuration/4) {
-//            // 1st Move pos
-//            //kirby leftfoot
-//            BroomHatter.get(0).getChildObject().get(0).translateObject(0f,1/1000f,0f);
-//            //kirby rightfoot
-//            BroomHatter.get(0).getChildObject().get(1).translateObject(0f,-1/1000f,0f);
-//        }
-//        else if (currentAnimTime >= animDuration/4 && currentAnimTime < animDuration*2/4){
-//            // 1st Move pos - BACK TO ORI
-//            //kirby leftfoot
-//            BroomHatter.get(0).getChildObject().get(0).translateObject(0f,0f,0f);
-//            //kirby rightfoot
-//            BroomHatter.get(0).getChildObject().get(1).translateObject(-0f,0f,0f);;
-//        }
-//        else if (currentAnimTime >= animDuration*2/4 && currentAnimTime < animDuration*3/4) {
-//            // Rev Move pos
-//            //kirby leftfoot
-//            BroomHatter.get(0).getChildObject().get(0).translateObject(0f,-1/1000f,0f);
-//            //kirby rightfoot
-//            BroomHatter.get(0).getChildObject().get(1).translateObject(0f,1/1000f,0f);
-//        }
-//        else if (currentAnimTime >= animDuration*3/4 && currentAnimTime < animDuration){
-//            // Rev Move pos - Back to ori
-//            //kirby leftfoot
-//            BroomHatter.get(0).getChildObject().get(0).translateObject(0f,0f,0f);
-//            //kirby rightfoot
-//            BroomHatter.get(0).getChildObject().get(1).translateObject(0f,0f,0f);
-//        }
-//        else if (currentAnimTime > animDuration){
-//            currentAnimTime = 0.0f;
-//        }
-//        currentAnimTime+=0.1f;
-//        currentAnimTime+=0.1f;
-//    }
+
 
     public void basicAnim(boolean isStopped){
 
@@ -125,6 +89,18 @@ public class BroomHatter {
             arrayList.add(object);
         }
     }
+
+    public void mengecildimakan(boolean isStopped)
+    {
+        BroomHatter.get(0).scaleObject(0.999f,0.999f,0.999f);
+    }
+
+    public void splat(boolean isStopped)
+    {
+        BroomHatter.get(0).scaleObject(0.999f,0.999f,0.999f);
+    }
+
+
 
     public void draw(){
         for (Object object: BroomHatter){
