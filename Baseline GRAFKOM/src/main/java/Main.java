@@ -77,9 +77,9 @@ public class Main {
         lolipop.create();
         lolipop.MoveContents(objects);
 
-        objects.get(0).translateObject(0.0f, 0.0f, 0f); //Kirby
-        objects.get(1).translateObject(-0.69f, 0.0f, 0f); //Awoofy
-        objects.get(2).translateObject(0.69f, 0.0f, 0f); //BroomHatter
+        objects.get(0).translateObject(0.0f, 0.0f, 2f); //Kirby
+        objects.get(1).translateObject(-0.40f, 0.0f, 0f); //Awoofy
+        objects.get(2).translateObject(0.40f, 0.0f, 0f); //BroomHatter
         objects.get(3).translateObject(0.0f, -0.2f, -0.3f); //Lolipop
 
         createBaseland();
@@ -206,7 +206,7 @@ public class Main {
             //objects.get(0).translateObject(0.0f,0.0f,-0.01f);
         }
         if (window.isKeyPressed(GLFW_KEY_E)) {
-            cam.moveRight((float) Math.toRadians(2f));
+            cam.moveRight((float) Math.toRadians(3f));
             //cam.moveForward(0.1f);
             //objects.get(0).translateObject(0.0f,0.0f,0.01f);
         }
@@ -250,10 +250,10 @@ public class Main {
             Kirby.walkAnim(false);
 
             awoofy.walkAnim(false);
-            awoofy.handAnim(false);
-d
-
-            broomHatter.splat(false);
+//            awoofy.handAnim(false);
+//            awoofy.splat(false);
+//
+//            broomHatter.splat(false);
         }
     }
 

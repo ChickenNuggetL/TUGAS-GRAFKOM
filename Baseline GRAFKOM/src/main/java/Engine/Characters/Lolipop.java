@@ -29,7 +29,10 @@ public class Lolipop {
         LoliRootBody.get(0).getChildObject().get(0).getChildObject().get(0).translateObject(0/1000f, 0/1000f, 0/100f);
         // Loli white sub index 0 -> child dari white main ke 1
         LoliRootBody.get(0).getChildObject().get(0).getChildObject().get(1).translateObject(0/1000f, 0/1000f, 0/100f);
-        
+
+        LoliRootBody.get(0).translateObject(-600/1000f,-250/1000f,100/1000f);
+        LoliRootBody.get(0).rotateObject((float)Math.toRadians(-90f),1f,0f,0f);
+
     }
 
     public void MoveContents(ArrayList<Object> arrayList){

@@ -227,6 +227,15 @@ public class Awoofy {
         }
     }
 
+    public void mengecildimakan(boolean isStopped) {
+        AwoofyRootBody.get(0).scaleObject(0.999f,0.999f,0.999f);
+    }
+
+    public void splat(boolean isStopped) {
+        AwoofyRootBody.get(0).scaleObject(0.999f,0.999f,0.999f);
+//        AwoofyRootBody.get(0).translateObject(5/1000f,5/1000f,0f);
+    }
+
     public void draw(){
         for (Object object: AwoofyRootBody){
             object.draw();
