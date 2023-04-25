@@ -77,9 +77,9 @@ public class Main {
         lolipop.create();
         lolipop.MoveContents(objects);
 
-        objects.get(0).translateObject(0.0f, 0.0f, 2f); //Kirby
-        objects.get(1).translateObject(-0.40f, 0.0f, 0f); //Awoofy
-        objects.get(2).translateObject(0.40f, 0.0f, 0f); //BroomHatter
+        objects.get(0).translateObject(0.0f, 0.0f, 0f); //Kirby
+        objects.get(1).translateObject(-0.69f, 0.0f, 0f); //Awoofy
+        objects.get(2).translateObject(0.69f, 0.0f, 0f); //BroomHatter
         objects.get(3).translateObject(0.0f, -0.2f, -0.3f); //Lolipop
 
         createBaseland();
@@ -113,23 +113,87 @@ public class Main {
  */
         createBaseland();
     }
+    public void allChar(){
+        objects.clear();
+
+        Kirby = new LinkKirby();
+        awoofy = new Awoofy();
+        broomHatter = new BroomHatter();
+
+        Kirby.create();
+        Kirby.MoveContents(objects);
+        awoofy.create();
+        awoofy.MoveContents(objects);
+        broomHatter.create();
+        broomHatter.MoveContents(objects);
+        createBaseland();
+    }
+    public void justKirby(){
+        objects.clear();
+        Kirby = new LinkKirby();
+        Kirby.create();
+        Kirby.MoveContents(objects);
+        createBaseland();
+    }
+
+    public void justKirbyLoli(){
+        objects.clear();
+        Kirby = new LinkKirby();
+        lolipop = new Lolipop();
+        Kirby.create();
+        lolipop.create();
+        Kirby.MoveContents(objects);
+        lolipop.MoveContents(objects);
+        createBaseland();
+    }
+
+    public void justAwoofyBroom(){
+        objects.clear();
+        awoofy = new Awoofy();
+        broomHatter = new BroomHatter();
+        awoofy.create();
+        broomHatter.create();
+        awoofy.MoveContents(objects);
+        broomHatter.MoveContents(objects);
+        createBaseland();
+    }
+
+    public void justAwoofyBroomLoli(){
+        objects.clear();
+        awoofy = new Awoofy();
+        broomHatter = new BroomHatter();
+        lolipop = new Lolipop();
+        awoofy.create();
+        broomHatter.create();
+        lolipop.create();
+        awoofy.MoveContents(objects);
+        broomHatter.MoveContents(objects);
+        lolipop.MoveContents(objects);
+        createBaseland();
+    }
 
     //UNTUK NGE ANIMASI
     public void sceneChanges() {
         resetAnims();
-        if (Scene < 0) {
+        if (Scene < 0) { // all char sejajar
             Scene = 0;
         }
-        System.out.println(Scene + " Scene skarang");
-        if (Scene == 1) {
-            objects.get(0).translateObject(0.0f, 0.0f, 0f); //Kirby
-            objects.get(1).translateObject(0f, 0.0f, 2f); //Awoofy
-            objects.get(1).rotateObject((float) Math.toRadians(180f), 0f, 1f, 0f);
-            objects.get(2).translateObject(0.69f, 0.0f, 2f); //BroomHatter
-            objects.get(2).rotateObject((float) Math.toRadians(180f), 0f, 1f, 0f);
-            objects.get(3).translateObject(0.0f, -0.2f, 0.9f); //Lolipop
+        System.out.println("Scene " + Scene +" sekarang");
+        if (Scene == 1) { // Introduksi kirby
+//            objects.get(0).translateObject(0.0f, 0.0f, 0f); //Kirby
+//            objects.get(1).translateObject(0f, 0.0f, 2f); //Awoofy
+//            objects.get(1).rotateObject((float) Math.toRadians(180f), 0f, 1f, 0f);
+//            objects.get(2).translateObject(0.69f, 0.0f, 2f); //BroomHatter
+//            objects.get(2).rotateObject((float) Math.toRadians(180f), 0f, 1f, 0f);
+//            objects.get(3).translateObject(0.0f, -0.2f, 0.9f); //Lolipop
+            justKirby();
         }
-        else if (Scene == 2) {
+        else if (Scene == 2){ // Introduksi Awoofy dan Broomhatter
+            justAwoofyBroom();
+            objects.get(1).translateObject(0.5f, 0.0f, 0f); //Awoofy
+            objects.get(2).translateObject(-0.5f, 0.0f, 0f); //BroomHatter
+        }
+        else if (Scene == 3) { // kirby nginjek awoofy
             objects.get(0).translateObject(0.0f, 0.5f, -2f); //Kirby
             objects.get(1).translateObject(0f, 0.0f, 2f); //Awoofy
             objects.get(1).rotateObject((float) Math.toRadians(180f), 0f, 1f, 0f);
@@ -137,7 +201,8 @@ public class Main {
             objects.get(2).rotateObject((float) Math.toRadians(180f), 0f, 1f, 0f);
             objects.get(3).translateObject(0.0f, -0.2f, -0.3f); //Lolipop
         }
-        else{
+        else if (Scene == 4){
+            // posisi netral
             objects.get(0).translateObject(0.0f, 0.0f, 0f); //Kirby
             objects.get(1).translateObject(-0.69f, 0.0f, 0f); //Awoofy
             objects.get(2).translateObject(0.69f, 0.0f, 0f); //BroomHatter
@@ -243,13 +308,17 @@ public class Main {
     //DRAW SCENE ANIMATIONNYA
     public void drawScenarios(){
         if (Scene == 1) {
-
-        } else if (Scene == 2) {
+            Kirby.walkAnim(false);
+        }else if (Scene == 2){
+            awoofy.walkAnim(false);
+            broomHatter.basicAnim(false);
+        }
+        else if (Scene == 3) {
             Kirby.upDownAnim(false);
         } else {
             Kirby.walkAnim(false);
 
-            awoofy.walkAnim(false);
+//            awoofy.walkAnim(false);
 //            awoofy.handAnim(false);
 //            awoofy.splat(false);
 //
