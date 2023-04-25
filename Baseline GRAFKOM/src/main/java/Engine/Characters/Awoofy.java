@@ -227,9 +227,29 @@ public class Awoofy {
         }
     }
 
-    public void mengecildimakan(boolean isStopped) {
+    public void upDownAnim(boolean isStopped){
+
+        float speed = 0.025f/frameTime;
+        if(!isStopped) {
+            if (currentAnimTime <= animDuration / 4f) {
+                AwoofyRootBody.get(0).translateObject(0f, speed, 0f);
+            } else if (currentAnimTime > animDuration / 4f && currentAnimTime <= animDuration * (2f / 4f)) {
+                AwoofyRootBody.get(0).translateObject(0f, -speed, 0f);
+            } else if (currentAnimTime > animDuration * 2f / 4f && currentAnimTime <= animDuration * (3f / 4f)) {
+                AwoofyRootBody.get(0).translateObject(0f, speed, 0f);
+            } else if (currentAnimTime > animDuration * 3f / 4f && currentAnimTime <= animDuration) {
+                AwoofyRootBody.get(0).translateObject(0f, -speed, 0f);
+            } else if (currentAnimTime >= animDuration) {
+                currentAnimTime = 0f;
+            }
+            currentAnimTime += animspeed;
+        }
+    }
+
+    public void eaten(boolean isStopped) {
         AwoofyRootBody.get(0).scaleObject(0.999f,0.999f,0.999f);
     }
+
 
     public void splat(boolean isStopped) {
         AwoofyRootBody.get(0).scaleObject(0.999f,0.999f,0.999f);

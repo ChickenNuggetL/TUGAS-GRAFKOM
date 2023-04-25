@@ -190,18 +190,54 @@ public class Main {
         }
         else if (Scene == 2){ // Introduksi Awoofy dan Broomhatter
             justAwoofyBroom();
-            objects.get(1).translateObject(0.5f, 0.0f, 0f); //Awoofy
-            objects.get(2).translateObject(-0.5f, 0.0f, 0f); //BroomHatter
+            objects.get(0).translateObject(0.2f, 0.0f, 0f); //Awoofy
+            objects.get(1).translateObject(-0.2f, 0.0f, 0f); //BroomHatter
         }
-        else if (Scene == 3) { // kirby nginjek awoofy
-            objects.get(0).translateObject(0.0f, 0.5f, -2f); //Kirby
-            objects.get(1).translateObject(0f, 0.0f, 2f); //Awoofy
+        else if (Scene == 3){// kirby pegang lolipop
+            justKirbyLoli();
+            objects.get(0).translateObject(0.0f, 0.0f, 0f); //Kirby
+            objects.get(1).translateObject(0.8f, -0.15f, -0.3f); //Lolipop dipegang kirby
+        }
+        else if (Scene == 4) { // awoofy dan broom curi lolipop dari kirby
+            // kirby nginjek awoofy
+//            objects.get(0).translateObject(0.0f, 0.5f, -2f); //Kirby
+//            objects.get(1).translateObject(0f, 0.0f, 2f); //Awoofy
+//            objects.get(1).rotateObject((float) Math.toRadians(180f), 0f, 1f, 0f);
+//            objects.get(2).translateObject(0.69f, 0.0f, 2f); //BroomHatter
+//            objects.get(2).rotateObject((float) Math.toRadians(180f), 0f, 1f, 0f);
+//            objects.get(3).translateObject(0.0f, -0.2f, -0.3f); //Lolipop
+            objects.get(0).translateObject(0.0f, 0.0f, 0f); //Kirby
+            objects.get(1).translateObject(-0.20f, 0.0f, 0.7f); //Awoofy
             objects.get(1).rotateObject((float) Math.toRadians(180f), 0f, 1f, 0f);
-            objects.get(2).translateObject(0.69f, 0.0f, 2f); //BroomHatter
+            objects.get(2).translateObject(0.20f, 0.0f, 0.7f); //BroomHatter
             objects.get(2).rotateObject((float) Math.toRadians(180f), 0f, 1f, 0f);
-            objects.get(3).translateObject(0.0f, -0.2f, -0.3f); //Lolipop
+            objects.get(3).translateObject(0.15f, -0.2f, 0.4f); //Lolipop di tangan awoofy
+            objects.get(3).rotateObject((float) Math.toRadians(180f), 0f, 1f, 0f);
         }
-        else if (Scene == 4){
+        else if (Scene == 5){ // kirby ngejar lolipop yg diambil loli ada di tangan awoofy
+            objects.get(0).translateObject(0.0f, 0.0f, 2f); //Kirby
+            objects.get(1).translateObject(-0.20f, 0.0f, 0f); //Awoofy
+            objects.get(2).translateObject(0.20f, 0.0f, 0f); //BroomHatter
+            objects.get(3).translateObject(0.15f, -0.15f, -0.3f); //Lolipop
+            // Lolipop ada di tangan Awoofy
+        }
+        else if (Scene == 6){ // kirby hadap awoofy dan makan awoofy
+            allChar();
+            objects.get(0).translateObject(0.0f, 0.0f, 0f); //Kirby
+            objects.get(0).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+            objects.get(1).translateObject(-0.69f, 0.0f, 0f); //Awoofy
+            objects.get(2).translateObject(0.69f, 0.0f, 0f); //BroomHatter
+//            objects.get(3).translateObject(0.0f, -0.2f, -0.3f); //Lolipop
+        }
+        else if (Scene == 7){ // kirby hadap broom dan makan broom
+            allChar();
+            objects.get(0).translateObject(0.0f, 0.0f, 0f); //Kirby
+            objects.get(0).rotateObject((float)Math.toRadians(-90f),0f,1f,0f);
+            objects.get(1).translateObject(-0.69f, -1f,0f); //Awoofy turun
+            objects.get(2).translateObject(0.69f, 0.0f, 0f); //BroomHatter
+//            objects.get(3).translateObject(0.0f, -0.2f, -0.3f); //Lolipop
+        }
+        else if (Scene == 8){
             // posisi netral
             objects.get(0).translateObject(0.0f, 0.0f, 0f); //Kirby
             objects.get(1).translateObject(-0.69f, 0.0f, 0f); //Awoofy
@@ -210,6 +246,48 @@ public class Main {
         }
     }
 
+    public void drawScenarios(){
+        if (Scene == 1) {
+            Kirby.walkAnim(false);
+        }else if (Scene == 2){
+            awoofy.walkAnim(false);
+            broomHatter.basicAnim(false);
+        }
+        else if (Scene == 3) {
+            Kirby.upDownAnim(false);
+            lolipop.upDownAnim(false);
+        }
+        else if (Scene == 4){
+            awoofy.upDownAnim(false);
+            lolipop.upDownAnim(false);
+            broomHatter.basicAnim(false);
+        }
+        else if (Scene == 5) {
+            Kirby.walkAnim(false);
+            awoofy.walkAnim(false);
+            awoofy.handAnim(false);
+            lolipop.loliHandAnim(false);
+            broomHatter.basicAnim(false);
+        }
+        else if (Scene == 6){
+            // animasi kirby buka mulut
+            // awoofy kemakan
+            awoofy.eaten(false);
+
+        }
+        else if (Scene == 7){
+            // animasi kirby buka mulut
+            // broom kemakan
+            broomHatter.mengecildimakan(false);
+        }
+        else {
+            Kirby.walkAnim(false);
+//            awoofy.walkAnim(false);
+//            awoofy.handAnim(false);
+//            awoofy.splat(false);
+//            broomHatter.splat(false);
+        }
+    }
     //INPUT
     public void input() {
 
@@ -306,25 +384,7 @@ public class Main {
     }
 
     //DRAW SCENE ANIMATIONNYA
-    public void drawScenarios(){
-        if (Scene == 1) {
-            Kirby.walkAnim(false);
-        }else if (Scene == 2){
-            awoofy.walkAnim(false);
-            broomHatter.basicAnim(false);
-        }
-        else if (Scene == 3) {
-            Kirby.upDownAnim(false);
-        } else {
-            Kirby.walkAnim(false);
 
-//            awoofy.walkAnim(false);
-//            awoofy.handAnim(false);
-//            awoofy.splat(false);
-//
-//            broomHatter.splat(false);
-        }
-    }
 
     public void loop() {
         //SKYBOX

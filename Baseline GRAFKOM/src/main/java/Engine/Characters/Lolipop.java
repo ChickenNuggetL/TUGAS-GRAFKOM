@@ -8,6 +8,16 @@ import java.util.ArrayList;
 public class Lolipop {
     public ArrayList<Object> LoliRootBody = new ArrayList<>();
 
+    //Animation duration SETUPS
+    float animDuration = 32.0f;
+    float animStepsDuration = 1.0f;
+    float frameTime = animDuration/animStepsDuration;
+    float currentAnimTime = 0f;
+
+    float animspeed = 0.5f;
+    //Final position
+    float lefthandrot = 40.0f;
+
     public void create(){
         EasyCreateObject Batang =  new EasyCreateObject();
         EasyCreateObject LoliWhiteMain = new EasyCreateObject();
@@ -38,6 +48,44 @@ public class Lolipop {
     public void MoveContents(ArrayList<Object> arrayList){
         for (Object object: LoliRootBody){
             arrayList.add(object);
+        }
+    }
+
+    float leftHandFrameTime = (float) Math.toRadians(lefthandrot/frameTime);
+    public void loliHandAnim(boolean isStopped){
+        if(!isStopped) {
+            if (currentAnimTime <= animDuration / 4f) {
+                LoliRootBody.get(0).rotateObject((leftHandFrameTime), 0f, -1f, 0f);
+            } else if (currentAnimTime > animDuration / 4f && currentAnimTime <= animDuration * (2f / 4f)) {
+                LoliRootBody.get(0).rotateObject((leftHandFrameTime), 0f, 1f, 0f);
+            } else if (currentAnimTime > animDuration * 2f / 4f && currentAnimTime <= animDuration * (3f / 4f)) {
+                LoliRootBody.get(0).rotateObject((leftHandFrameTime), 0f, -1f, 0f);
+            } else if (currentAnimTime > animDuration * 3f / 4f && currentAnimTime <= animDuration) {
+                LoliRootBody.get(0).rotateObject((leftHandFrameTime), 0f, 1f, 0f);
+            } else if (currentAnimTime > animDuration) {
+                LoliRootBody.get(0).setRotate(0f, 0f, 0f);
+                currentAnimTime = 0f;
+            }
+            currentAnimTime += animspeed;
+        }
+    }
+
+    public void upDownAnim(boolean isStopped){
+
+        float speed = 0.025f/frameTime;
+        if(!isStopped) {
+            if (currentAnimTime <= animDuration / 4f) {
+                LoliRootBody.get(0).translateObject(0f, speed, 0f);
+            } else if (currentAnimTime > animDuration / 4f && currentAnimTime <= animDuration * (2f / 4f)) {
+                LoliRootBody.get(0).translateObject(0f, -speed, 0f);
+            } else if (currentAnimTime > animDuration * 2f / 4f && currentAnimTime <= animDuration * (3f / 4f)) {
+                LoliRootBody.get(0).translateObject(0f, speed, 0f);
+            } else if (currentAnimTime > animDuration * 3f / 4f && currentAnimTime <= animDuration) {
+                LoliRootBody.get(0).translateObject(0f, -speed, 0f);
+            } else if (currentAnimTime >= animDuration) {
+                currentAnimTime = 0f;
+            }
+            currentAnimTime += animspeed;
         }
     }
 }
