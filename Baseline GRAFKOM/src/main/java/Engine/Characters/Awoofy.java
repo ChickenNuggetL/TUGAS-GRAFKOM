@@ -247,9 +247,29 @@ public class Awoofy {
     }
 
     public void eaten(boolean isStopped) {
-        AwoofyRootBody.get(0).scaleObject(0.999f,0.999f,0.999f);
+        if(!isStopped){
+            AwoofyRootBody.get(0).scaleObject(0.996f,0.996f,0.996f);
+        }
     }
 
+    public void run(boolean isStopped){
+//        float speed = 0.005f/frameTime;
+//        if(!isStopped) {
+//            if (currentAnimTime <= animDuration / 4f) {
+//                AwoofyRootBody.get(0).translateObject(0f, 0f, -speed);
+//            } else if (currentAnimTime > animDuration / 4f && currentAnimTime <= animDuration * (2f / 4f)) {
+//                AwoofyRootBody.get(0).translateObject(0f, 0f, speed);
+//            } else if (currentAnimTime > animDuration * 2f / 4f && currentAnimTime <= animDuration * (3f / 4f)) {
+//                AwoofyRootBody.get(0).translateObject(0f, 0f, -speed);
+//            } else if (currentAnimTime > animDuration * 3f / 4f && currentAnimTime <= animDuration) {
+//                AwoofyRootBody.get(0).translateObject(0f, 0f, speed);
+//            } else if (currentAnimTime >= animDuration) {
+//                currentAnimTime = 0f;
+//            }
+//            currentAnimTime += animspeed;
+//        }
+        AwoofyRootBody.get(0).translateObject(0f,0f,-0.005f);
+    }
 
     public void splat(boolean isStopped) {
         AwoofyRootBody.get(0).scaleObject(0.999f,0.999f,0.999f);

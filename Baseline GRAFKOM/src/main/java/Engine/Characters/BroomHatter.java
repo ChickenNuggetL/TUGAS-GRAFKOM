@@ -92,7 +92,11 @@ public class BroomHatter {
 
     public void mengecildimakan(boolean isStopped)
     {
-        BroomHatter.get(0).scaleObject(0.999f,0.999f,0.999f);
+        BroomHatter.get(0).scaleObject(0.996f,0.996f,0.996f);
+    }
+
+    public void run(boolean isStopped){
+        BroomHatter.get(0).translateObject(0f,0f,-0.005f);
     }
 
     public void splat(boolean isStopped)
