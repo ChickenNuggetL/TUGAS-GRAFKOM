@@ -163,7 +163,7 @@ public class LinkKirby {
     }
 
     public void run(boolean isStopped){
-        KirbyRootBody.get(0).translateObject(0f,0f,-0.009f);
+        KirbyRootBody.get(0).translateObject(0f,0f,-0.004f);
     }
 
 //    public void draw() {
