@@ -269,6 +269,7 @@ public class Main {
             awoofy.run(false);
             broomHatter.run(false);
             Kirby.walkAnim(false);
+            Kirby.run(false);
             awoofy.walkAnim(false);
             awoofy.handAnim(false);
             broomHatter.basicAnim(false);
