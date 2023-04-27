@@ -13,7 +13,7 @@ public class Projection {
         updateProjMatrix(width, height);
     }
 
-    private float FOV = (float) Math.toRadians(95.0f);
+    private float FOV = (float) Math.toRadians(96.0f);
     private static final float Z_FAR = 1000000.0f;
     private static final float Z_NEAR = 0.01f;
     private int width, height;

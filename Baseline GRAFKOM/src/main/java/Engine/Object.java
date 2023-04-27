@@ -126,6 +126,7 @@ public class Object extends ShaderProgram{
 
 
     public void updateCenterPoint(){
+        //model.identity();
         Vector3f destTemp = new Vector3f();
         model.transformPosition(0.0f,0.0f,0.0f,destTemp);
         centerPoint.set(0,destTemp.x);
@@ -145,7 +146,7 @@ public class Object extends ShaderProgram{
     public void rotationObject(Float Degree, Float x, Float y, Float z){
 //        model = new Matrix4f().rotation(Degree, x, y, z).mul(new Matrix4f(model));
         //model = new Matrix4f().rotation((float) Math.toRadians(Degree), x, y, z).mul(new Matrix4f(model));
-        model = new Matrix4f().rotation(Degree,x,y,z).mul(new Matrix4f(model));
+        model = new Matrix4f().rotation(Degree,x,y,z).mulLocal(new Matrix4f(model));
         updateCenterPoint();
         for (Object child:childObject) {
             child.rotationObject(Degree, x, y, z);
@@ -171,6 +172,12 @@ public class Object extends ShaderProgram{
         model = new Matrix4f().scale(scaleX, scaleY, scaleZ).mul(new Matrix4f(model));
         for (Object child:childObject){
             child.scaleObject(scaleX,scaleY,scaleZ);
+        }
+    }
+    public void scaleObject2(Float scaleX, Float scaleY, Float scaleZ){
+        model = new Matrix4f().scale(scaleX, scaleY, scaleZ).mulLocal(new Matrix4f(model));
+        for (Object child:childObject){
+            child.scaleObject2(scaleX,scaleY,scaleZ);
         }
     }
 

@@ -35,7 +35,7 @@ public class Main {
     //MODULE SCRIPT BOLEH DIRUBAH---------------------------------------------------
     private Window window =
             new Window
-                    (900, 800, "Kirby");
+                    (1280, 720, "Kirby eating pepos");
     Projection projection = new Projection(window.getWidth(), window.getHeight());
 
     //Deklarasi Array---------------------------------------------------
@@ -266,21 +266,24 @@ public class Main {
             broomHatter.basicAnim(false);
         }
         else if (Scene == 5) {
+            awoofy.run(false);
+            broomHatter.run(false);
             Kirby.walkAnim(false);
             awoofy.walkAnim(false);
             awoofy.handAnim(false);
-            awoofy.run(false);
             broomHatter.basicAnim(false);
-            broomHatter.run(false);
+
         }
         else if (Scene == 6){
             // animasi kirby buka mulut
             // awoofy kemakan
+            Kirby.EAT(false);
             awoofy.eaten(false);
         }
         else if (Scene == 7){
             // animasi kirby buka mulut
             // broom kemakan
+            Kirby.EAT(false);
             broomHatter.mengecildimakan(false);
         }
         else {
@@ -405,7 +408,7 @@ public class Main {
             input();
 
             for (Object object : objects) {
-                object.draw(cam, projection);
+                    object.draw(cam, projection);
             }
 
             // Restore state
