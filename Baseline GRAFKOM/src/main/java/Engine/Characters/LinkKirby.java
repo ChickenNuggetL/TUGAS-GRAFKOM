@@ -142,6 +142,11 @@ public class LinkKirby {
         }
     }
 
+    // sori cuman buat coba aja
+    public void run(boolean isStopped){
+        KirbyRootBody.get(0).translateObject(0f,0f,-0.009f);
+    }
+
 
     public void draw(){
         for (Object object: KirbyRootBody){

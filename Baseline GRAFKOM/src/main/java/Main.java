@@ -267,6 +267,7 @@ public class Main {
         }
         else if (Scene == 5) {
             Kirby.walkAnim(false);
+            Kirby.run(false);
             awoofy.walkAnim(false);
             awoofy.handAnim(false);
             awoofy.run(false);
