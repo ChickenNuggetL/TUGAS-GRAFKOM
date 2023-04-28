@@ -301,20 +301,20 @@ public class Main {
         // radian awal adalah 0.5f
         // tak ganti ke 1f supaya cepet aja
         if (window.isKeyPressed(GLFW_KEY_D)) {
-            cam.addRotation((float) Math.toRadians(0f), (float) Math.toRadians(2f));
+            cam.addRotation((float) Math.toRadians(0f), (float) Math.toRadians(1f));
 //            for(int zi= 0; zi < objects.size(); zi++) {
 //                objects.get(zi).rotationObject((float) Math.toRadians(1f), 0f, 1f, 0f);
 //            }
             //objects.get(0).translateObject(0.0f,0.0f,0.00015f);
         }
         if (window.isKeyPressed(GLFW_KEY_A)) {
-            cam.addRotation((float) Math.toRadians(0f), (float) Math.toRadians(-2f));
+            cam.addRotation((float) Math.toRadians(0f), (float) Math.toRadians(-1f));
 //            for(int zi= 0; zi < objects.size(); zi++) {
 //                objects.get(zi).rotateObject((float) Math.toRadians(1f), 0f, -1f, 0f);
 //            }
         }
         if (window.isKeyPressed(GLFW_KEY_S)) {
-            cam.moveBackwards((float) Math.toRadians(2f));
+            cam.moveBackwards((float) Math.toRadians(1f));
 //            for(int zi= 0; zi < objects.size(); zi++) {
 //                objects.get(zi).rotateObject((float)Math.toRadians(1f),1f,0f,0f);
 //            }
@@ -351,12 +351,12 @@ public class Main {
             pressed = false;
         }
         if (window.isKeyPressed(GLFW_KEY_Q)) {
-            cam.moveLeft((float) Math.toRadians(2f));
+            cam.moveLeft((float) Math.toRadians(1f));
             //cam.moveBackwards(0.1f);
             //objects.get(0).translateObject(0.0f,0.0f,-0.01f);
         }
         if (window.isKeyPressed(GLFW_KEY_E)) {
-            cam.moveRight((float) Math.toRadians(3f));
+            cam.moveRight((float) Math.toRadians(1f));
             //cam.moveForward(0.1f);
             //objects.get(0).translateObject(0.0f,0.0f,0.01f);
         }
