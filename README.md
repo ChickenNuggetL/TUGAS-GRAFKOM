@@ -6,4 +6,6 @@ James Andrew Alexander - C14210318
 
 [Laporan](https://docs.google.com/document/d/1WTP5wPhdu29oGEckY5nKeAz7feUwpJMyG7RMjB_adNw/edit)
 
-[Video](https://youtu.be/kcF3R2g-k1U)
+[Video](https://youtu.be/O3-EsBMoTV0)
+
+https://youtu.be/O3-EsBMoTV0
