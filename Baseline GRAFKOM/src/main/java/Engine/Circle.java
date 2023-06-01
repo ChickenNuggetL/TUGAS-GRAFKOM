@@ -3,9 +3,15 @@ package Engine;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL15.*;
+import static org.lwjgl.opengl.GL15.GL_ARRAY_BUFFER;
+import static org.lwjgl.opengl.GL20.glEnableVertexAttribArray;
+import static org.lwjgl.opengl.GL20.glVertexAttribPointer;
 import static org.lwjgl.opengl.GL30.glGenVertexArrays;
 
 public class Circle extends Object {
@@ -13,13 +19,49 @@ public class Circle extends Object {
     Float radiusX;
     Float radiusY;
 
+    List<Vector3f> normal;
+    int nbo;
+
     public Circle(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color, List<Float> centerPoint, Float radiusX, Float radiusY) {
         super(shaderModuleDataList, vertices, color);
         this.centerPoint = centerPoint;
         this.radiusX = radiusX;
         this.radiusY = radiusY;
         createCircle();
-        setupVAOVBO();
+
+        normal = new ArrayList<>(Arrays.asList(
+                //Belakang
+                new Vector3f(0.0f,0.0f,-1.0f),
+                new Vector3f(0.0f,0.0f,-1.0f),
+                new Vector3f(0.0f,0.0f,-1.0f),
+                new Vector3f(0.0f,0.0f,-1.0f),
+                //depan
+                new Vector3f(0.0f,0.0f,1.0f),
+                new Vector3f(0.0f,0.0f,1.0f),
+                new Vector3f(0.0f,0.0f,1.0f),
+                new Vector3f(0.0f,0.0f,1.0f),
+                //kiri
+                new Vector3f(-1.0f,0.0f,0.0f),
+                new Vector3f(-1.0f,0.0f,0.0f),
+                new Vector3f(-1.0f,0.0f,0.0f),
+                new Vector3f(-1.0f,0.0f,0.0f),
+                //kanan
+                new Vector3f(1.0f,0.0f,0.0f),
+                new Vector3f(1.0f,0.0f,0.0f),
+                new Vector3f(1.0f,0.0f,0.0f),
+                new Vector3f(1.0f,0.0f,0.0f),
+                //atas
+                new Vector3f(0.0f,1.0f,0.0f),
+                new Vector3f(0.0f,1.0f,0.0f),
+                new Vector3f(0.0f,1.0f,0.0f),
+                new Vector3f(0.0f,1.0f,0.0f),
+                //bawah
+                new Vector3f(0.0f,-1.0f,0.0f),
+                new Vector3f(0.0f,-1.0f,0.0f),
+                new Vector3f(0.0f,-1.0f,0.0f),
+                new Vector3f(0.0f,-1.0f,0.0f)
+        ));
+        //setupVAOVBO();
     }
 
     public double degToRad(float degree) {
@@ -48,6 +90,38 @@ public class Circle extends Object {
             vertices.add(new Vector3f(x, y, z));
             degree += 90;
         }
+    }
+
+    public void setupVAOVBO(){
+        super.setupVAOVBO();
+
+        //set nbo
+        nbo = glGenBuffers();
+        glBindBuffer(GL_ARRAY_BUFFER, nbo);
+        glBufferData(GL_ARRAY_BUFFER,
+                Utils.listoFloat(normal),
+                GL_STATIC_DRAW);
+
+        //uniformsMap.createUniform("lightColor");
+        //uniformsMap.createUniform("lightPos");
+    }
+
+    public void drawSetup(Camera camera, Projection projection){
+        super.drawSetup(camera, projection);
+        glEnableVertexAttribArray(1);
+        glBindBuffer(GL_ARRAY_BUFFER, nbo);
+        glVertexAttribPointer(1, 3,
+                GL_FLOAT,
+                false,
+                0, 0);
+
+        //uniformsMap.setUniform("lightColor", new Vector3f(1f,1f,1f));
+        //uniformsMap.setUniform("lightPos", new Vector3f(1f,2f,0f));
+        uniformsMap.setUniform("dirLight.direction", new Vector3f(-0.2f, -1.0f, -0.3f));
+        uniformsMap.setUniform("dirLight.diffuse", new Vector3f(0.4f, 0.4f, 0.4f));
+        uniformsMap.setUniform("dirLight.ambient", new Vector3f(0.5f, 0.5f, 0.5f));
+        uniformsMap.setUniform("dirLight.specular", new Vector3f(0.5f, 0.5f, 0.5f));
+        uniformsMap.setUniform("viewPos", camera.getPosition());
     }
 
     public void createTriangle() {

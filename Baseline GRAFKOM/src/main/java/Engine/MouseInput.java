@@ -8,18 +8,19 @@ import static org.lwjgl.glfw.GLFW.*;
 public class MouseInput {
 
     private Vector3f currentPos;
-    private Vector3f displVec;
-    private Vector3f scroll;
+    private Vector2f displVec;
+    private Vector2f scroll;
     private boolean inWindow;
     private boolean leftButtonPressed;
     private Vector3f previousPos;
     private boolean rightButtonPressed;
+    private boolean mouseMoved;
 
     public MouseInput(long windowHandle) {
         previousPos = new Vector3f(-1, -1,-1);
         currentPos = new Vector3f();
-        scroll = new Vector3f();
-        displVec = new Vector3f();
+        scroll = new Vector2f();
+        displVec = new Vector2f();
         leftButtonPressed = false;
         rightButtonPressed = false;
         inWindow = false;
@@ -35,6 +36,7 @@ public class MouseInput {
         glfwSetMouseButtonCallback(windowHandle, (handle, button, action, mode) -> {
             leftButtonPressed = button == GLFW_MOUSE_BUTTON_1 && action == GLFW_PRESS;
             rightButtonPressed = button == GLFW_MOUSE_BUTTON_2 && action == GLFW_PRESS;
+            mouseMoved = action == GLFW_RAW_MOUSE_MOTION;
         });
     }
 
@@ -42,11 +44,14 @@ public class MouseInput {
         return currentPos;
     }
 
-    public Vector3f getScroll() {
+    public Vector2f getScroll() {
         return scroll;
     }
+    public void setScroll(Vector2f x) {
+        scroll = x;
+    }
 
-    public Vector3f getDisplVec() {
+    public Vector2f getDisplVec() {
         return displVec;
     }
 
@@ -77,4 +82,9 @@ public class MouseInput {
     public boolean isRightButtonPressed() {
         return rightButtonPressed;
     }
+
+    public boolean isMoved(){
+        return mouseMoved;
+    }
 }
+

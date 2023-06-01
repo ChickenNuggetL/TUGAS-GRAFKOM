@@ -29,6 +29,13 @@
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
+
+            <dependency>
+                <groupId>org.lwjgl</groupId>
+                <artifactId>lwjgl-assimp</artifactId>
+                <version>${lwjgl.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

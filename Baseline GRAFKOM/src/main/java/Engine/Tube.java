@@ -4,6 +4,7 @@ import org.joml.Vector3f;
 import org.joml.Vector4f;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Tube extends Sphere2{
@@ -24,5 +25,8 @@ public class Tube extends Sphere2{
             temp.add(new Vector3f(x,y,height/2.0f));
         }
         vertices = temp;
+
+
+
     }
 }

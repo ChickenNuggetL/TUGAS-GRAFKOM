@@ -31,6 +31,10 @@ public class Object extends ShaderProgram{
     List<Float> centerPoint;
     public Vector3f centerpoint;
     List<Vector3f> curve = new ArrayList<>();
+    Vector3f position = new Vector3f(0,0,0);
+    Vector3f rotationWorld = new Vector3f(0,0,0);
+    Vector3f rotationLocal = new Vector3f(0,0,0);
+    float degree;
     boolean isCurve;
     float radiusX;
     float radiusY;
@@ -43,16 +47,19 @@ public class Object extends ShaderProgram{
         this.vertices = vertices;
         this.color = color;
         this.isCurve = false;
-        setupVAOVBO();
+
+        //setupVAOVBO();
+
+
         uniformsMap = new UniformsMap(getProgramId());
-        uniformsMap.createUniform(
-                "uni_color");
-        uniformsMap.createUniform(
-                "model");
-        uniformsMap.createUniform(
-                "view");
-        uniformsMap.createUniform(
-                "projection");
+//        uniformsMap.createUniform(
+//                "uni_color");
+//        uniformsMap.createUniform(
+//                "model");
+//        uniformsMap.createUniform(
+//                "view");
+//        uniformsMap.createUniform(
+//                "projection");
 
 //        model = new Matrix4f().identity();
         modelz = new Matrix4f().scale(1,1,1);
@@ -83,6 +90,26 @@ public class Object extends ShaderProgram{
 //
 ////        setupVAOVBOWithVerticesColor();
 //    }
+
+
+    public void updatePosition(float Xx, float Yy, float Zz) {
+        this.position.x += Xx;
+        this.position.y += Yy;
+        this.position.z += Zz;
+    }
+
+    public void updateRotWorld(float Xx, float Yy, float Zz) {
+        this.rotationWorld.x += Xx;
+        this.rotationWorld.y += Yy;
+        this.rotationWorld.z += Zz;
+    }
+
+    public void updateRotPos(float Xx, float Yy, float Zz) {
+        this.rotationLocal.x += Xx;
+        this.rotationLocal.y += Yy;
+        this.rotationLocal.z += Zz;
+    }
+
     public void addVerticesForCurve(Vector3f newVector) {
         vertices.add(newVector);
     }
@@ -137,6 +164,8 @@ public class Object extends ShaderProgram{
 //        model = new Matrix4f().rotation(Degree, x, y, z).mul(new Matrix4f(model));
         //model = new Matrix4f().rotation((float) Math.toRadians(Degree), x, y, z).mul(new Matrix4f(model));
         model = new Matrix4f().rotate(Degree,x,y,z).mul(new Matrix4f(model));
+        updateRotWorld(x, y, z);
+        degree = Degree;
         updateCenterPoint();
         for (Object child:childObject) {
             child.rotateObject(Degree, x, y, z);
@@ -147,6 +176,8 @@ public class Object extends ShaderProgram{
 //        model = new Matrix4f().rotation(Degree, x, y, z).mul(new Matrix4f(model));
         //model = new Matrix4f().rotation((float) Math.toRadians(Degree), x, y, z).mul(new Matrix4f(model));
         model = new Matrix4f().rotation(Degree,x,y,z).mulLocal(new Matrix4f(model));
+        updateRotPos(x, y, z);
+        degree = Degree;
         updateCenterPoint();
         for (Object child:childObject) {
             child.rotationObject(Degree, x, y, z);
@@ -155,6 +186,7 @@ public class Object extends ShaderProgram{
 
     public void translateObject(Float offsetX, Float offsetY, Float offsetZ){
         model = new Matrix4f().translate(offsetX,offsetY,offsetZ).mul(new Matrix4f(model));
+        updatePosition(offsetX, offsetY, offsetZ);
         updateCenterPoint();
         for (Object child:childObject){
             child.translateObject(offsetX,offsetY,offsetZ);
@@ -256,7 +288,7 @@ public class Object extends ShaderProgram{
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
         glVertexAttribPointer(0, 3,
                 GL_FLOAT,
-                true,
+                false,
                 0, 0);
     }
 

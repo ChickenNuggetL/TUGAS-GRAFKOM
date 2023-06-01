@@ -81,7 +81,7 @@ public class EasyCreateObject {
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(70/255f, 70/255f, 70/255f, 1.0f), //Warna
+                new Vector4f(220/255f, 220/255f, 70/255f, 1.0f), //Warna
                 Arrays.asList(0.0f, 0.0f, 0.0f), //Coord center point
                 radx/1000f,
                 rady/1000f,

@@ -1,6 +1,7 @@
 import Engine.*;
 import Engine.Characters.*;
 import Engine.Object;
+import org.joml.Vector2f;
 import org.joml.Vector3f;
 import org.lwjgl.opengl.GL;
 
@@ -28,7 +29,7 @@ public class Main {
 
     Lolipop lolipop = new Lolipop();
 
-    Camera cam = new Camera();
+    Camera cam; // = new Camera(mouseInput);
 
     int Scene = 0;
 
@@ -50,6 +51,7 @@ public class Main {
     public void createBaseland() {
         EasyCreateObject plate = new EasyCreateObject();
         plate.Box(objects, 200, 50, 200);
+        //plate.Box(objects, 200, 50, 200, 0f,1f,0f);
         plate.Objectnya.scaleObject(100f, 5f, 100f);
         plate.Objectnya.translateObject(0f, -0.35f, 0f);
     }
@@ -59,11 +61,7 @@ public class Main {
         GL.createCapabilities();
         glEnable(GL_DEPTH_TEST);
         glEnable(GL_LINE_SMOOTH);
-        //glShadeModel(GL_SMOOTH);
         mouseInput = window.getMouseInput();
-        // Render model lewat easyCreateObject
-        //elips.Sphere(objects, 80, 55, 55);  //Contoh Pake easyCreate
-        //Spherex.Sphere(objects, 155, 155, 155, 155/255f, 191/255f,11/255f);  //Contoh Pake easyCreate
 
         Kirby.create();
         Kirby.MoveContents(objects);
@@ -84,8 +82,9 @@ public class Main {
 
         createBaseland();
         //Cam initialize
-        cam.setRotation((float) Math.toRadians(0.0f), (float) Math.toRadians(0.0f));
-        cam.setPosition(0f, 0f, -3f);
+        //cam.setRotation((float) Math.toRadians(0.0f), (float) Math.toRadians(0.0f));
+        //cam.setPosition(0f, 0f, -3f);
+        cam = new Camera(mouseInput, objects.get(0));
     }
 
     public void resetAnims() {
@@ -104,13 +103,6 @@ public class Main {
         broomHatter.MoveContents(objects);
         lolipop.create();
         lolipop.MoveContents(objects);
-/*
-        objects.get(0).translateObject(0.0f,0.0f,0f); //Kirby
-        objects.get(1).translateObject(-0.69f,0.0f,0f); //Awoofy
-        objects.get(2).translateObject(0.69f,0.0f,0f); //BroomHatter
-        objects.get(3).translateObject(0.0f, -0.2f,-0.3f); //Lolipop
-
- */
         createBaseland();
     }
     public void allChar(){
@@ -313,6 +305,20 @@ public class Main {
 //                objects.get(zi).rotateObject((float) Math.toRadians(1f), 0f, -1f, 0f);
 //            }
         }
+        if (window.isKeyPressed(GLFW_KEY_L)) {
+            objects.get(0).translateObject(0.1f, 0f,0f);
+        }
+        if (window.isKeyPressed(GLFW_KEY_J)) {
+            objects.get(0).translateObject(-0.1f, 0f,0f);
+        }
+        if (window.isKeyPressed(GLFW_KEY_K)) {
+            objects.get(0).translateObject(0.0f, 0f,0.1f);
+        }
+        if (window.isKeyPressed(GLFW_KEY_I)) {
+            objects.get(0).translateObject(0.0f, 0f,-0.1f);
+        }
+
+
         if (window.isKeyPressed(GLFW_KEY_S)) {
             cam.moveBackwards((float) Math.toRadians(1f));
 //            for(int zi= 0; zi < objects.size(); zi++) {
@@ -373,21 +379,38 @@ public class Main {
         }
 
 
-        if (mouseInput.isLeftButtonPressed()) {
-            Vector3f pos = mouseInput.getCurrentPos();
+//        if (mouseInput.isLeftButtonPressed()) {
+            //Vector2f displayvec = window.getMouseInput().getDisplVec();
+            //cam.addRotation((float) Math.toRadians((displayvec.x) * 0.06f), (float) Math.toRadians((displayvec.y) * 0.06f));
+////            Vector3f pos = mouseInput.getCurrentPos();
+////
+////            pos.x = (pos.x - (window.getWidth()) / 2.0f) /
+////                    (window.getWidth() / 2.0f);
+////            pos.y = (pos.y - (window.getHeight()) / 2.0f) /
+////                    (-window.getHeight() / 2.0f);
+////            pos.z = (pos.z - (window.getHeight()) / 2.0f) /
+////                    (-window.getHeight() / 2.0f);
+////
+////            if ((!(pos.x > 1 || pos.x < -0.97) && !(pos.y > 0.97 || pos.y < -1)
+////                    && !(pos.z > 1 || pos.z < -0.97))) {
+////                System.out.println("x : " + pos.x + " y : " + pos.y + " z : " + pos.z);
+////            }
+//        }
+//
+//        if (mouseInput.isRightButtonPressed()) {
+//
+//        }
+//
+//        if(window.getMouseInput().getScroll().y != 0){
+//            projection.setFOV(projection.getFOV()-(window.getMouseInput().getScroll().y * 0.01f));
+//            if(projection.getFOV() < 0.2f){
+//                projection.setFOV(0.2f);
+//            }
+//            window.getMouseInput().setScroll(new Vector2f());
+//        }
 
-            pos.x = (pos.x - (window.getWidth()) / 2.0f) /
-                    (window.getWidth() / 2.0f);
-            pos.y = (pos.y - (window.getHeight()) / 2.0f) /
-                    (-window.getHeight() / 2.0f);
-            pos.z = (pos.z - (window.getHeight()) / 2.0f) /
-                    (-window.getHeight() / 2.0f);
 
-            if ((!(pos.x > 1 || pos.x < -0.97) && !(pos.y > 0.97 || pos.y < -1)
-                    && !(pos.z > 1 || pos.z < -0.97))) {
-                System.out.println("x : " + pos.x + " y : " + pos.y + " z : " + pos.z);
-            }
-        }
+
     }
 
     //DRAW SCENE ANIMATIONNYA
@@ -400,6 +423,7 @@ public class Main {
             glClearColor(0.6f,
                     0.6f, 0.9f,
                     0.75f);
+            //glClearColor(0f,1f,0f,1f);
             GL.createCapabilities();
 
             //DRAW SCENE ANIMATIONNYA
@@ -411,7 +435,7 @@ public class Main {
             for (Object object : objects) {
                     object.draw(cam, projection);
             }
-
+            cam.move();
             // Restore state
             glDisableVertexAttribArray(0);
 
