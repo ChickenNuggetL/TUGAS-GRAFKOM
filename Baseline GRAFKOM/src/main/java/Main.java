@@ -29,6 +29,8 @@ public class Main {
 
     Lolipop lolipop = new Lolipop();
 
+    EasyCreateObject obj = new EasyCreateObject();
+
     Camera cam; // = new Camera(mouseInput);
 
     int Scene = 0;
@@ -74,6 +76,8 @@ public class Main {
 
         lolipop.create();
         lolipop.MoveContents(objects);
+
+        obj.loadObj(objects);
 
         objects.get(0).translateObject(0.0f, 0.0f, 0f); //Kirby
         objects.get(1).translateObject(-0.69f, 0.0f, 0f); //Awoofy
@@ -367,11 +371,16 @@ public class Main {
             //objects.get(0).translateObject(0.0f,0.0f,0.01f);
         }
 
+        if (window.isKeyPressed(GLFW_KEY_M)){
+            objects.get(0).rotateObject((float)Math.toRadians(45f), 0f, 1f,0f);
+        }
+
         if (window.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {
             cam.moveDown((float) Math.toRadians(2f));
             //cam.moveForward(0.1f);
             //objects.get(0).translateObject(0.0f,0.0f,0.01f);
         }
+
         if (window.isKeyPressed(GLFW_KEY_SPACE)) {
             cam.moveUp((float) Math.toRadians(2f));
             //cam.moveForward(0.1f);

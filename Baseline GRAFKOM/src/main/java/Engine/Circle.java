@@ -22,6 +22,10 @@ public class Circle extends Object {
     List<Vector3f> normal;
     int nbo;
 
+    public Circle(){
+
+    }
+
     public Circle(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color, List<Float> centerPoint, Float radiusX, Float radiusY) {
         super(shaderModuleDataList, vertices, color);
         this.centerPoint = centerPoint;

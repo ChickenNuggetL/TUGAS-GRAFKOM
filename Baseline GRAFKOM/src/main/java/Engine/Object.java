@@ -40,6 +40,9 @@ public class Object extends ShaderProgram{
     float radiusY;
     float radiusZ;
 
+    public Object(){
+
+    }
     public Object(List<ShaderModuleData> shaderModuleDataList
             , List<Vector3f> vertices
             , Vector4f color) {

@@ -19,7 +19,13 @@ public class Box extends Circle{
     int stackCount;
     int sectorCount;
     List<Vector3f> normal;
+    List<Integer> index;
     int nbo;
+    int ibo;
+
+    public Box() {
+
+    }
 
     public Box(List<ShaderProgram.ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color, List<Float> centerPoint, Float radiusX, Float radiusY, Float radiusZ,
                int sectorCount, int stackCount){
@@ -175,6 +181,30 @@ public class Box extends Circle{
 
         //uniformsMap.setUniform("lightColor", new Vector3f(1f,1f,1f));
         //uniformsMap.setUniform("lightPos", new Vector3f(1f,2f,0f));
+    }
+
+    public void setNormal(List<Vector3f> normal) {
+        this.normal = normal;
+        setupVAOVBO();
+    }
+
+
+    public List<Vector3f> getVertices() {
+        return vertices;
+    }
+
+    public void setVertices(List<Vector3f> vertices) {
+        this.vertices = vertices;
+        setupVAOVBO();
+    }
+
+    public void setIndicies(List<Integer> indicies){
+        this.index = indicies;
+        setupVAOVBO();
+        //ibo
+        ibo = glGenBuffers();
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,ibo);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER,Utils.listoInt(index),GL_STATIC_DRAW);
     }
 
 }

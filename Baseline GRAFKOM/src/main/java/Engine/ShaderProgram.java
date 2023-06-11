@@ -9,6 +9,10 @@ public class ShaderProgram {
 
     private final int programId;
 
+    public ShaderProgram(){
+        programId = 0;
+    }
+
     public ShaderProgram(List<ShaderModuleData> shaderModuleDataList) {
         programId = glCreateProgram();
         if (programId == 0) {

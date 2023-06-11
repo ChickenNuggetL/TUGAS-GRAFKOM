@@ -1,9 +1,12 @@
 package Engine;
 
+import Engine.BlenderObjImport.OBJimport;
+import org.joml.Vector3f;
 import org.joml.Vector4f;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.lwjgl.opengl.GL20.GL_FRAGMENT_SHADER;
 import static org.lwjgl.opengl.GL20.GL_VERTEX_SHADER;
@@ -18,7 +21,28 @@ public class EasyCreateObject {
     // CEK YG ADA DI INIT di main                                                           //
     //////////////////////////////////////////////////////////////////////////////////////////
 
-
+    //.OBJ Loader
+    public void loadObj(ArrayList<Object> object){
+    OBJimport objectLoader = new OBJimport("C://Users//RichardP//Documents//GitHub//Grafkom example//TUGAS-GRAFKOM//Baseline GRAFKOM//src//main//java//BASEmodel.obj", "obj");
+        Objectnya = new Box(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                    new ArrayList<>(),
+                    new Vector4f(220/255f, 220/255f, 70/255f, 1.0f), //Warna
+                    Arrays.asList(1.0f, 1.0f, 1.0f), //Coord center point
+                    0.1f,
+                0.1f,
+                0.1f,
+                36,
+                180
+        );
+        ((Box)Objectnya).setVertices(objectLoader.vertices);
+        ((Box)Objectnya).setNormal(objectLoader.normals);
+        ((Box)Objectnya).setIndicies(objectLoader.indicies);
+        object.add(Objectnya);
+    }
 
     //ELIPSE DAN SPHERE
     public void Sphere(ArrayList<Object> object){
