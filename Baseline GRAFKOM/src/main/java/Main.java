@@ -1,10 +1,10 @@
 import Engine.*;
 import Engine.Characters.*;
 import Engine.Object;
-import org.joml.Vector2f;
-import org.joml.Vector3f;
+import org.joml.Vector4f;
 import org.lwjgl.opengl.GL;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -19,6 +19,7 @@ public class Main {
 //    EasyCreateObject Spherex = new EasyCreateObject();
 //    EasyCreateObject Sphere2x = new EasyCreateObject();
 
+    ArrayList<ObjectLoader> objectObj = new ArrayList();
     boolean pressed = false;
 
     LinkKirby Kirby = new LinkKirby();
@@ -58,7 +59,7 @@ public class Main {
         plate.Objectnya.translateObject(0f, -0.35f, 0f);
     }
 
-    public void init() {
+    public void init() throws IOException {
         window.init();
         GL.createCapabilities();
         glEnable(GL_DEPTH_TEST);
@@ -77,7 +78,19 @@ public class Main {
         lolipop.create();
         lolipop.MoveContents(objects);
 
-        obj.loadObj(objects);
+//        obj.loadObj(objects);
+//        objectObj.add(new Model(
+//                Arrays.asList(
+//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+//                ),
+//                new ArrayList<>(),
+//                new Vector4f(1.0f,0.0f,0.0f,1.0f),
+//                "C:\\Users\\James\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\Baseline GRAFKOM\\src\\main\\java\\BASEmodel.obj"
+//        ));
+//        objectObj.get(0).scaleObject(0.1f,0.1f,0.1f);
+//        objectObj.get(0).translateObject(-0.2f, 0f, 0f);
+
 
         objects.get(0).translateObject(0.0f, 0.0f, 0f); //Kirby
         objects.get(1).translateObject(-0.69f, 0.0f, 0f); //Awoofy
@@ -455,7 +468,7 @@ public class Main {
         }
     }
 
-    public void run() {
+    public void run() throws IOException {
         init();
         loop();
 
@@ -465,7 +478,7 @@ public class Main {
         glfwSetErrorCallback(null).free();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         new Main().run();
     }
 }

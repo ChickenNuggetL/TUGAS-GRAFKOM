@@ -18,7 +18,7 @@ import static org.lwjgl.opengl.GL20.glEnableVertexAttribArray;
 import static org.lwjgl.opengl.GL20.glVertexAttribPointer;
 
 
-public class Model extends Object{
+public class Model extends ObjectLoader{
     List <Vector3f> normals;
     List <Vector2f> textures;
     List <Face> faces;

@@ -167,5 +167,8 @@ public class Camera {
     public float calcVerticalDistance() {
         return (float) (distanceFromSource * Math.sin(Math.toRadians(pitch)));
     }
+    public Vector3f getDirection() {
+        return direction;
+    }
 
 }
