@@ -43,7 +43,7 @@ public class CobaBlender {
         camera.moveDown(0.6f);
 
 
-        //tanah
+        //
         objects.add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),

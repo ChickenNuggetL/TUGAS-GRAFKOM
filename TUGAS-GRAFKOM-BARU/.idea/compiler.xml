@@ -9,6 +9,7 @@
         <module name="GrafkomA2223-master" />
         <module name="UAS2" />
         <module name="GrafkomA" />
+        <module name="TUGAS-GRAFKOM-BARU" />
       </profile>
     </annotationProcessing>
   </component>
