@@ -86,7 +86,7 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(1.0f,0.0f,0.0f,1.0f),
-                "C:\\Users\\RichardP\\Documents\\GitHub\\grafkom\\proyek UAS\\TUGAS-GRAFKOM EX\\TUGAS-GRAFKOM\\Baseline GRAFKOM\\src\\main\\java\\FabConvert.com_ar toy chica.obj"
+                "C:\\Users\\James\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\Baseline GRAFKOM\\resources\\OBJ file\\FabConvert.com_ar toy chica.obj"
         ));
         objectObj.get(0).scaleObject(0.1f,0.1f,0.1f);
         objectObj.get(0).translateObject(-0.2f, 0f, 0f);

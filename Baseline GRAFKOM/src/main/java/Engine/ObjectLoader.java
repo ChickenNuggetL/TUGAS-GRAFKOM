@@ -128,17 +128,17 @@ public class ObjectLoader extends ShaderProgram{
 //            uniformsMap.setUniform("pointLight["+i+"].linear", new Vector3f(-0.2f, -1.0f, -0.3f));
 //            uniformsMap.setUniform("pointLight["+i+"].quadratic", new Vector3f(-0.2f, -1.0f, -0.3f));
 //        }
-        uniformsMap.setUniform("spotLight.position", new Vector3f(-0.2f, -1.0f, -0.3f));
-        uniformsMap.setUniform("spotLight.direction", new Vector3f(-0.2f, -1.0f, -0.3f));
-        uniformsMap.setUniform("spotLight.ambient", new Vector3f(-0.2f, -1.0f, -0.3f));
-        uniformsMap.setUniform("spotLight.diffuse", new Vector3f(-0.2f, -1.0f, -0.3f));
-        uniformsMap.setUniform("spotLight.specular", new Vector3f(-0.2f, -1.0f, -0.3f));
-        uniformsMap.setUniform("spotLight.constant", new Vector3f(-0.2f, -1.0f, -0.3f));
-        uniformsMap.setUniform("spotLight.linear", new Vector3f(-0.2f, -1.0f, -0.3f));
-        uniformsMap.setUniform("spotLight.quadratic", new Vector3f(-0.2f, -1.0f, -0.3f));
-        uniformsMap.setUniform("spotLight.cutOff", new Vector3f(-0.2f, -1.0f, -0.3f));
-        uniformsMap.setUniform("spotLight.outerCutOff", new Vector3f(-0.2f, -1.0f, -0.3f));
-        uniformsMap.setUniform("viewPos",  camera.getPosition());
+//        uniformsMap.setUniform("spotLight.position", new Vector3f(-0.2f, -1.0f, -0.3f));
+//        uniformsMap.setUniform("spotLight.direction", new Vector3f(-0.2f, -1.0f, -0.3f));
+//        uniformsMap.setUniform("spotLight.ambient", new Vector3f(-0.2f, -1.0f, -0.3f));
+//        uniformsMap.setUniform("spotLight.diffuse", new Vector3f(-0.2f, -1.0f, -0.3f));
+//        uniformsMap.setUniform("spotLight.specular", new Vector3f(-0.2f, -1.0f, -0.3f));
+//        uniformsMap.setUniform("spotLight.constant", new Vector3f(-0.2f, -1.0f, -0.3f));
+//        uniformsMap.setUniform("spotLight.linear", new Vector3f(-0.2f, -1.0f, -0.3f));
+//        uniformsMap.setUniform("spotLight.quadratic", new Vector3f(-0.2f, -1.0f, -0.3f));
+//        uniformsMap.setUniform("spotLight.cutOff", new Vector3f(-0.2f, -1.0f, -0.3f));
+//        uniformsMap.setUniform("spotLight.outerCutOff", new Vector3f(-0.2f, -1.0f, -0.3f));
+//        uniformsMap.setUniform("viewPos",  camera.getPosition());
 
         Vector3f[] _pointLightPositions = {
                 new Vector3f(2f, 2f, 4.3f),
