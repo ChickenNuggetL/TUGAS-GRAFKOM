@@ -43,14 +43,14 @@ public class CobaBlender {
         camera.moveDown(0.6f);
 
 
-        //
+        // floor office
         objects.add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.30f, 0.15f, 0.0f, 1.0f),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
                 Arrays.asList(0.0f, 1.0f, 0.0f),
                 0.125f,
                 0.125f,
@@ -59,13 +59,37 @@ public class CobaBlender {
                 18
         ));
 
-        ObjectLoader objectLoader = new ObjectLoader("resources/Gregory.fbx", "fbx");
+        ObjectLoader objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx", "fbx");
         objects.get(0).setVertices(objectLoader.vertices);
         objects.get(0).setNormal(objectLoader.normals);
         objects.get(0).setIndicies(objectLoader.indicies);
 
-//        objects.get(0).scaleObject(1f, 1f, 1f);
+        objects.get(0).scaleObject(1f, 0f, 2f);
         objects.get(0).translateObject(0f, 0f, 0f);
+
+        // floor wall depan
+        objects.get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 0.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("", "fbx");
+        objects.get(0).getChildObject().get(0).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(0).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(0).setIndicies(objectLoader.indicies);
+
+        objects.get(0).scaleObject(1f, 5f, f);
+        objects.get(0).translateObject(1f, 0f, 0f);
 
 //        objects.add(new Sphere(
 //                Arrays.asList(
