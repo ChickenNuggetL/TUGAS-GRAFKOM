@@ -78,7 +78,7 @@ public class Main {
         lolipop.create();
         lolipop.MoveContents(objects);
 
-        //obj.loadObj(objects);
+//        obj.loadObj(objects);
         objectObj.add(new Model(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
@@ -86,13 +86,13 @@ public class Main {
                 ),
                 new ArrayList<>(),
                 new Vector4f(1.0f,0.0f,0.0f,1.0f),
-                "C:\\Users\\RichardP\\Documents\\GitHub\\grafkom\\proyek UAS\\TUGAS-GRAFKOM EX\\TUGAS-GRAFKOM\\Baseline GRAFKOM\\src\\main\\java\\BASEmodel.obj"
+                "C:\\Users\\James\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\Baseline GRAFKOM\\resources\\OBJ file\\FabConvert.com_ar toy chica.obj"
         ));
         objectObj.get(0).scaleObject(0.1f,0.1f,0.1f);
         objectObj.get(0).translateObject(-0.2f, 0f, 0f);
 
 
-        objects.get(0).translateObject(0.0f, 0.0f, 0f); //Kirby
+        objects.get(0).translateObject(0.6f, 0.0f, 0f); //Kirby
         objects.get(1).translateObject(-0.69f, 0.0f, 0f); //Awoofy
         objects.get(2).translateObject(0.69f, 0.0f, 0f); //BroomHatter
         objects.get(3).translateObject(0.0f, -0.2f, -0.3f); //Lolipop
@@ -458,6 +458,9 @@ public class Main {
                     object.draw(cam, projection);
             }
             cam.move(window);
+            for(ObjectLoader objectLoader : objectObj){
+                objectLoader.draw(cam,projection);
+            }
             // Restore state
             glDisableVertexAttribArray(0);
 

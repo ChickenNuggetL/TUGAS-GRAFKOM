@@ -21,6 +21,15 @@ public class Camera {
 
     MouseInput mouse;
 
+    public Camera(){
+        direction = new Vector3f();
+        right = new Vector3f();
+        up = new Vector3f();
+        position = new Vector3f();
+        viewMatrix = new Matrix4f();
+        rotation = new Vector2f();
+    }
+
 
     public Camera(MouseInput mouseInput) {
         direction = new Vector3f();
