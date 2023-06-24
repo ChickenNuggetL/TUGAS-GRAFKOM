@@ -105,7 +105,7 @@ public class ObjectLoader extends ShaderProgram{
         uniformsMap.setUniform("spotLight.quadratic", new Vector3f(-0.2f, -1.0f, -0.3f));
         uniformsMap.setUniform("spotLight.cutOff", new Vector3f(-0.2f, -1.0f, -0.3f));
         uniformsMap.setUniform("spotLight.outerCutOff", new Vector3f(-0.2f, -1.0f, -0.3f));
-        uniformsMap.setUniform("viewPos", new Vector3f(-0.2f, -1.0f, -0.3f));
+        uniformsMap.setUniform("viewPos",  camera.getPosition());
 
         Vector3f[] _pointLightPositions = {
                 new Vector3f(2f, 2f, 4.3f),

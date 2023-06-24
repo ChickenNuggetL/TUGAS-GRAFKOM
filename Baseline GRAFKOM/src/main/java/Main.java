@@ -457,7 +457,7 @@ public class Main {
             for (Object object : objects) {
                     object.draw(cam, projection);
             }
-            cam.move();
+            cam.move(window);
             // Restore state
             glDisableVertexAttribArray(0);
 
