@@ -43,7 +43,7 @@ public class CobaBlender {
         camera.moveDown(0.6f);
 
 
-        // floor office
+        // WALL indeks 0
         objects.add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
@@ -59,15 +59,15 @@ public class CobaBlender {
                 18
         ));
 
-        ObjectLoader objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx", "fbx");
+        ObjectLoader objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_WALL.fbx", "fbx");
         objects.get(0).setVertices(objectLoader.vertices);
         objects.get(0).setNormal(objectLoader.normals);
         objects.get(0).setIndicies(objectLoader.indicies);
 
-        objects.get(0).scaleObject(1f, 0f, 2f);
+        objects.get(0).scaleObject(1f, 1f, 0.1f);
         objects.get(0).translateObject(0f, 0f, 0f);
 
-        // floor wall depan
+        // WALL INDEX 0
         objects.get(0).getChildObject().add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
@@ -82,14 +82,15 @@ public class CobaBlender {
                 36,
                 18
         ));
-
-        objectLoader = new ObjectLoader("", "fbx");
+//
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_WALL.fbx", "fbx");
         objects.get(0).getChildObject().get(0).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(0).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(0).setIndicies(objectLoader.indicies);
 
-        objects.get(0).scaleObject(1f, 5f, f);
-        objects.get(0).translateObject(1f, 0f, 0f);
+        objects.get(0).getChildObject().get(0).scaleObject(1f, 1f, 0.1f);
+        objects.get(0).getChildObject().get(0).rotateObject(90f,0f, 1f, 0f);
+        objects.get(0).getChildObject().get(0).translateObject(2f, 0f, 0f);
 
 //        objects.add(new Sphere(
 //                Arrays.asList(
