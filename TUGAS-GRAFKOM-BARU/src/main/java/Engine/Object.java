@@ -24,6 +24,8 @@ public class Object extends ShaderProgram{
     int nbo;
     UniformsMap uniformsMap;
     Vector4f color;
+    Vector3f position = new Vector3f(0,0,0);
+    Vector3f rotationWorld = new Vector3f(0,0,0);
 
     Matrix4f model;
 
@@ -71,6 +73,11 @@ public class Object extends ShaderProgram{
 
     public void setCenterPoint(List<Float> centerPoint) {
         this.centerPoint = centerPoint;
+    }
+    public void updatePosition(float Xx, float Yy, float Zz) {
+        this.position.x += Xx;
+        this.position.y += Yy;
+        this.position.z += Zz;
     }
 
     List<Vector3f> verticesColor;
@@ -232,6 +239,7 @@ public class Object extends ShaderProgram{
     }
     public void translateObject(Float offsetX,Float offsetY,Float offsetZ){
         model = new Matrix4f().translate(offsetX,offsetY,offsetZ).mul(new Matrix4f(model));
+        updatePosition(offsetX, offsetY, offsetZ);
         updateCenterPoint();
         for(Object child:childObject){
             child.translateObject(offsetX,offsetY,offsetZ);
