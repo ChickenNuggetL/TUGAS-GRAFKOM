@@ -29,7 +29,7 @@ public class Object extends ShaderProgram{
     List<Vector3f> verticesColor;
     List<Object> childObject;
     public List<Float> centerPoint;
-    public Vector3f centerpoint;
+    //public Vector3f centerpoint;
     List<Vector3f> curve = new ArrayList<>();
     Vector3f position = new Vector3f(0,0,0);
     Vector3f rotationWorld = new Vector3f(0,0,0);

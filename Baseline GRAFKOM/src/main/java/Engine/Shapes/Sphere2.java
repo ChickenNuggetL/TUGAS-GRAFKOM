@@ -80,9 +80,9 @@ public class Sphere2 extends Circle {
             {
                 sectorAngle = j * sectorStep;
                 Vector3f temp_vector = new Vector3f();
-                temp_vector.x = centerPoint.get(0) + x * (float)Math.cos(sectorAngle);
-                temp_vector.y = centerPoint.get(1) + y * (float)Math.sin(sectorAngle);
-                temp_vector.z = centerPoint.get(2) + z;
+                temp_vector.x = getCenterPoint().get(0) + x * (float)Math.cos(sectorAngle);
+                temp_vector.y = getCenterPoint().get(1) + y * (float)Math.sin(sectorAngle);
+                temp_vector.z = getCenterPoint().get(2) + z;
                 vertices.add(temp_vector);
             }
         }

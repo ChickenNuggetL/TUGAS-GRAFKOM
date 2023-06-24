@@ -119,15 +119,15 @@ public class ObjectLoader extends ShaderProgram{
         uniformsMap.setUniform("dirLight.ambient", new Vector3f(-0.2f, -1.0f, -0.3f));
         uniformsMap.setUniform("dirLight.diffuse", new Vector3f(-0.2f, -1.0f, -0.3f));
         uniformsMap.setUniform("dirLight.specular", new Vector3f(-0.2f, -1.0f, -0.3f));
-        for(int i = 0; i < 4; i++){
-            uniformsMap.setUniform("pointLight["+i+"].position", new Vector3f(-0.2f, -1.0f, -0.3f));
-            uniformsMap.setUniform("pointLight["+i+"].ambient", new Vector3f(-0.2f, -1.0f, -0.3f));
-            uniformsMap.setUniform("pointLight["+i+"].diffuse", new Vector3f(-0.2f, -1.0f, -0.3f));
-            uniformsMap.setUniform("pointLight["+i+"].specular", new Vector3f(-0.2f, -1.0f, -0.3f));
-            uniformsMap.setUniform("pointLight["+i+"].constant", new Vector3f(-0.2f, -1.0f, -0.3f));
-            uniformsMap.setUniform("pointLight["+i+"].linear", new Vector3f(-0.2f, -1.0f, -0.3f));
-            uniformsMap.setUniform("pointLight["+i+"].quadratic", new Vector3f(-0.2f, -1.0f, -0.3f));
-        }
+//        for(int i = 0; i < 4; i++){
+//            uniformsMap.setUniform("pointLight["+i+"].position", new Vector3f(-0.2f, -1.0f, -0.3f));
+//            uniformsMap.setUniform("pointLight["+i+"].ambient", new Vector3f(-0.2f, -1.0f, -0.3f));
+//            uniformsMap.setUniform("pointLight["+i+"].diffuse", new Vector3f(-0.2f, -1.0f, -0.3f));
+//            uniformsMap.setUniform("pointLight["+i+"].specular", new Vector3f(-0.2f, -1.0f, -0.3f));
+//            uniformsMap.setUniform("pointLight["+i+"].constant", new Vector3f(-0.2f, -1.0f, -0.3f));
+//            uniformsMap.setUniform("pointLight["+i+"].linear", new Vector3f(-0.2f, -1.0f, -0.3f));
+//            uniformsMap.setUniform("pointLight["+i+"].quadratic", new Vector3f(-0.2f, -1.0f, -0.3f));
+//        }
         uniformsMap.setUniform("spotLight.position", new Vector3f(-0.2f, -1.0f, -0.3f));
         uniformsMap.setUniform("spotLight.direction", new Vector3f(-0.2f, -1.0f, -0.3f));
         uniformsMap.setUniform("spotLight.ambient", new Vector3f(-0.2f, -1.0f, -0.3f));
