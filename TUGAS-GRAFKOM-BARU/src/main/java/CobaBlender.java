@@ -43,7 +43,8 @@ public class CobaBlender {
         camera.moveDown(0.6f);
 
 
-        // WALL indeks 0
+
+        // floor office
         objects.add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
@@ -59,15 +60,15 @@ public class CobaBlender {
                 18
         ));
 
-        ObjectLoader objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_WALL.fbx", "fbx");
+        ObjectLoader objectLoader = new ObjectLoader("C:\\Users\\RichardP\\Documents\\GitHub\\grafkom\\proyek UAS\\TUGAS-GRAFKOM EX\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Character\\Gregory.fbx", "fbx");
         objects.get(0).setVertices(objectLoader.vertices);
         objects.get(0).setNormal(objectLoader.normals);
         objects.get(0).setIndicies(objectLoader.indicies);
 
-        objects.get(0).scaleObject(1f, 1f, 0.1f);
+        objects.get(0).scaleObject(0.01f, 0.01f, 0.01f);
         objects.get(0).translateObject(0f, 0f, 0f);
 
-        // WALL INDEX 0
+        // floor wall depan
         objects.get(0).getChildObject().add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
@@ -82,15 +83,14 @@ public class CobaBlender {
                 36,
                 18
         ));
-//
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_WALL.fbx", "fbx");
-        objects.get(0).getChildObject().get(0).setVertices(objectLoader.vertices);
-        objects.get(0).getChildObject().get(0).setNormal(objectLoader.normals);
-        objects.get(0).getChildObject().get(0).setIndicies(objectLoader.indicies);
 
-        objects.get(0).getChildObject().get(0).scaleObject(1f, 1f, 0.1f);
-        objects.get(0).getChildObject().get(0).rotateObject(90f,0f, 1f, 0f);
-        objects.get(0).getChildObject().get(0).translateObject(2f, 0f, 0f);
+//        objectLoader = new ObjectLoader("", "fbx");
+//        objects.get(0).getChildObject().get(0).setVertices(objectLoader.vertices);
+//        objects.get(0).getChildObject().get(0).setNormal(objectLoader.normals);
+//        objects.get(0).getChildObject().get(0).setIndicies(objectLoader.indicies);
+//
+//        objects.get(0).scaleObject(1f, 5f, 1f);
+//        objects.get(0).translateObject(1f, 0f, 0f);
 
 //        objects.add(new Sphere(
 //                Arrays.asList(
@@ -472,6 +472,9 @@ public class CobaBlender {
 //
 //        countTree +=1;
 //        tempCount +=3.0f;
+
+        camera = new Camera(mouseInput, objects.get(0));
+
     }
 
 
@@ -560,9 +563,11 @@ public class CobaBlender {
                     0.0f);
             GL.createCapabilities();
 
-            input();
 
+            input();
+            camera.move(window);
             //code
+
             for (Object object : objects) {
                 object.draw(camera, projection);
             }

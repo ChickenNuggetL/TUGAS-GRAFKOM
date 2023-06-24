@@ -15,7 +15,7 @@ import static org.lwjgl.system.MemoryUtil.NULL;
 
 public class Window {
 
-    private long window;
+    public long window;
     private boolean open=  true;
     private int width, height;
     private String title;

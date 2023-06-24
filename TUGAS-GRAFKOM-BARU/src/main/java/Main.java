@@ -37,8 +37,13 @@ public class Main {
         window.init();
         GL.createCapabilities();
         mouseInput = window.getMouseInput();
-        camera.setPosition(0,1f,1.7f);
-        camera.moveDown(0.6f);
+        //camera.setPosition(0,1f,1.7f);
+        //camera.moveDown(0.6f);
+
+
+        camera = new Camera(mouseInput, objects.get(0));
+
+
 //        camera.setRotation((float)Math.toRadians(0.0f),(float)Math.toRadians(30.0f));
 
         //code
@@ -322,8 +327,9 @@ public class Main {
                     0.0f, 0.0f,
                     0.0f);
             GL.createCapabilities();
-            input();
 
+            input();
+            camera.move(window);
             //code
             for(Object object: objects){
                 object.draw(camera,projection);
@@ -337,6 +343,7 @@ public class Main {
 
             // Restore state
             glDisableVertexAttribArray(0);
+
 
             // Poll for window events.
             // The key callback above will only be
