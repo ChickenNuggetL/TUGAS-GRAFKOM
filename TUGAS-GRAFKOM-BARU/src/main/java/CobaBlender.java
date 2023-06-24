@@ -474,8 +474,149 @@ public class CobaBlender {
 
         objects.get(0).getChildObject().get(7).getChildObject().get(1).scaleObject(0.1f, 0.1f, 0.1f);
         objects.get(0).getChildObject().get(7).getChildObject().get(1).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
-        objects.get(0).getChildObject().get(7).getChildObject().get(1).translateObject(0.17f, 0.9f, 0.4f);
+        objects.get(0).getChildObject().get(7).getChildObject().get(1).translateObject(0.23f, 0.9f, 0.4f);
 
+        // doll
+        objects.get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 0f, 1f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_DOLL1.fbx", "fbx");
+        objects.get(0).getChildObject().get(8).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(8).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(8).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(8).scaleObject(0.5f, 0.5f, 0.5f);
+        objects.get(0).getChildObject().get(8).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+        objects.get(0).getChildObject().get(8).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(8).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(8).rotateObject((float) Math.toRadians(30f), 0f, -1f, 0f);
+        objects.get(0).getChildObject().get(8).translateObject(-0.5f, 0.53f, 0.4f);
+
+        // cup
+        objects.get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 0f, 0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BOTOL.fbx", "fbx");
+        objects.get(0).getChildObject().get(9).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(9).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(9).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(9).scaleObject(0.07f, 0.07f, 0.12f);
+//        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(9).translateObject(0.0f, 0.64f, 0.2f);
+
+        //  Speaker
+        objects.get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.1f, 0.1f, 0.1f, 0.1f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_SPEAKER.fbx", "fbx");
+        objects.get(0).getChildObject().get(10).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(10).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(10).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(10).scaleObject(0.1f, 0.1f, 0.25f);
+        objects.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(90f), 0f, 0f, -1f);
+        objects.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(180f), 0f, -1f, 0f);
+        objects.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(90f), 1f, 0f, 0f);
+        objects.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(30f), 0f, -1f, 0f);
+        objects.get(0).getChildObject().get(10).translateObject(-0.4f, 0.26f, 0.25f);
+
+        // botol1
+        objects.get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1f, 0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BOTOL2.fbx", "fbx");
+        objects.get(0).getChildObject().get(11).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(11).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(11).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(11).scaleObject(0.07f, 0.07f, 0.07f);
+//        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(11).translateObject(0.25f, 0.64f, 0.20f);
+
+        // roof
+        objects.get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.0f, 0f, 0f, 0.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx", "fbx");
+        objects.get(0).getChildObject().get(12).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(12).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(12).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(12).scaleObject(1f, 0.01f, 1.5f);
+//        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).translateObject(0f, 1.97f, 0f);
+
+
+
+        // UMUM
+        
 
 
 
