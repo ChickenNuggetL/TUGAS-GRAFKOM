@@ -23,7 +23,7 @@ public class EasyCreateObject {
 
     //.OBJ Loader
     public void loadObj(ArrayList<Object> object){
-    OBJimport objectLoader = new OBJimport("C://Users//RichardP//Documents//GitHub//Grafkom example//TUGAS-GRAFKOM//Baseline GRAFKOM//src//main//java//BASEmodel.obj", "obj");
+    OBJimport objectLoader = new OBJimport("C:\\Users\\James\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\Baseline GRAFKOM\\src\\main\\java\\BASEmodel.obj", "obj");
         Objectnya = new Box(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),

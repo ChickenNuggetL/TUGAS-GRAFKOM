@@ -79,20 +79,20 @@ public class Main {
         lolipop.MoveContents(objects);
 
 //        obj.loadObj(objects);
-//        objectObj.add(new Model(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(1.0f,0.0f,0.0f,1.0f),
-//                "C:\\Users\\James\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\Baseline GRAFKOM\\src\\main\\java\\BASEmodel.obj"
-//        ));
-//        objectObj.get(0).scaleObject(0.1f,0.1f,0.1f);
-//        objectObj.get(0).translateObject(-0.2f, 0f, 0f);
+        objectObj.add(new Model(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f,0.0f,0.0f,1.0f),
+                "C:\\Users\\James\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\Baseline GRAFKOM\\resources\\OBJ file\\FabConvert.com_ar toy chica.obj"
+        ));
+        objectObj.get(0).scaleObject(0.1f,0.1f,0.1f);
+        objectObj.get(0).translateObject(-0.2f, 0f, 0f);
 
 
-        objects.get(0).translateObject(0.0f, 0.0f, 0f); //Kirby
+        objects.get(0).translateObject(0.6f, 0.0f, 0f); //Kirby
         objects.get(1).translateObject(-0.69f, 0.0f, 0f); //Awoofy
         objects.get(2).translateObject(0.69f, 0.0f, 0f); //BroomHatter
         objects.get(3).translateObject(0.0f, -0.2f, -0.3f); //Lolipop
@@ -456,6 +456,9 @@ public class Main {
 
             for (Object object : objects) {
                     object.draw(cam, projection);
+            }
+            for(ObjectLoader objectLoader : objectObj){
+                objectLoader.draw(cam,projection);
             }
             cam.move();
             // Restore state
