@@ -16,8 +16,8 @@ import static org.lwjgl.opengl.GL30.glGenVertexArrays;
 
 public class Circle extends Object {
 
-    Float radiusX;
-    Float radiusY;
+    public Float radiusX;
+    public Float radiusY;
 
     List<Vector3f> normal;
     int nbo;

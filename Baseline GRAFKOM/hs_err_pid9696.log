@@ -37,7 +37,7 @@ j  org.lwjgl.opengl.GL20.glCreateProgram()I+0
 j  Engine.ShaderProgram.<init>(Ljava/util/List;)V+5
 j  Engine.Object.<init>(Ljava/util/List;Ljava/util/List;Lorg/joml/Vector4f;)V+2
 j  Engine.Circle.<init>(Ljava/util/List;Ljava/util/List;Lorg/joml/Vector4f;Ljava/util/List;Ljava/lang/Float;Ljava/lang/Float;)V+4
-j  Engine.Sphere2.<init>(Ljava/util/List;Ljava/util/List;Lorg/joml/Vector4f;Ljava/util/List;Ljava/lang/Float;Ljava/lang/Float;Ljava/lang/Float;II)V+10
+j  Engine.Shapes.Sphere2.<init>(Ljava/util/List;Ljava/util/List;Lorg/joml/Vector4f;Ljava/util/List;Ljava/lang/Float;Ljava/lang/Float;Ljava/lang/Float;II)V+10
 j  Engine.EasyCreateObject.Sphere(Ljava/util/ArrayList;FFFFFF)V+115
 j  Engine.Characters.LinkKirby.<init>()V+74
 j  Main.<init>()V+9

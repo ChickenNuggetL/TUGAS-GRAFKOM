@@ -159,7 +159,7 @@ void main(){
     vec3 viewDir = normalize(viewPos - FragPos);
     //Directional Light
     vec3 result = CalcDirLight(dirLight, normal, viewDir);
-    fragColor = vec4(result * vec3(uni_color), 1.0);
+    fragColor = vec4(result * vec3(uni_color), 1.0f);
 
     //Point light
     for(int i = 0;i<NR_POINT_LIGHTS;i++){

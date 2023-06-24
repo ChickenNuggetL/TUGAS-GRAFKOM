@@ -2,6 +2,7 @@ package Engine;
 
 import org.joml.Vector2f;
 import org.joml.Vector3f;
+import org.lwjgl.glfw.GLFW;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -51,6 +52,14 @@ public class MouseInput {
         scroll = x;
     }
 
+    public void forceCenterMouse(boolean xd, Window window){
+        if (xd) {
+            //GLFW.glfwSetCursorPos(window.window, (float)window.getWidth()/2, (float)window.getHeight()/2);4
+            org.lwjgl.glfw.GLFW.glfwSetInputMode(window.window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+        }
+    }
+
+
     public Vector2f getDisplVec() {
         return displVec;
     }
@@ -85,6 +94,12 @@ public class MouseInput {
 
     public boolean isMoved(){
         return mouseMoved;
+    }
+    public boolean isMoved2(){
+        if(GLFW_RAW_MOUSE_MOTION != 0){
+            return true;
+        }
+        return false;
     }
 }
 

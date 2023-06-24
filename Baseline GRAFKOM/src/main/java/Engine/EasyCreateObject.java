@@ -1,12 +1,14 @@
 package Engine;
 
 import Engine.BlenderObjImport.OBJimport;
-import org.joml.Vector3f;
+import Engine.Shapes.Box;
+import Engine.Shapes.EllipticParaboloid;
+import Engine.Shapes.Sphere2;
+import Engine.Shapes.Tube;
 import org.joml.Vector4f;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import static org.lwjgl.opengl.GL20.GL_FRAGMENT_SHADER;
 import static org.lwjgl.opengl.GL20.GL_VERTEX_SHADER;
@@ -23,7 +25,7 @@ public class EasyCreateObject {
 
     //.OBJ Loader
     public void loadObj(ArrayList<Object> object){
-    OBJimport objectLoader = new OBJimport("C://Users//RichardP//Documents//GitHub//Grafkom example//TUGAS-GRAFKOM//Baseline GRAFKOM//src//main//java//BASEmodel.obj", "obj");
+    OBJimport objectLoader = new OBJimport("C:\\Users\\James\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\Baseline GRAFKOM\\src\\main\\java\\BASEmodel.obj", "obj");
         Objectnya = new Box(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),

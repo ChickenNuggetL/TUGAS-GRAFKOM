@@ -21,6 +21,15 @@ public class Camera {
 
     MouseInput mouse;
 
+    public Camera(){
+        direction = new Vector3f();
+        right = new Vector3f();
+        up = new Vector3f();
+        position = new Vector3f();
+        viewMatrix = new Matrix4f();
+        rotation = new Vector2f();
+    }
+
 
     public Camera(MouseInput mouseInput) {
         direction = new Vector3f();
@@ -109,8 +118,9 @@ public class Camera {
         recalculate();
     }
 
-    public void move(){
-        calcZoom();
+    public void move(Window window){
+        calcZoom(window);
+        mouse.forceCenterMouse(true, window);
         calcPitchAngle();
         calcAngleAroundPlayer();
         float horizDistance = calcHorizontalDistance();
@@ -119,11 +129,12 @@ public class Camera {
         recalculate();
     }
 
-    public void calcZoom() {
-        if(mouse.getScroll().y != 0) {
-            float zoomlevel = mouse.getScroll().y * 0.01f;
+    public void calcZoom(Window window) {
+        if(window.getMouseInput().getScroll().y != 0) {
+            float zoomlevel = window.getMouseInput().getScroll().y * 0.1f;
             distanceFromSource -= zoomlevel;
         }
+        window.getMouseInput().setScroll(new Vector2f());
     }
 
     public void calcPitch() {
@@ -141,7 +152,7 @@ public class Camera {
     }
 
     public void calcPitchAngle() {
-        if(mouse.isLeftButtonPressed()) {
+        if(mouse.isMoved2()) {
             float pitchchange = mouse.getDisplVec().x * camrotation;
             float angleChange = mouse.getDisplVec().y * camrotation;
             angleFromSource -= angleChange;
