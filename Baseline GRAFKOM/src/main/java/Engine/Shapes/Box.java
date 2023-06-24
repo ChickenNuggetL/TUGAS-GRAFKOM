@@ -1,7 +1,12 @@
-package Engine;
+package Engine.Shapes;
 
+import Engine.Camera;
+import Engine.Circle;
+import Engine.Projection;
+import Engine.Utils;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
+import org.lwjgl.opengl.GL15;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,7 +18,7 @@ import static org.lwjgl.opengl.GL15.GL_STATIC_DRAW;
 import static org.lwjgl.opengl.GL20.glEnableVertexAttribArray;
 import static org.lwjgl.opengl.GL20.glVertexAttribPointer;
 
-public class Box extends Circle{
+public class Box extends Circle {
 
     float radiusZ;
     int stackCount;
@@ -27,7 +32,7 @@ public class Box extends Circle{
 
     }
 
-    public Box(List<ShaderProgram.ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color, List<Float> centerPoint, Float radiusX, Float radiusY, Float radiusZ,
+    public Box(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color, List<Float> centerPoint, Float radiusX, Float radiusY, Float radiusZ,
                int sectorCount, int stackCount){
         super(shaderModuleDataList, vertices, color, centerPoint, radiusX, radiusY);
         this.radiusZ = radiusZ;
@@ -162,7 +167,7 @@ public class Box extends Circle{
         //set nbo
         nbo = glGenBuffers();
         glBindBuffer(GL_ARRAY_BUFFER, nbo);
-        glBufferData(GL_ARRAY_BUFFER,
+        GL15.glBufferData(GL_ARRAY_BUFFER,
                 Utils.listoFloat(normal),
                 GL_STATIC_DRAW);
 

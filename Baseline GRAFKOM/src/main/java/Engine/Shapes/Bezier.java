@@ -1,5 +1,6 @@
-package Engine;
+package Engine.Shapes;
 
+import Engine.Object;
 import org.joml.Vector3f;
 
 import java.util.ArrayList;

@@ -1,10 +1,9 @@
-package Engine;
+package Engine.Shapes;
 
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Tube extends Sphere2{

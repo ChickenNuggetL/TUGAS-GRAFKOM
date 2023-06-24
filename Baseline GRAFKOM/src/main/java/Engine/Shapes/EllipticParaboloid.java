@@ -1,5 +1,6 @@
-package Engine;
+package Engine.Shapes;
 
+import Engine.Circle;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 
@@ -7,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class EllipticParaboloid extends Circle{
+public class EllipticParaboloid extends Circle {
 
     float radiusZ;
     int stackCount;

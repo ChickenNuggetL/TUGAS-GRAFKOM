@@ -1,20 +1,16 @@
 package Engine.BlenderObjImport;
 
-import Engine.Box;
+import Engine.Shapes.Box;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
-import org.joml.Vector3i;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.joml.Vector4f;
 import org.lwjgl.assimp.*;
-import java.util.Vector;
 
 public class OBJimport extends Box {
     List<String> lines;

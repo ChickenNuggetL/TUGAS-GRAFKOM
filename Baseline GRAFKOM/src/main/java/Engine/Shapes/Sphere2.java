@@ -1,7 +1,12 @@
-package Engine;
+package Engine.Shapes;
 
+import Engine.Camera;
+import Engine.Circle;
+import Engine.Projection;
+import Engine.Utils;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
+import org.lwjgl.opengl.GL15;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +19,7 @@ import static org.lwjgl.opengl.GL15.GL_ARRAY_BUFFER;
 import static org.lwjgl.opengl.GL20.glEnableVertexAttribArray;
 import static org.lwjgl.opengl.GL20.glVertexAttribPointer;
 
-public class Sphere2 extends Circle{
+public class Sphere2 extends Circle {
     float radiusZ;
     int stackCount;
     int sectorCount;
@@ -36,7 +41,7 @@ public class Sphere2 extends Circle{
         //set nbo
         nbo = glGenBuffers();
         glBindBuffer(GL_ARRAY_BUFFER, nbo);
-        glBufferData(GL_ARRAY_BUFFER,
+        GL15.glBufferData(GL_ARRAY_BUFFER,
                 Utils.listoFloat(normal),
                 GL_STATIC_DRAW);
 

@@ -1,12 +1,14 @@
 package Engine;
 
 import Engine.BlenderObjImport.OBJimport;
-import org.joml.Vector3f;
+import Engine.Shapes.Box;
+import Engine.Shapes.EllipticParaboloid;
+import Engine.Shapes.Sphere2;
+import Engine.Shapes.Tube;
 import org.joml.Vector4f;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import static org.lwjgl.opengl.GL20.GL_FRAGMENT_SHADER;
 import static org.lwjgl.opengl.GL20.GL_VERTEX_SHADER;

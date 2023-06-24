@@ -28,7 +28,7 @@ public class Object extends ShaderProgram{
     int vboColor;
     List<Vector3f> verticesColor;
     List<Object> childObject;
-    List<Float> centerPoint;
+    public List<Float> centerPoint;
     public Vector3f centerpoint;
     List<Vector3f> curve = new ArrayList<>();
     Vector3f position = new Vector3f(0,0,0);
