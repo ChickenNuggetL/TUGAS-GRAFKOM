@@ -1815,6 +1815,63 @@ public class CobaBlender {
         doll.rotateObject((float) Math.toRadians(30f), 0f, 1f, 0f);
         doll.translateObject(3.5f, 1.3f, 3.8f);
 
+        // BONEKA DI RAK
+        objects.get(1).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 0f, 1f, 0.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath7, "fbx");
+        doll = objects.get(1).getChildObject().get(9);
+        doll.setVertices(objectLoader.vertices);
+        doll.setNormal(objectLoader.normals);
+        doll.setIndicies(objectLoader.indicies);
+
+        doll.scaleObject(0.5f, 0.5f, 0.5f);
+        doll.rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+        doll.rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        doll.rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        doll.rotateObject((float) Math.toRadians(30f), 0f, 1f, 0f);
+        doll.translateObject(3.5f, 0.7f, 3.8f);
+
+        objects.get(1).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 0.5f, 0.5f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath22, "fbx");
+        doll = objects.get(1).getChildObject().get(10);
+        doll.setVertices(objectLoader.vertices);
+        doll.setNormal(objectLoader.normals);
+        doll.setIndicies(objectLoader.indicies);
+
+        doll.scaleObject(0.05f, 0.05f, 0.4f);
+        doll.rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+        doll.rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        doll.rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        doll.rotateObject((float) Math.toRadians(30f), 0f, 1f, 0f);
+        doll.translateObject(2.5f, 0.6f, 4f);
+
         // RUANG GORDEN
         // WALL SISI KANAN RUANG GORDEN
         objects.add(new Sphere(
