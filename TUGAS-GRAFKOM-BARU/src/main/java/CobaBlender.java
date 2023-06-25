@@ -55,10 +55,29 @@ public class CobaBlender {
         String filepath8 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BOTOL.fbx";
         String filepath9 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_SPEAKER.fbx";
         String filepath10 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BOTOL2.fbx";
-        String filepath11 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BALIHO.fbx";
+        String filepath11 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_MARIONETTE.fbx";
         String filepath12 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TABLE_PARTY.fbx";
         String filepath13 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_STAGE.fbx";
         String filepath14 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_KORDEN_CURVE.fbx";
+        String filepath15 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_DOLL2.fbx";
+        String filepath16 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_DOLL3.fbx";
+        String filepath17 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_DOLL4.fbx";
+        String filepath18 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_PIZZA.fbx";
+        String filepath19 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FOXY_PILLAR.fbx";
+        String filepath20 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FOXY_KORDEN.fbx";
+        String filepath21 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FOXY_SIGN.fbx";
+        String filepath22 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_SAPU.fbx";
+        String filepath23 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_RAK.fbx";
+        String filepath24 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_MATAHARI.fbx";
+        String filepath25 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_AWAN.fbx";
+        String filepath26 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TABLE_KAYU.fbx";
+        String filepath27 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BUTTON.fbx";
+        String filepath28 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_HEAD1.fbx";
+        String filepath29 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_HEAD2.fbx";
+        String filepath30 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_HEAD3.fbx";
+        String filepath31 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_SKELETON.fbx";
+
+
 
 
 
@@ -609,14 +628,122 @@ public class CobaBlender {
 //        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
         objects.get(0).getChildObject().get(11).translateObject(0.25f, 0.64f, 0.20f);
 
-        // roof
+        // objek 12 full dekorasi, gak urus
         objects.get(0).getChildObject().add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
                 ),
                 new ArrayList<>(),
-                new Vector4f(0.0f, 0f, 0f, 0.0f),
+                new Vector4f(1.0f, 0f, 0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath10, "fbx");
+        objects.get(0).getChildObject().get(12).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(12).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(12).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(12).scaleObject(0.07f, 0.07f, 0.07f);
+        objects.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(90f), 0f, 0f, -1f);
+//        objects.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+//        objects.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).translateObject(0f, 0.15f, 9.2f);
+
+        objects.get(0).getChildObject().get(12).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.0f, 0f, 1f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath10, "fbx");
+        objects.get(0).getChildObject().get(12).getChildObject().get(0).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(12).getChildObject().get(0).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(12).getChildObject().get(0).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(12).getChildObject().get(0).scaleObject(0.07f, 0.07f, 0.07f);
+//        objects.get(0).getChildObject().get(12).getChildObject().get(0).rotateObject((float) Math.toRadians(90f), 0f, 0f, -1f);
+//        objects.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+//        objects.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(0).translateObject(1f, 0.2f, 9.2f);
+
+        objects.get(0).getChildObject().get(12).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 0f, 1f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath10, "fbx");
+        objects.get(0).getChildObject().get(12).getChildObject().get(1).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(12).getChildObject().get(1).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(12).getChildObject().get(1).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(12).getChildObject().get(1).scaleObject(0.07f, 0.07f, 0.07f);
+//        objects.get(0).getChildObject().get(12).getChildObject().get(0).rotateObject((float) Math.toRadians(90f), 0f, 0f, -1f);
+//        objects.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+//        objects.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(1).translateObject(-2f, 0.2f, 9.2f);
+
+        objects.get(0).getChildObject().get(12).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 0f, 1f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath10, "fbx");
+        objects.get(0).getChildObject().get(12).getChildObject().get(2).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(12).getChildObject().get(2).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(12).getChildObject().get(2).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(12).getChildObject().get(2).scaleObject(0.5f, 0.5f, 0.5f);
+//        objects.get(0).getChildObject().get(12).getChildObject().get(0).rotateObject((float) Math.toRadians(90f), 0f, 0f, -1f);
+//        objects.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+//        objects.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(2).translateObject(-2.5f, 1f, 12f);
+
+        objects.get(0).getChildObject().get(12).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0f, 0f, 0f, 0.0f),
                 Arrays.asList(0.0f, 1.0f, 0.0f),
                 0.125f,
                 0.125f,
@@ -626,16 +753,202 @@ public class CobaBlender {
         ));
 
         objectLoader = new ObjectLoader(filepath11, "fbx");
-        objects.get(0).getChildObject().get(12).setVertices(objectLoader.vertices);
-        objects.get(0).getChildObject().get(12).setNormal(objectLoader.normals);
-        objects.get(0).getChildObject().get(12).setIndicies(objectLoader.indicies);
+        objects.get(0).getChildObject().get(12).getChildObject().get(3).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(12).getChildObject().get(3).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(12).getChildObject().get(3).setIndicies(objectLoader.indicies);
 
-        objects.get(0).getChildObject().get(12).scaleObject(0.01f, 0.01f, 0.01f);
-//        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(3).scaleObject(0.006f, 0.006f, 0.006f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(3).rotateObject((float) Math.toRadians(90f), 0f, -1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(3).rotateObject((float) Math.toRadians(90f), 0f, 0f, -1f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(3).rotateObject((float) Math.toRadians(180f), 0f, 1f, 0f);
 //        objects.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
 //        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
 //        objects.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
-        objects.get(0).getChildObject().get(12).translateObject(0f, 3f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(3).translateObject(-3.5f, 0f, 11f);
+
+        objects.get(0).getChildObject().get(12).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 0f, 0f, 0.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath15, "fbx");
+        objects.get(0).getChildObject().get(12).getChildObject().get(4).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(12).getChildObject().get(4).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(12).getChildObject().get(4).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(12).getChildObject().get(4).scaleObject(0.5f, 0.5f, 0.5f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(4).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(4).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(4).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(4).rotateObject((float) Math.toRadians(30f), 0f, -1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(4).translateObject(-1.5f, 0.1f, 8.2f);
+
+        objects.get(0).getChildObject().get(12).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 1f, 0f, 0.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath16, "fbx");
+        objects.get(0).getChildObject().get(12).getChildObject().get(5).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(12).getChildObject().get(5).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(12).getChildObject().get(5).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(12).getChildObject().get(5).scaleObject(0.5f, 0.5f, 0.5f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(5).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(5).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(5).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(5).rotateObject((float) Math.toRadians(30f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(5).translateObject(1.3f, 0.1f, 7f);
+
+        objects.get(0).getChildObject().get(12).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0f, 1f, 0f, 0.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath17, "fbx");
+        objects.get(0).getChildObject().get(12).getChildObject().get(6).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(12).getChildObject().get(6).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(12).getChildObject().get(6).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(12).getChildObject().get(6).scaleObject(0.5f, 0.5f, 0.5f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(6).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(6).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(6).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(6).rotateObject((float) Math.toRadians(30f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(6).translateObject(2.5f, 0f, 7.4f);
+
+        objects.get(0).getChildObject().get(12).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0f, 0f, 0f, 0.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath19, "fbx");
+        objects.get(0).getChildObject().get(12).getChildObject().get(7).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(12).getChildObject().get(7).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(12).getChildObject().get(7).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(12).getChildObject().get(7).scaleObject(0.7f, 0.9f, 2f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(7).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(0).getChildObject().get(12).getChildObject().get(7).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+//        objects.get(0).getChildObject().get(12).getChildObject().get(7).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+//        objects.get(0).getChildObject().get(12).getChildObject().get(7).rotateObject((float) Math.toRadians(30f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(7).translateObject(3.5f, 0f, 6.5f);
+
+        objects.get(0).getChildObject().get(12).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 0f, 1f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath20, "fbx");
+        objects.get(0).getChildObject().get(12).getChildObject().get(8).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(12).getChildObject().get(8).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(12).getChildObject().get(8).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(12).getChildObject().get(8).scaleObject(0.3f, 0.17f, 0.5f);
+//        objects.get(0).getChildObject().get(12).getChildObject().get(8).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(0).getChildObject().get(12).getChildObject().get(7).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+//        objects.get(0).getChildObject().get(12).getChildObject().get(7).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+//        objects.get(0).getChildObject().get(12).getChildObject().get(7).rotateObject((float) Math.toRadians(30f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(8).translateObject(2.7f, 0.2f, 6.5f);
+
+        objects.get(0).getChildObject().get(12).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 0.5f, 0.7f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath21, "fbx");
+        objects.get(0).getChildObject().get(12).getChildObject().get(9).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(12).getChildObject().get(9).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(12).getChildObject().get(9).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(12).getChildObject().get(9).scaleObject(0.05f, 0.5f, 0.05f);
+//        objects.get(0).getChildObject().get(12).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(0).getChildObject().get(12).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+//        objects.get(0).getChildObject().get(12).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+//        objects.get(0).getChildObject().get(12).getChildObject().get(9).rotateObject((float) Math.toRadians(30f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).getChildObject().get(9).translateObject(2f, 0.0f, 7f);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // OFFICE RUANGAN KEDUA
         // WALL PENYAMBUNG DEPAN KIRI
@@ -1673,9 +1986,33 @@ public class CobaBlender {
         kordenWallKiri.setVertices(objectLoader.vertices);
         kordenWallKiri.setNormal(objectLoader.normals);
         kordenWallKiri.setIndicies(objectLoader.indicies);
-        kordenWallKiri.scaleObject(0.1f, 0.1f, 0.1f);
+        kordenWallKiri.scaleObject(0.1f, 0.25f, 0.25f);
         kordenWallKiri.rotateObject((float)Math.toRadians(90f),0f,1f,0f);
-        kordenWallKiri.translateObject(1.5f, 0.95f, 11.8f);
+        kordenWallKiri.translateObject(1.5f, 0.0f, 11.8f);
+
+        objects.get(6).getChildObject().get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(128/255f, 0f, 128/255f, 0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath14, "fbx");
+        Object kordenWallKanan = objects.get(6).getChildObject().get(0).getChildObject().get(0);
+        kordenWallKanan.setVertices(objectLoader.vertices);
+        kordenWallKanan.setNormal(objectLoader.normals);
+        kordenWallKanan.setIndicies(objectLoader.indicies);
+        kordenWallKanan.scaleObject(0.1f, 0.25f, 0.25f);
+        kordenWallKanan.rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        kordenWallKanan.translateObject(-1.5f, 0.0f, 11.8f);
 
         // WALL BELAKANG RUANG PANGGUNG
         objects.get(6).getChildObject().add(new Sphere(
