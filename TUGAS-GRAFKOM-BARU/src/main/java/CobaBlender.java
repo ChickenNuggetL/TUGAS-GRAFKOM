@@ -2186,6 +2186,58 @@ public class CobaBlender {
         objects.get(3).getChildObject().get(6).rotateObject((float)Math.toRadians(90f),-1f, 0f, 0f);
         objects.get(3).getChildObject().get(6).translateObject(4.2f, 0.25f, 11f);
 
+        // RAK 2 RUANG TOPENG
+        objects.get(3).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0f, 0f, 0f, 0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath23, "fbx");
+        objects.get(3).getChildObject().get(7).setVertices(objectLoader.vertices);
+        objects.get(3).getChildObject().get(7).setNormal(objectLoader.normals);
+        objects.get(3).getChildObject().get(7).setIndicies(objectLoader.indicies);
+        objects.get(3).getChildObject().get(7).scaleObject(0.3f, 0.7f, 0.01f);
+        objects.get(3).getChildObject().get(7).rotateObject((float)Math.toRadians(90f),-1f, 0f, 0f);
+        objects.get(3).getChildObject().get(7).rotateObject((float)Math.toRadians(90f),0f, 1f, 0f);
+        objects.get(3).getChildObject().get(7).translateObject(3.5f, 0.25f, 12.5f);
+
+        // BONEKA DI RUANG TOPENG
+        objects.get(3).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 0f, 0f, 0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath17, "fbx");
+        objects.get(3).getChildObject().get(8).setVertices(objectLoader.vertices);
+        objects.get(3).getChildObject().get(8).setNormal(objectLoader.normals);
+        objects.get(3).getChildObject().get(8).setIndicies(objectLoader.indicies);
+        objects.get(3).getChildObject().get(8).scaleObject(0.5f, 0.5f, 0.5f);
+        objects.get(3).getChildObject().get(8).rotateObject((float)Math.toRadians(90f),-1f, 0f, 0f);
+        objects.get(3).getChildObject().get(8).rotateObject((float)Math.toRadians(90f),0f, 1f, 0f);
+        objects.get(3).getChildObject().get(8).rotateObject((float)Math.toRadians(90f),0f, 1f, 0f);
+        objects.get(3).getChildObject().get(8).rotateObject((float)Math.toRadians(90f),0f, 1f, 0f);
+        objects.get(3).getChildObject().get(8).translateObject(3.5f, 0.25f, 12.5f);
+
         //PARTY
         //floor
         objects.add(new Sphere(
