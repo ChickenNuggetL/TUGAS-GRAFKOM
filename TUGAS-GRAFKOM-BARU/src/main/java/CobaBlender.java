@@ -41,7 +41,7 @@ public class CobaBlender {
         mouseInput = window.getMouseInput();
         camera.setPosition(0, 1f, 1.7f);
         camera.moveDown(0.6f);
-
+        //Test
         // OFFICE
         // floor
         objects.add(new Sphere(
