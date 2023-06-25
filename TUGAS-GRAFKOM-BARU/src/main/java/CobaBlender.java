@@ -1238,6 +1238,9 @@ public class CobaBlender {
 
 
 
+        // ini dekorasi untuk ruangan head, yang diatas dekorasi apalah gatau pokoknya dekorasi
+
+
 
 
 
