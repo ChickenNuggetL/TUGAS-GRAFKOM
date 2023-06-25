@@ -21,7 +21,7 @@ public class Sphere extends Circle{
     List<Vector3f> normal;
 
     public Sphere(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color, List<Float> centerPoint, Float radiusX, Float radiusY, Float radiusZ,
-                  int sectorCount,int stackCount) {
+                  int sectorCount,int stackCount) throws Exception {
         super(shaderModuleDataList, vertices, color, centerPoint, radiusX, radiusY);
         this.radiusZ = radiusZ;
         this.stackCount = stackCount;
@@ -310,7 +310,7 @@ public class Sphere extends Circle{
 //
 //    }
 
-    public void drawSetup(Camera camera, Projection projection){
+    public void drawSetup(Camera camera, Projection projection) throws Exception {
         super.drawSetup(camera,projection);
 
         // Bind VBO

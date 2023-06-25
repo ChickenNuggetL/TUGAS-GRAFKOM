@@ -42,7 +42,7 @@ public class CobaBlender {
     public CobaBlender() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
     }
 
-    public void init() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+    public void init() throws Exception {
         window.init();
         GL.createCapabilities();
         glEnable(GL_DEPTH_TEST);
@@ -2634,16 +2634,19 @@ public class CobaBlender {
         }
         if (window.isKeyPressed(GLFW_KEY_D)) {
             camera.moveRight(move);
+        }
+
+        if (window.isKeyPressed(GLFW_KEY_F)) {
 
         }
 
-        if (window.isKeyPressed(GLFW_KEY_UP)) {
+        if (window.isKeyPressed(GLFW_KEY_SPACE)) {
             camera.moveUp(move);
         }
-        if (window.isKeyPressed(GLFW_KEY_DOWN)) {
+        if (window.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {
             camera.moveDown(move);
         }
-        if (window.isKeyPressed(GLFW_KEY_R)) {
+        if (window.isKeyPressed(GLFW_KEY_M)) {
             keyRditekan = true;
 //            for(float i = 0f; i < 360f; i += 0.5f) {
 //                List<Float> temp = new ArrayList<>(objects.get(0).getCenterPoint());
@@ -2652,41 +2655,15 @@ public class CobaBlender {
 //                camera.setPosition(temp.get(0) * 1, temp.get(1) * 1, camera.getPosition().z);
 //            }
         }
-        if (window.isKeyPressed(GLFW_KEY_G)) {
-//            float zCAM = camera.getPosition().z;
-//            float xCAM = camera.getPosition().x;
-//            float zOBJ = objects.get(0).getCenterPoint().get(2);
-//            float xOBJ = objects.get(0).getCenterPoint().get(0);
-//            float x = (float) Math.pow(xCAM-xOBJ,2);
-//            float y = (float) Math.pow(zCAM-zOBJ,2);
-//            float temp = (float) Math.sqrt(x+y)*0.01f;
-//            camera.moveRight(move+temp);
-//            camera.addRotation(0f,-move-(temp));
-            camera.moveForward(1.7f);
-            camera.addRotation(0, (float) Math.toRadians(1f));
-            setRot(1f);
-            camera.moveBackwards(1.7f);
-        }
 
         float move2 = 0.5f;
         if (keyRditekan) {
             float posisiX = camera.getPosition().x;
             float posisiY = camera.getPosition().y;
             float posisiZ = camera.getPosition().z;
-            camera.setPosition(-posisiX, -posisiY, -posisiZ);
-            camera.addRotation(0.0f, (float) Math.toRadians(move2));
-            camera.setPosition(posisiX, posisiY, posisiZ);
-            derajatkamera += move2;
-            if (derajatkamera >= 360.0f) {
-                derajatkamera = 0f;
-                keyRditekan = false;
-            }
+            System.out.println("Camera pos = " + posisiX + " " + posisiY+ " " + posisiZ);
         }
-        if (mouseInput.isLeftButtonPressed()) {
-            Vector2f displayVec = window.getMouseInput().getDisplVec();
-            camera.addRotation((float) Math.toRadians(displayVec.x * 0.1f),
-                    (float) Math.toRadians(displayVec.y * 0.1f));
-        }
+        //FOV
         if (window.getMouseInput().getScroll().y != 0) {
             projection.setFOV(projection.getFOV() - (window.getMouseInput().getScroll().y * 0.01f));
             window.getMouseInput().setScroll(new Vector2f());
@@ -2699,12 +2676,12 @@ public class CobaBlender {
 
     }
 
-    public void loop() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+    public void loop() throws Exception {
         while (window.isOpen()) {
             window.update();
-            glClearColor(0.0f,
-                    0.0f, 1.0f,
-                    0.0f);
+            glClearColor(0.25f,
+                    0.25f, 0.25f,
+                    0.3f);
             GL.createCapabilities();
 
             input();
@@ -2732,7 +2709,7 @@ public class CobaBlender {
         }
     }
 
-    public void run() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+    public void run() throws Exception {
 
         init();
         loop();
@@ -2756,7 +2733,7 @@ public class CobaBlender {
         Main.rot += rot;
     }
 
-    public static void main(String[] args) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+    public static void main(String[] args) throws Exception {
         new CobaBlender().run();
     }
 }

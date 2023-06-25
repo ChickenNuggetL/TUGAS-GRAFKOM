@@ -12,7 +12,7 @@ public class instantObject {
     Object objectnya;
 
     //untuk mbuat baru
-    public instantObject(ArrayList<Object> objectsList, String filepath, float scalex, float scaley, float scalez, float translatex, float translatey, float translatez) {
+    public instantObject(ArrayList<Object> objectsList, String filepath, float scalex, float scaley, float scalez, float translatex, float translatey, float translatez) throws Exception {
         ObjectLoader objectLoader = new ObjectLoader(filepath, "fbx");
         objectnya = new Sphere(
                 Arrays.asList(
@@ -53,7 +53,7 @@ public class instantObject {
     }
 
     //Untuk edit
-    public void Edit(Object objects, String filepath, float scalex, float scaley, float scalez, float translatex, float translatey, float translatez) {
+    public void Edit(Object objects, String filepath, float scalex, float scaley, float scalez, float translatex, float translatey, float translatez) throws Exception {
         ObjectLoader objectLoader = new ObjectLoader(filepath, "fbx");
         objectnya = objects;
         objects.setVertices(objectLoader.vertices);

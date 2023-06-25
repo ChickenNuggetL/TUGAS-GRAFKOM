@@ -14,7 +14,7 @@ public class Rectangle extends Object {
     //index buffer object || element buffer object
     public Rectangle(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices,
                      Vector4f color,
-                     List<Integer> index) {
+                     List<Integer> index) throws Exception {
         super(shaderModuleDataList, vertices, color);
         this.index = index;
         ibo = glGenBuffers();

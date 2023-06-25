@@ -33,7 +33,7 @@ public class Main {
     int countDegree = 0;
     Projection projection = new Projection(window.getWidth(),window.getHeight());
     Camera camera = new Camera();
-    public void init(){
+    public void init() throws Exception {
         window.init();
         GL.createCapabilities();
         mouseInput = window.getMouseInput();
@@ -320,7 +320,7 @@ public class Main {
             window.getMouseInput().setScroll(new Vector2f());
         }
     }
-    public void loop(){
+    public void loop() throws Exception {
         while (window.isOpen()) {
             window.update();
             glClearColor(0.0f,
@@ -351,7 +351,7 @@ public class Main {
             glfwPollEvents();
         }
     }
-    public void run() {
+    public void run() throws Exception {
 
         init();
         loop();

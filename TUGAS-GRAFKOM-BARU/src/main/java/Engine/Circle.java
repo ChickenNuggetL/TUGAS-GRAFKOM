@@ -12,7 +12,7 @@ public class Circle extends Object {
 
     Float radiusX;
     Float radiusY;
-    public Circle(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color, List<Float> centerPoint, Float radiusX,Float radiusY) {
+    public Circle(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color, List<Float> centerPoint, Float radiusX,Float radiusY) throws Exception {
         super(shaderModuleDataList, vertices, color);
         this.centerPoint = centerPoint;
         this.radiusX = radiusX;

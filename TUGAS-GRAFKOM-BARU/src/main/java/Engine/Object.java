@@ -1,5 +1,7 @@
 package Engine;
 
+import Engine.LightingLogics.PointLight;
+import Engine.LightingLogics.ShaderManager;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
@@ -23,11 +25,14 @@ public class Object extends ShaderProgram{
     int vbo;
     int nbo;
     UniformsMap uniformsMap;
+    ShaderManager shaderManager = new ShaderManager();
     Vector4f color;
     Vector3f position = new Vector3f(0,0,0);
     Vector3f rotationWorld = new Vector3f(0,0,0);
 
     Matrix4f model;
+
+    PointLight pointLight;
 
     int vboColor;
 
@@ -81,21 +86,24 @@ public class Object extends ShaderProgram{
     }
 
     List<Vector3f> verticesColor;
-    public Object(List<ShaderModuleData> shaderModuleDataList
-            , List<Vector3f> vertices
-            , Vector4f color) {
+    public Object(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color) throws Exception {
         super(shaderModuleDataList);
         this.vertices = vertices;
 //        setupVAOVBO();
         uniformsMap = new UniformsMap(getProgramId());
-        uniformsMap.createUniform(
-                "uni_color");
-        uniformsMap.createUniform(
-                "model");
-        uniformsMap.createUniform(
-                "projection");
-        uniformsMap.createUniform(
-                "view");
+
+
+        shaderManager.createPointLights("pointLight", uniformsMap);
+        //UNIFORMS
+//        uniformsMap.createUniform(
+//                "uni_color");
+//        uniformsMap.createUniform(
+//                "model");
+//        uniformsMap.createUniform(
+//                "projection");
+//        uniformsMap.createUniform(
+//                "view");
+
         this.color = color;
         model = new Matrix4f().identity();
         childObject = new ArrayList<>();
@@ -121,8 +129,9 @@ public class Object extends ShaderProgram{
                 Utils.listoFloat(vertices),
                 GL_STATIC_DRAW);
 
-        uniformsMap.createUniform("lightColor");
-        uniformsMap.createUniform("lightPos");
+        //UNIFORMS
+//        uniformsMap.createUniform("lightColor");
+//        uniformsMap.createUniform("lightPos");
 
         //set nbo
         nbo = glGenBuffers();
@@ -149,8 +158,12 @@ public class Object extends ShaderProgram{
                 Utils.listoFloat(verticesColor),
                 GL_STATIC_DRAW);
     }
-    public void drawSetup(Camera camera, Projection projection){
+    public void drawSetup(Camera camera, Projection projection) throws Exception {
         bind();
+        pointLight = new PointLight(new Vector3f(1f,0.85f,0.85f), new Vector3f(camera.getPosition().x, camera.getPosition().y, camera.getPosition().z+0.1f), 1f);
+        //pointLight = new PointLight(new Vector3f(0.9f,0.75f,0.75f), camera.lockSomethingInFrontofCam(), 1f);
+
+        //UNIFORMS UNTUK LIGHTING
         uniformsMap.setUniform(
                 "uni_color", color);
         uniformsMap.setUniform(
@@ -159,6 +172,17 @@ public class Object extends ShaderProgram{
                 "view", camera.getViewMatrix());
         uniformsMap.setUniform(
                 "projection", projection.getProjMatrix());
+        uniformsMap.setUniform("dirLight.direction", new Vector3f(0.2f, 1.0f, 1.1f));
+        uniformsMap.setUniform("dirLight.diffuse", new Vector3f(1.1f, 1.4f, 1.4f));
+        uniformsMap.setUniform("dirLight.ambient", new Vector3f(159/255f, 43/255f, 104/255f));
+        uniformsMap.setUniform("dirLight.specular", new Vector3f(0.1f, 1.4f, 1.4f));
+        uniformsMap.setUniform("viewPos", camera.getPosition());
+
+        shaderManager.setPointLights("pointLight", uniformsMap, pointLight);
+
+
+
+
         // Bind VBO
         glEnableVertexAttribArray(0);
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
@@ -186,7 +210,7 @@ public class Object extends ShaderProgram{
                 false,
                 0, 0);
     }
-    public void draw(Camera camera, Projection projection){
+    public void draw(Camera camera, Projection projection) throws Exception {
         drawSetup(camera, projection);
         // Draw the vertices
         //optional

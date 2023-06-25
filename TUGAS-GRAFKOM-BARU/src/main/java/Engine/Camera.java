@@ -225,7 +225,7 @@ public class Camera {
         calcZoom(window);
         mouse.forceCenterMouse(true, window);
         calcPitchAngle();
-        calcAngleAroundPlayer();
+        //calcAngleAroundPlayer();
         float horizDistance = calcHorizontalDistance();
         float vertDistance = calcVerticalDistance();
         calcCameraPosition(horizDistance, vertDistance);
@@ -266,6 +266,7 @@ public class Camera {
             pitch -= pitchchange;
             Vector2f displayvec = mouse.getDisplVec();
             addRotation((float) Math.toRadians((displayvec.x) * camrotation), (float) Math.toRadians((displayvec.y) * camrotation));
+            //System.out.println("Camera pos = " + position.x + " " + position.y+ " " + position.z);
         }
     }
 
@@ -294,5 +295,12 @@ public class Camera {
     public Vector3f getDirection() {
         return direction;
     }
+
+//    public void moveForward(float inc) {
+//        viewMatrix.positiveZ(direction).negate().mul(inc);
+//        position.add(direction);
+//        recalculate();
+//    }
+
 
 }
