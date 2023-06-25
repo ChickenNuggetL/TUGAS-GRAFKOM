@@ -95,7 +95,7 @@ import java.lang.Math;
 public class Camera {
 
     float distanceFromSource = -1f;
-    float camrotation = 0.25f;
+    float camrotation = 0.125f;
     float angleFromSource = 0;
     float pitch = 5f;
     float yaw = 0f;

@@ -1,19 +1,18 @@
 package Engine;
 
+
 import org.joml.Vector2f;
 import org.joml.Vector3f;
-import org.joml.Vector3i;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import org.joml.Vector4f;
 import org.lwjgl.assimp.*;
-import java.util.Vector;
+
 
 public class ObjectLoader {
     List<String> lines;
@@ -24,6 +23,8 @@ public class ObjectLoader {
     float[] normalsArrays = null;
     float[] textureArrays = null;
     AIScene scene;
+
+    private List<Integer> textureIDs;
 
     public ObjectLoader(String fileName, String type){
         if (type.equalsIgnoreCase("obj")){
@@ -56,11 +57,11 @@ public class ObjectLoader {
             AIVector3D.Buffer verticesBuffer = mesh.mVertices();
             int numVertices = mesh.mNumVertices();
 
-
             for (int i = 0; i < numVertices; i++) {
                 AIVector3D vertex = verticesBuffer.get(i);
                 Vector3f verticesVec = new Vector3f(vertex.x(), vertex.y(), vertex.z());
                 vertices.add(verticesVec);
+
             }
 
             //  normal
@@ -86,6 +87,7 @@ public class ObjectLoader {
                 }
                 System.out.println();
             }
+
         }
 
     }
@@ -155,4 +157,5 @@ public class ObjectLoader {
         normalsArrays[currentVertexPointer*3+1] = currentNorm.y;
         normalsArrays[currentVertexPointer*3+2] = currentNorm.z;
     }
+
 }
