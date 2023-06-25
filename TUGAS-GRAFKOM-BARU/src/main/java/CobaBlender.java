@@ -57,9 +57,6 @@ public class CobaBlender {
         String filepath10 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BOTOL2.fbx";
         String filepath11 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BALIHO.fbx";
 
-
-
-
         // OFFICE
         // floor
         objects.add(new Sphere(
@@ -628,7 +625,7 @@ public class CobaBlender {
         objects.get(0).getChildObject().get(12).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(12).setIndicies(objectLoader.indicies);
 
-        objects.get(0).getChildObject().get(12).scaleObject(0.1f, 0.1f, 0.1f);
+        objects.get(0).getChildObject().get(12).scaleObject(0.01f, 0.01f, 0.01f);
 //        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
 //        objects.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
 //        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
@@ -1056,6 +1053,223 @@ public class CobaBlender {
         objects.get(2).getChildObject().get(0).scaleObject(1f, 1f, 0.05f);
         objects.get(2).getChildObject().get(0).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
         objects.get(2).getChildObject().get(0).translateObject(4.5f, 0.95f, 6.5f);
+
+        // WALL SISI KIRI RUANG MARIONETTE
+        objects.get(2).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath2, "fbx");
+        objects.get(2).getChildObject().get(1).setVertices(objectLoader.vertices);
+        objects.get(2).getChildObject().get(1).setNormal(objectLoader.normals);
+        objects.get(2).getChildObject().get(1).setIndicies(objectLoader.indicies);
+        objects.get(2).getChildObject().get(1).scaleObject(1f, 1f, 0.05f);
+//        objects.get(2).getChildObject().get(1).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(2).getChildObject().get(1).translateObject(3.5f, 0.95f, 7.5f);
+
+        // FLOOR UNTUK RUANG MARIONETTE
+        objects.get(2).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.5f, 0.5f, 0.5f, 0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath1, "fbx");
+        objects.get(2).getChildObject().get(2).setVertices(objectLoader.vertices);
+        objects.get(2).getChildObject().get(2).setNormal(objectLoader.normals);
+        objects.get(2).getChildObject().get(2).setIndicies(objectLoader.indicies);
+
+        objects.get(2).getChildObject().get(2).scaleObject(1.3f, 0.01f, 1f);
+        objects.get(2).getChildObject().get(2).translateObject(3.3f, 0f, 6.5f);
+
+        // WALL TRANSISI KE ANTARA RUANG MARIONETTE KE RUANGAN TOPENG BAGIAN KANAN
+        objects.get(2).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath2, "fbx");
+        objects.get(2).getChildObject().get(3).setVertices(objectLoader.vertices);
+        objects.get(2).getChildObject().get(3).setNormal(objectLoader.normals);
+        objects.get(2).getChildObject().get(3).setIndicies(objectLoader.indicies);
+        objects.get(2).getChildObject().get(3).scaleObject(1f, 1f, 0.05f);
+        objects.get(2).getChildObject().get(3).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(2).getChildObject().get(3).translateObject(2.5f, 0.95f, 8.5f);
+
+        // RUANG TOPENG
+        // WALL SISI KIRI RUANG TOPENG
+        objects.add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 1f, 1f, 0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath2, "fbx");
+        objects.get(3).setVertices(objectLoader.vertices);
+        objects.get(3).setNormal(objectLoader.normals);
+        objects.get(3).setIndicies(objectLoader.indicies);
+        objects.get(3).scaleObject(1f, 1f, 0.05f);
+        objects.get(3).translateObject(3.5f, 0.95f, 9.5f);
+
+        // WALL SISI BELAKANG RUANG TOPENG
+        objects.get(3).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 1f, 1f, 0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath2, "fbx");
+        objects.get(3).getChildObject().get(0).setVertices(objectLoader.vertices);
+        objects.get(3).getChildObject().get(0).setNormal(objectLoader.normals);
+        objects.get(3).getChildObject().get(0).setIndicies(objectLoader.indicies);
+        objects.get(3).getChildObject().get(0).scaleObject(1.7f, 1f, 0.05f);
+        objects.get(3).getChildObject().get(0).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(3).getChildObject().get(0).translateObject(4.5f, 0.95f, 11.2f);
+
+        // WALL SISI KANAN RUANG TOPENG
+        objects.get(3).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 1f, 1f, 0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath2, "fbx");
+        objects.get(3).getChildObject().get(1).setVertices(objectLoader.vertices);
+        objects.get(3).getChildObject().get(1).setNormal(objectLoader.normals);
+        objects.get(3).getChildObject().get(1).setIndicies(objectLoader.indicies);
+        objects.get(3).getChildObject().get(1).scaleObject(1f, 1f, 0.05f);
+//        objects.get(3).getChildObject().get(1).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(3).getChildObject().get(1).translateObject(3.5f, 0.95f, 12.9f);
+
+        // WALL SISI DEPAN RUANG TOPENG
+        objects.get(3).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 1f, 1f, 0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath2, "fbx");
+        objects.get(3).getChildObject().get(2).setVertices(objectLoader.vertices);
+        objects.get(3).getChildObject().get(2).setNormal(objectLoader.normals);
+        objects.get(3).getChildObject().get(2).setIndicies(objectLoader.indicies);
+        objects.get(3).getChildObject().get(2).scaleObject(1f, 1f, 0.05f);
+        objects.get(3).getChildObject().get(2).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(3).getChildObject().get(2).translateObject(2.5f, 0.95f, 10.5f);
+
+        // ATASAN PINTU RUANG TOPENG
+        objects.get(3).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 1f, 1f, 0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath2, "fbx");
+        objects.get(3).getChildObject().get(3).setVertices(objectLoader.vertices);
+        objects.get(3).getChildObject().get(3).setNormal(objectLoader.normals);
+        objects.get(3).getChildObject().get(3).setIndicies(objectLoader.indicies);
+        objects.get(3).getChildObject().get(3).scaleObject(0.05f, 0.2f, 0.7f);
+//        objects.get(3).getChildObject().get(3).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(3).getChildObject().get(3).translateObject(2.5f, 1.75f, 12.2f);
+
+        // FLOOR RUANG TOPENG
+        objects.get(3).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.5f, 0.5f, 0.5f, 0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath1, "fbx");
+        objects.get(3).getChildObject().get(4).setVertices(objectLoader.vertices);
+        objects.get(3).getChildObject().get(4).setNormal(objectLoader.normals);
+        objects.get(3).getChildObject().get(4).setIndicies(objectLoader.indicies);
+        objects.get(3).getChildObject().get(4).scaleObject(1f, 0.01f, 1.7f);
+        objects.get(3).getChildObject().get(4).translateObject(3.5f, 0f, 11.25f);
+
+
 
 //        objects.add(new Sphere(
 //                Arrays.asList(
