@@ -39,9 +39,27 @@ public class CobaBlender {
         GL.createCapabilities();
         glEnable(GL_DEPTH_TEST);
         mouseInput = window.getMouseInput();
-        camera.setPosition(0, 1f, 1.7f);
-        camera.moveDown(0.6f);
-        //Test
+//        camera.setPosition(0, 1f, 1.7f);
+//        camera.moveDown(0.6f);
+
+        //KUMPULAN FILEPATH
+        //--------------------------------------------------------------------------------------
+
+        String filepath1 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx";
+        String filepath2 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx";
+        String filepath3 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_POSTER.fbx";
+        String filepath4 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_KABEL.fbx";
+        String filepath5 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TABLE.fbx";
+        String filepath6 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TV.fbx";
+        String filepath7 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_DOLL1.fbx";
+        String filepath8 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BOTOL.fbx";
+        String filepath9 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_SPEAKER.fbx";
+        String filepath10 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BOTOL2.fbx";
+        String filepath11 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BALIHO.fbx";
+
+
+
+
         // OFFICE
         // floor
         objects.add(new Sphere(
@@ -59,7 +77,10 @@ public class CobaBlender {
                 18
         ));
 
-        ObjectLoader objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx", "fbx");
+        //Camera control
+        camera = new Camera(mouseInput, objects.get(0));
+
+        ObjectLoader objectLoader = new ObjectLoader(filepath1, "fbx");
         objects.get(0).setVertices(objectLoader.vertices);
         objects.get(0).setNormal(objectLoader.normals);
         objects.get(0).setIndicies(objectLoader.indicies);
@@ -84,7 +105,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(0).getChildObject().get(0).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(0).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(0).setIndicies(objectLoader.indicies);
@@ -108,7 +129,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(0).getChildObject().get(1).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(1).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(1).setIndicies(objectLoader.indicies);
@@ -132,7 +153,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(0).getChildObject().get(2).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(2).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(2).setIndicies(objectLoader.indicies);
@@ -156,7 +177,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(0).getChildObject().get(2).getChildObject().get(0).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(2).getChildObject().get(0).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(2).getChildObject().get(0).setIndicies(objectLoader.indicies);
@@ -180,7 +201,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(0).getChildObject().get(2).getChildObject().get(1).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(2).getChildObject().get(1).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(2).getChildObject().get(1).setIndicies(objectLoader.indicies);
@@ -204,7 +225,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(0).getChildObject().get(3).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(3).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(3).setIndicies(objectLoader.indicies);
@@ -228,7 +249,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(0).getChildObject().get(3).getChildObject().get(0).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(3).getChildObject().get(0).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(3).getChildObject().get(0).setIndicies(objectLoader.indicies);
@@ -252,7 +273,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(0).getChildObject().get(3).getChildObject().get(1).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(3).getChildObject().get(1).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(3).getChildObject().get(1).setIndicies(objectLoader.indicies);
@@ -276,7 +297,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_POSTER.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath3, "fbx");
         objects.get(0).getChildObject().get(4).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(4).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(4).setIndicies(objectLoader.indicies);
@@ -299,7 +320,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_POSTER.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath3, "fbx");
         objects.get(0).getChildObject().get(4).getChildObject().get(0).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(4).getChildObject().get(0).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(4).getChildObject().get(0).setIndicies(objectLoader.indicies);
@@ -322,7 +343,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_POSTER.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath3, "fbx");
         objects.get(0).getChildObject().get(4).getChildObject().get(1).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(4).getChildObject().get(1).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(4).getChildObject().get(1).setIndicies(objectLoader.indicies);
@@ -345,7 +366,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_POSTER.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath3, "fbx");
         objects.get(0).getChildObject().get(4).getChildObject().get(2).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(4).getChildObject().get(2).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(4).getChildObject().get(2).setIndicies(objectLoader.indicies);
@@ -369,7 +390,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_KABEL.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath4, "fbx");
         objects.get(0).getChildObject().get(5).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(5).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(5).setIndicies(objectLoader.indicies);
@@ -393,7 +414,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TABLE.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath5, "fbx");
         objects.get(0).getChildObject().get(6).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(6).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(6).setIndicies(objectLoader.indicies);
@@ -419,7 +440,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TV.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath6, "fbx");
         objects.get(0).getChildObject().get(7).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(7).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(7).setIndicies(objectLoader.indicies);
@@ -443,7 +464,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TV.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath6, "fbx");
         objects.get(0).getChildObject().get(7).getChildObject().get(0).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(7).getChildObject().get(0).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(7).getChildObject().get(0).setIndicies(objectLoader.indicies);
@@ -467,7 +488,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TV.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath6, "fbx");
         objects.get(0).getChildObject().get(7).getChildObject().get(1).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(7).getChildObject().get(1).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(7).getChildObject().get(1).setIndicies(objectLoader.indicies);
@@ -492,7 +513,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_DOLL1.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath7, "fbx");
         objects.get(0).getChildObject().get(8).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(8).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(8).setIndicies(objectLoader.indicies);
@@ -520,7 +541,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BOTOL.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath8, "fbx");
         objects.get(0).getChildObject().get(9).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(9).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(9).setIndicies(objectLoader.indicies);
@@ -547,7 +568,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_SPEAKER.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath9, "fbx");
         objects.get(0).getChildObject().get(10).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(10).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(10).setIndicies(objectLoader.indicies);
@@ -575,7 +596,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BOTOL2.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath10, "fbx");
         objects.get(0).getChildObject().get(11).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(11).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(11).setIndicies(objectLoader.indicies);
@@ -586,7 +607,7 @@ public class CobaBlender {
 //        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
         objects.get(0).getChildObject().get(11).translateObject(0.25f, 0.64f, 0.20f);
 
-        // ROOF FOR RUANG OFFICE TENGAH
+        // roof
         objects.get(0).getChildObject().add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
@@ -602,13 +623,17 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath11, "fbx");
         objects.get(0).getChildObject().get(12).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(12).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(12).setIndicies(objectLoader.indicies);
 
-        objects.get(0).getChildObject().get(12).scaleObject(1f, 0.01f, 3.5f);
-        objects.get(0).getChildObject().get(12).translateObject(0f, 2f, 2f);
+        objects.get(0).getChildObject().get(12).scaleObject(0.1f, 0.1f, 0.1f);
+//        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+//        objects.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).translateObject(0f, 3f, 0f);
 
         // OFFICE RUANGAN KEDUA
         // WALL PENYAMBUNG DEPAN KIRI
@@ -627,7 +652,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(0).getChildObject().get(13).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(13).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(13).setIndicies(objectLoader.indicies);
@@ -652,7 +677,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(0).getChildObject().get(14).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(14).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(14).setIndicies(objectLoader.indicies);
@@ -677,7 +702,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(0).getChildObject().get(15).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(15).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(15).setIndicies(objectLoader.indicies);
@@ -702,7 +727,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath1, "fbx");
         objects.get(0).getChildObject().get(16).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(16).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(16).setIndicies(objectLoader.indicies);
@@ -727,7 +752,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(0).getChildObject().get(17).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(17).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(17).setIndicies(objectLoader.indicies);
@@ -752,7 +777,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(0).getChildObject().get(18).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(18).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(18).setIndicies(objectLoader.indicies);
@@ -777,7 +802,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(0).getChildObject().get(19).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(19).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(19).setIndicies(objectLoader.indicies);
@@ -802,7 +827,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath1, "fbx");
         objects.get(0).getChildObject().get(20).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(20).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(20).setIndicies(objectLoader.indicies);
@@ -826,7 +851,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(1).setVertices(objectLoader.vertices);
         objects.get(1).setNormal(objectLoader.normals);
         objects.get(1).setIndicies(objectLoader.indicies);
@@ -851,7 +876,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(1).getChildObject().get(0).setVertices(objectLoader.vertices);
         objects.get(1).getChildObject().get(0).setNormal(objectLoader.normals);
         objects.get(1).getChildObject().get(0).setIndicies(objectLoader.indicies);
@@ -877,7 +902,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(1).getChildObject().get(1).setVertices(objectLoader.vertices);
         objects.get(1).getChildObject().get(1).setNormal(objectLoader.normals);
         objects.get(1).getChildObject().get(1).setIndicies(objectLoader.indicies);
@@ -901,7 +926,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(1).getChildObject().get(2).setVertices(objectLoader.vertices);
         objects.get(1).getChildObject().get(2).setNormal(objectLoader.normals);
         objects.get(1).getChildObject().get(2).setIndicies(objectLoader.indicies);
@@ -925,7 +950,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(1).getChildObject().get(3).setVertices(objectLoader.vertices);
         objects.get(1).getChildObject().get(3).setNormal(objectLoader.normals);
         objects.get(1).getChildObject().get(3).setIndicies(objectLoader.indicies);
@@ -949,7 +974,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath1, "fbx");
         objects.get(1).getChildObject().get(4).setVertices(objectLoader.vertices);
         objects.get(1).getChildObject().get(4).setNormal(objectLoader.normals);
         objects.get(1).getChildObject().get(4).setIndicies(objectLoader.indicies);
@@ -972,7 +997,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(1).getChildObject().get(5).setVertices(objectLoader.vertices);
         objects.get(1).getChildObject().get(5).setNormal(objectLoader.normals);
         objects.get(1).getChildObject().get(5).setIndicies(objectLoader.indicies);
@@ -998,7 +1023,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(2).setVertices(objectLoader.vertices);
         objects.get(2).setNormal(objectLoader.normals);
         objects.get(2).setIndicies(objectLoader.indicies);
@@ -1023,7 +1048,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader(filepath2, "fbx");
         objects.get(2).getChildObject().get(0).setVertices(objectLoader.vertices);
         objects.get(2).getChildObject().get(0).setNormal(objectLoader.normals);
         objects.get(2).getChildObject().get(0).setIndicies(objectLoader.indicies);
@@ -1478,6 +1503,8 @@ public class CobaBlender {
             GL.createCapabilities();
 
             input();
+            //Camera control
+            camera.move(window);
 
             //code
             for (Object object : objects) {
