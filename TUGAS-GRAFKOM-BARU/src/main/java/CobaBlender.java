@@ -59,7 +59,7 @@ public class CobaBlender {
                 18
         ));
 
-        ObjectLoader objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx", "fbx");
+        ObjectLoader objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx", "fbx");
         objects.get(0).setVertices(objectLoader.vertices);
         objects.get(0).setNormal(objectLoader.normals);
         objects.get(0).setIndicies(objectLoader.indicies);
@@ -84,7 +84,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
         objects.get(0).getChildObject().get(0).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(0).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(0).setIndicies(objectLoader.indicies);
@@ -108,7 +108,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
         objects.get(0).getChildObject().get(1).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(1).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(1).setIndicies(objectLoader.indicies);
@@ -132,7 +132,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
         objects.get(0).getChildObject().get(2).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(2).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(2).setIndicies(objectLoader.indicies);
@@ -156,7 +156,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
         objects.get(0).getChildObject().get(2).getChildObject().get(0).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(2).getChildObject().get(0).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(2).getChildObject().get(0).setIndicies(objectLoader.indicies);
@@ -180,7 +180,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
         objects.get(0).getChildObject().get(2).getChildObject().get(1).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(2).getChildObject().get(1).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(2).getChildObject().get(1).setIndicies(objectLoader.indicies);
@@ -204,7 +204,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
         objects.get(0).getChildObject().get(3).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(3).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(3).setIndicies(objectLoader.indicies);
@@ -228,7 +228,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
         objects.get(0).getChildObject().get(3).getChildObject().get(0).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(3).getChildObject().get(0).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(3).getChildObject().get(0).setIndicies(objectLoader.indicies);
@@ -252,7 +252,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
         objects.get(0).getChildObject().get(3).getChildObject().get(1).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(3).getChildObject().get(1).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(3).getChildObject().get(1).setIndicies(objectLoader.indicies);
@@ -276,7 +276,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_POSTER.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_POSTER.fbx", "fbx");
         objects.get(0).getChildObject().get(4).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(4).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(4).setIndicies(objectLoader.indicies);
@@ -299,7 +299,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_POSTER.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_POSTER.fbx", "fbx");
         objects.get(0).getChildObject().get(4).getChildObject().get(0).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(4).getChildObject().get(0).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(4).getChildObject().get(0).setIndicies(objectLoader.indicies);
@@ -322,7 +322,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_POSTER.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_POSTER.fbx", "fbx");
         objects.get(0).getChildObject().get(4).getChildObject().get(1).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(4).getChildObject().get(1).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(4).getChildObject().get(1).setIndicies(objectLoader.indicies);
@@ -345,7 +345,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_POSTER.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_POSTER.fbx", "fbx");
         objects.get(0).getChildObject().get(4).getChildObject().get(2).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(4).getChildObject().get(2).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(4).getChildObject().get(2).setIndicies(objectLoader.indicies);
@@ -369,7 +369,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_KABEL.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_KABEL.fbx", "fbx");
         objects.get(0).getChildObject().get(5).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(5).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(5).setIndicies(objectLoader.indicies);
@@ -393,7 +393,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TABLE.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TABLE.fbx", "fbx");
         objects.get(0).getChildObject().get(6).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(6).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(6).setIndicies(objectLoader.indicies);
@@ -419,7 +419,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TV.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TV.fbx", "fbx");
         objects.get(0).getChildObject().get(7).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(7).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(7).setIndicies(objectLoader.indicies);
@@ -443,7 +443,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TV.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TV.fbx", "fbx");
         objects.get(0).getChildObject().get(7).getChildObject().get(0).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(7).getChildObject().get(0).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(7).getChildObject().get(0).setIndicies(objectLoader.indicies);
@@ -467,7 +467,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TV.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_TV.fbx", "fbx");
         objects.get(0).getChildObject().get(7).getChildObject().get(1).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(7).getChildObject().get(1).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(7).getChildObject().get(1).setIndicies(objectLoader.indicies);
@@ -492,7 +492,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_DOLL1.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_DOLL1.fbx", "fbx");
         objects.get(0).getChildObject().get(8).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(8).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(8).setIndicies(objectLoader.indicies);
@@ -520,7 +520,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BOTOL.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BOTOL.fbx", "fbx");
         objects.get(0).getChildObject().get(9).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(9).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(9).setIndicies(objectLoader.indicies);
@@ -547,7 +547,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_SPEAKER.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_SPEAKER.fbx", "fbx");
         objects.get(0).getChildObject().get(10).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(10).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(10).setIndicies(objectLoader.indicies);
@@ -575,7 +575,7 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BOTOL2.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BOTOL2.fbx", "fbx");
         objects.get(0).getChildObject().get(11).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(11).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(11).setIndicies(objectLoader.indicies);
@@ -602,49 +602,440 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\Lenovo\\OneDrive\\Documents\\GitHub\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BALIHO.fbx", "fbx");
         objects.get(0).getChildObject().get(12).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(12).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(12).setIndicies(objectLoader.indicies);
 
-        objects.get(0).getChildObject().get(12).scaleObject(1f, 0.01f, 1.5f);
+        objects.get(0).getChildObject().get(12).scaleObject(0.1f, 0.1f, 0.1f);
 //        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
 //        objects.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
 //        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
-        objects.get(0).getChildObject().get(12).translateObject(0f, 1.97f, 0f);
+//        objects.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(0).getChildObject().get(12).translateObject(0f, 3f, 0f);
 
+        // OFFICE RUANGAN KEDUA
+        // WALL PENYAMBUNG DEPAN KIRI
+        objects.get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
 
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objects.get(0).getChildObject().get(13).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(13).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(13).setIndicies(objectLoader.indicies);
 
-        // UMUM
-        
+        objects.get(0).getChildObject().get(13).scaleObject(1f, 1f, 0.05f);
+        objects.get(0).getChildObject().get(13).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(0).getChildObject().get(13).translateObject(-1f, 0.95f, 2.5f);
 
+        // WALL PENYAMBUNG DEPAN KANAN
+        objects.get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
 
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objects.get(0).getChildObject().get(14).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(14).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(14).setIndicies(objectLoader.indicies);
 
+        objects.get(0).getChildObject().get(14).scaleObject(1f, 1f, 0.05f);
+        objects.get(0).getChildObject().get(14).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(0).getChildObject().get(14).translateObject(1f, 0.95f, 2.5f);
 
+        // WALL PENUTUP RUANG TENGAH
+        objects.get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
 
-//        objects.add(new Sphere(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.0f, 1.0f, 1.0f, 1.0f),
-//                Arrays.asList(0.0f, 1.0f, 0.0f),
-//                0.125f,
-//                0.125f,
-//                0.125f,
-//                36,
-//                18
-//        ));
-//
-//        objectLoader = new ObjectLoader("resources/Helicopter.fbx", "fbx");
-//        objects.get(1).setVertices(objectLoader.vertices);
-//        objects.get(1).setNormal(objectLoader.normals);
-//        objects.get(1).setIndicies(objectLoader.indicies);
-//
-//        objects.get(1).scaleObject(0.001f, 0.0001f, 0.000001f);
-//        objects.get(1).translateObject(3.0f, 0.0f, 0.0f);
-//
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objects.get(0).getChildObject().get(15).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(15).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(15).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(15).scaleObject(1f, 1f, 0.05f);
+//        objects.get(0).getChildObject().get(15).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(0).getChildObject().get(15).translateObject(0f, 0.95f, 3.5f);
+
+        // FLOOR UNTUK RUANG DEPANNYA OFFICE (RUANG KE 2)
+        objects.get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.5f, 0.5f, 0.5f, 0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx", "fbx");
+        objects.get(0).getChildObject().get(16).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(16).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(16).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(16).scaleObject(1f, 0.01f, 1f);
+        objects.get(0).getChildObject().get(16).translateObject(0f, 0f, 2.5f);
+
+        // OFFICE RUANGAN KETIGA
+        // WALL PENYAMBUNG DEPAN KIRI
+        objects.get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objects.get(0).getChildObject().get(17).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(17).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(17).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(17).scaleObject(1f, 1f, 0.05f);
+        objects.get(0).getChildObject().get(17).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(0).getChildObject().get(17).translateObject(-1f, 0.95f, 4.5f);
+
+        // WALL PENYAMBUNG DEPAN KANAN
+        objects.get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objects.get(0).getChildObject().get(18).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(18).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(18).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(18).scaleObject(1f, 1f, 0.05f);
+        objects.get(0).getChildObject().get(18).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(0).getChildObject().get(18).translateObject(1f, 0.95f, 4.5f);
+
+        // WALL PENUTUP RUANG TENGAH
+        objects.get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objects.get(0).getChildObject().get(19).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(19).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(19).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(19).scaleObject(1f, 1f, 0.05f);
+//        objects.get(0).getChildObject().get(19).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(0).getChildObject().get(19).translateObject(0f, 0.95f, 5.5f);
+
+        // FLOOR UNTUK RUANG DEPANNYA OFFICE (RUANG KE 2)
+        objects.get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.5f, 0.5f, 0.5f, 0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx", "fbx");
+        objects.get(0).getChildObject().get(20).setVertices(objectLoader.vertices);
+        objects.get(0).getChildObject().get(20).setNormal(objectLoader.normals);
+        objects.get(0).getChildObject().get(20).setIndicies(objectLoader.indicies);
+
+        objects.get(0).getChildObject().get(20).scaleObject(1f, 0.01f, 1f);
+        objects.get(0).getChildObject().get(20).translateObject(0f, 0f, 4.5f);
+
+        // WALL PENYAMBUNG RUANGAN 1 KE KANAN
+        objects.add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objects.get(1).setVertices(objectLoader.vertices);
+        objects.get(1).setNormal(objectLoader.normals);
+        objects.get(1).setIndicies(objectLoader.indicies);
+
+        objects.get(1).scaleObject(0.5f, 1f, 0.05f);
+//        objects.get(1).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(1).translateObject(1.5f, 0.95f, -1.5f);
+
+        // SAMBUNGAN KE KANAN
+        objects.get(1).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objects.get(1).getChildObject().get(0).setVertices(objectLoader.vertices);
+        objects.get(1).getChildObject().get(0).setNormal(objectLoader.normals);
+        objects.get(1).getChildObject().get(0).setIndicies(objectLoader.indicies);
+
+        objects.get(1).getChildObject().get(0).scaleObject(2f, 1f, 0.05f);
+        objects.get(1).getChildObject().get(0).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(1).getChildObject().get(0).translateObject(2f, 0.95f, 0.5f);
+
+        // RUANG YANG ADA RAK
+        // WALL SISI KANAN RUANG RAK
+        objects.get(1).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objects.get(1).getChildObject().get(1).setVertices(objectLoader.vertices);
+        objects.get(1).getChildObject().get(1).setNormal(objectLoader.normals);
+        objects.get(1).getChildObject().get(1).setIndicies(objectLoader.indicies);
+        objects.get(1).getChildObject().get(1).scaleObject(1f, 1f, 0.05f);
+//        objects.get(1).getChildObject().get(1).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(1).getChildObject().get(1).translateObject(3f, 0.95f, 2.5f);
+
+        // WALL BELAKANG RUANG RAK
+        objects.get(1).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objects.get(1).getChildObject().get(2).setVertices(objectLoader.vertices);
+        objects.get(1).getChildObject().get(2).setNormal(objectLoader.normals);
+        objects.get(1).getChildObject().get(2).setIndicies(objectLoader.indicies);
+        objects.get(1).getChildObject().get(2).scaleObject(1f, 1f, 0.05f);
+        objects.get(1).getChildObject().get(2).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(1).getChildObject().get(2).translateObject(4f, 0.95f, 3.5f);
+
+        // WALL SISI KIRI RUANG RAK
+        objects.get(1).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objects.get(1).getChildObject().get(3).setVertices(objectLoader.vertices);
+        objects.get(1).getChildObject().get(3).setNormal(objectLoader.normals);
+        objects.get(1).getChildObject().get(3).setIndicies(objectLoader.indicies);
+        objects.get(1).getChildObject().get(3).scaleObject(1f, 1f, 0.05f);
+//        objects.get(1).getChildObject().get(3).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(1).getChildObject().get(3).translateObject(3f, 0.95f, 4.5f);
+
+        // FLOOR RUANG RAK
+        objects.get(1).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0.5f, 0.5f, 0.5f, 0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx", "fbx");
+        objects.get(1).getChildObject().get(4).setVertices(objectLoader.vertices);
+        objects.get(1).getChildObject().get(4).setNormal(objectLoader.normals);
+        objects.get(1).getChildObject().get(4).setIndicies(objectLoader.indicies);
+        objects.get(1).getChildObject().get(4).scaleObject(1f, 0.01f, 1f);
+        objects.get(1).getChildObject().get(4).translateObject(3f, 0f, 3.5f);
+
+        // WALL PENYAMBUNG RUANGAN RAK KE RUANGAN TENGAH
+        objects.get(1).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objects.get(1).getChildObject().get(5).setVertices(objectLoader.vertices);
+        objects.get(1).getChildObject().get(5).setNormal(objectLoader.normals);
+        objects.get(1).getChildObject().get(5).setIndicies(objectLoader.indicies);
+
+        objects.get(1).getChildObject().get(5).scaleObject(1.3f, 1f, 0.05f);
+        objects.get(1).getChildObject().get(5).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(1).getChildObject().get(5).translateObject(2f, 0.95f, 4.6f);
+
+        // RUANG MARIONETTE
+        // WALL SISI KANAN RUANG MARIONETTE
+        objects.add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objects.get(2).setVertices(objectLoader.vertices);
+        objects.get(2).setNormal(objectLoader.normals);
+        objects.get(2).setIndicies(objectLoader.indicies);
+
+        objects.get(2).scaleObject(1.3f, 1f, 0.05f);
+//        objects.get(2).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(2).translateObject(3.3f, 0.95f, 5.5f);
+
+        // WALL SISI BELAKANG RUANG MARIONETTE
+        objects.get(2).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1.0f, 1.0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_WALL_NOWINDOW.fbx", "fbx");
+        objects.get(2).getChildObject().get(0).setVertices(objectLoader.vertices);
+        objects.get(2).getChildObject().get(0).setNormal(objectLoader.normals);
+        objects.get(2).getChildObject().get(0).setIndicies(objectLoader.indicies);
+
+        objects.get(2).getChildObject().get(0).scaleObject(1f, 1f, 0.05f);
+        objects.get(2).getChildObject().get(0).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(2).getChildObject().get(0).translateObject(4.5f, 0.95f, 6.5f);
+
 //        objects.add(new Sphere(
 //                Arrays.asList(
 //                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
