@@ -1729,6 +1729,89 @@ public class CobaBlender {
         objects.get(1).getChildObject().get(5).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
         objects.get(1).getChildObject().get(5).translateObject(2f, 0.95f, 4.6f);
 
+        // RAK OBJEK
+        objects.get(1).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(150/255f, 75/255f, 0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath23, "fbx");
+        Object rak = objects.get(1).getChildObject().get(6);
+        rak.setVertices(objectLoader.vertices);
+        rak.setNormal(objectLoader.normals);
+        rak.setIndicies(objectLoader.indicies);
+
+        rak.scaleObject(0.9f, 0.4f, 0.05f);
+        rak.rotateObject((float)Math.toRadians(90f),1f,0f,0f);
+        rak.rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        rak.translateObject(3.5f, 0f, 3.5f);
+
+        // BOTOL DI RAK
+        objects.get(1).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1.0f, 1f, 0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath10, "fbx");
+        objects.get(1).getChildObject().get(7).setVertices(objectLoader.vertices);
+        objects.get(1).getChildObject().get(7).setNormal(objectLoader.normals);
+        objects.get(1).getChildObject().get(7).setIndicies(objectLoader.indicies);
+
+        objects.get(1).getChildObject().get(7).scaleObject(0.07f, 0.07f, 0.07f);
+//        objects.get(1).getChildObject().get(7).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(1).getChildObject().get(7).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+//        objects.get(1).getChildObject().get(7).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        objects.get(1).getChildObject().get(7).translateObject(3.5f, 1.5f, 3f);
+
+        // BONEKA DI RAK
+        objects.get(1).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(1f, 165/255f, 0f, 0.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath16, "fbx");
+        Object doll = objects.get(1).getChildObject().get(8);
+        doll.setVertices(objectLoader.vertices);
+        doll.setNormal(objectLoader.normals);
+        doll.setIndicies(objectLoader.indicies);
+
+        doll.scaleObject(0.5f, 0.5f, 0.5f);
+        doll.rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
+        doll.rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        doll.rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
+        doll.rotateObject((float) Math.toRadians(30f), 0f, 1f, 0f);
+        doll.translateObject(3.5f, 1.3f, 3.8f);
+
         // RUANG GORDEN
         // WALL SISI KANAN RUANG GORDEN
         objects.add(new Sphere(
