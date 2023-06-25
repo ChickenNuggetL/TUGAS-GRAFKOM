@@ -86,6 +86,13 @@ public class CobaBlender {
         String filepath29 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_HEAD2.fbx";
         String filepath30 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_HEAD3.fbx";
         String filepath31 = "resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_SKELETON.fbx";
+        String bonnie = "resources\\Character\\hwbonnie_by_rodaanimation_dd8s569.fbx";
+        String foxy = "resources\\Character\\hwfoxy_by_rodaanimation_dd8pskl.fbx";
+        String gregory = "resources\\Character\\FabConvert.com_gregory.fbx";
+        String drone = "resources\\Character\\drone_costum.fbx";
+        String chica = "resources\\Character\\FabConvert.com_ar toy chica.fbx";
+        String freddy = "resources\\Character\\freddy fazbear.fbx";
+
 
 
 
@@ -109,6 +116,7 @@ public class CobaBlender {
         ));
 
         //Camera control
+
         camera = new Camera(mouseInput, objects.get(0));
 
         ObjectLoader objectLoader = new ObjectLoader(filepath1, "fbx");
@@ -2799,363 +2807,160 @@ public class CobaBlender {
 
 
 
-//        objects.add(new Sphere(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.20f, 0.15f, 0.0f, 1.0f),
-//                Arrays.asList(0.0f, 1.0f, 0.0f),
-//                0.125f,
-//                0.125f,
-//                0.125f,
-//                36,
-//                18
-//        ));
+
+
+
+        // KARAKTER BONNIE
+        objects.add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(150/255f, 75/255f, 0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(bonnie, "fbx");
+        objects.get(9).setVertices(objectLoader.vertices);
+        objects.get(9).setNormal(objectLoader.normals);
+        objects.get(9).setIndicies(objectLoader.indicies);
+        objects.get(9).scaleObject(0.01f, 0.01f, 0.01f);
+        objects.get(9).rotateObject((float)Math.toRadians(90f),-1f,0f,0f);
+        objects.get(9).rotateObject((float)Math.toRadians(180f),0f,1f,0f);
+        objects.get(9).translateObject(0f, 0.3f, 12.5f);
+
+//         KARAKTER FOXY (STILL ERROR)
+        objects.add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(150/255f, 75/255f, 0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(foxy, "fbx");
+        objects.get(10).setVertices(objectLoader.vertices);
+        objects.get(10).setNormal(objectLoader.normals);
+        objects.get(10).setIndicies(objectLoader.indicies);
+        objects.get(10).scaleObject(0.01f, 0.01f, 0.01f);
+        objects.get(10).rotateObject((float)Math.toRadians(90f),-1f,0f,0f);
+        objects.get(10).rotateObject((float)Math.toRadians(180f),0f,1f,0f);
+        objects.get(10).rotateObject((float)Math.toRadians(90f),0f,1f,0f);
+        objects.get(10).translateObject(1.5f, 0.0f, 6f);
 //
-//        objectLoader = new ObjectLoader("resources/farm_house.fbx", "fbx");
-//        objects.get(2).setVertices(objectLoader.vertices);
-//        objects.get(2).setNormal(objectLoader.normals);
-//        objects.get(2).setIndicies(objectLoader.indicies);
-//        objects.get(2).scaleObject(0.2f, 0.2f, 0.2f);
-//        objects.get(2).translateObject(-16.0f, -7.0f, 10.0f);
-//        objects.get(2).rotateObject(1f, 0.0f, 1f,0f);
+        // KARAKTER GREGORY
+        objects.add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0f, 0f, 1f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(gregory, "fbx");
+        objects.get(11).setVertices(objectLoader.vertices);
+        objects.get(11).setNormal(objectLoader.normals);
+        objects.get(11).setIndicies(objectLoader.indicies);
+        objects.get(11).scaleObject(0.01f, 0.01f, 0.01f);
+//        objects.get(11).rotateObject((float)Math.toRadians(90f),-1f,0f,0f);
+//        objects.get(11).rotateObject((float)Math.toRadians(180f),0f,1f,0f);
+        objects.get(11).translateObject(0.2f, 0f, -0.5f);
 //
-//        //rumput
-//        objects.add(new Sphere(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.0f, 0.5f, 0.1f, 1.0f),
-//                Arrays.asList(0.0f, 1.0f, 0.0f),
-//                0.125f,
-//                0.125f,
-//                0.125f,
-//                36,
-//                18
-//        ));
-//
-//        objectLoader = new ObjectLoader("resources/rumput.fbx", "fbx");
-//        objects.get(3).setVertices(objectLoader.vertices);
-//        objects.get(3).setNormal(objectLoader.normals);
-//        objects.get(3).setIndicies(objectLoader.indicies);
-//
-//        objects.get(3).scaleObject(10.f, 10.0f, 10.0f);
-//        objects.get(3).translateObject(0.0f, -4.8f, 0.0f);
-//
-//        //cewek
-//        objects.add(new Sphere(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(1.0f, 0.0f, 0f, 1.0f),
-//                Arrays.asList(0.0f, 1.0f, 0.0f),
-//                0.125f,
-//                0.125f,
-//                0.125f,
-//                36,
-//                18
-//        ));
-//
-//        objectLoader = new ObjectLoader("resources/raphtalia.fbx", "fbx");
-//        objects.get(4).setVertices(objectLoader.vertices);
-//        objects.get(4).setNormal(objectLoader.normals);
-//        objects.get(4).setIndicies(objectLoader.indicies);
-//        objects.get(4).scaleObject(0.01f, 0.01f, 0.01f);
-////        objects.get(280).rotateObject(1f, -1f, 0.0f,0f);
-//
-//        objects.get(4).translateObject(0.0f, -5.7f, 0.0f);
-//
-//        objects.add(new Sphere(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.22f, 0.27f, 0.27f, 1.0f),
-//                Arrays.asList(0.0f, 1.0f, 0.0f),
-//                0.125f,
-//                0.125f,
-//                0.125f,
-//                36,
-//                18
-//        ));
-//        objectLoader = new ObjectLoader("resources/sumur_rusak.fbx", "fbx");
-//        objects.get(5).setVertices(objectLoader.vertices);
-//        objects.get(5).setNormal(objectLoader.normals);
-//        objects.get(5).setIndicies(objectLoader.indicies);
-//        objects.get(5).scaleObject(0.05f, 0.05f, 0.05f);
-//        objects.get(5).rotateObject((float)Math.toRadians(-90),1f,0f,0f);
-//        objects.get(5).translateObject(2.0f,-7f,10f);
-//
-//        //batu
-//        {
-//            objects.add(new Sphere(
-//                    Arrays.asList(
-//                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
-//                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-//                    ),
-//                    new ArrayList<>(),
-//                    new Vector4f(0.22f, 0.27f, 0.27f, 1.0f),
-//                    Arrays.asList(0.0f, 1.0f, 0.0f),
-//                    0.125f,
-//                    0.125f,
-//                    0.125f,
-//                    36,
-//                    18
-//            ));
-//            objectLoader = new ObjectLoader("resources/batu2.fbx", "fbx");
-//            objects.get(6).setVertices(objectLoader.vertices);
-//            objects.get(6).setNormal(objectLoader.normals);
-//            objects.get(6).setIndicies(objectLoader.indicies);
-//            objects.get(6).scaleObject(0.01f, 0.01f, 0.01f);
-//            objects.get(6).rotateObject((float) Math.toRadians(90), 0f, 0f, 1f);
-//            objects.get(6).translateObject(-20.0f, -7f, 10f);
-//
-//            objects.add(new Sphere(
-//                    Arrays.asList(
-//                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
-//                            new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-//                    ),
-//                    new ArrayList<>(),
-//                    new Vector4f(0.22f, 0.27f, 0.27f, 1.0f),
-//                    Arrays.asList(0.0f, 1.0f, 0.0f),
-//                    0.125f,
-//                    0.125f,
-//                    0.125f,
-//                    36,
-//                    18
-//            ));
-//            objectLoader = new ObjectLoader("resources/batu2.fbx", "fbx");
-//            objects.get(7).setVertices(objectLoader.vertices);
-//            objects.get(7).setNormal(objectLoader.normals);
-//            objects.get(7).setIndicies(objectLoader.indicies);
-//            objects.get(7).scaleObject(0.004f, 0.005f, 0.005f);
-//            objects.get(7).rotateObject((float) Math.toRadians(90), 0f, 0f, 1f);
-//            objects.get(7).rotateObject((float) Math.toRadians(90), 0f, 1f, 0f);
-//            objects.get(7).translateObject(-21.5f, -4.3f, 10f);
-//        }
-//        objects.add(new Sphere(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.45f, 0.30f, 0.00f, 1.0f),
-//                Arrays.asList(0.0f, 1.0f, 0.0f),
-//                0.125f,
-//                0.125f,
-//                0.125f,
-//                36,
-//                18
-//        ));
-//        objectLoader = new ObjectLoader("resources/sumur.fbx", "fbx");
-//        objects.get(8).setVertices(objectLoader.vertices);
-//        objects.get(8).setNormal(objectLoader.normals);
-//        objects.get(8).setIndicies(objectLoader.indicies);
-//        objects.get(8).scaleObject(0.05f, 0.05f, 0.05f);
-//        objects.get(8).rotateObject((float) Math.toRadians(-90), 1f, 0f, 0f);
-//        objects.get(8).translateObject(-4.0f, -6.3f, 7f);
-//
-//        //pohon
-//        {
-//            drawMediumTree(-2f, 0.0f, -20f);
-//            drawMediumTree(-10f, 0.0f, -7f);
-//            drawMediumTree(-18f, 0.0f, -15f);
-//            drawMediumTree(-30f, 0.0f, -5f);
-//            drawMediumTree(-25f, 0.0f, 4f);
-//            drawMediumTree(10f, 0.0f, 10f);
-//            drawMediumTree(10f, 0.0f, 0f);
-//            drawMediumTree(3f, 0.0f, -10f);
-//            drawMediumTree(-23f, 0.0f, -5.0f);
-//            drawMediumTree(5f, 0.0f, -6.0f);
-//            drawMediumTree(-3f, 0.0f, -12.0f);
-//            drawMediumTree(-14f, 0.0f, -12.0f);
-//        }
-//
-//
-//
-//        System.out.println("Jumlah : " +  countTree);
-//
-//    }
-//    public void drawMiniTree(float x, float y, float z){
-//        //batang
-//        objects.add(new Sphere(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.30f, 0.15f, 0.0f, 1.0f),
-//                Arrays.asList(0.0f, 1.0f, 0.0f),
-//                0.125f,
-//                0.125f,
-//                0.125f,
-//                36,
-//                18
-//        ));
-//
-//        ObjectLoader objectLoader = new ObjectLoader("resources/batang.fbx", "fbx");
-//        objects.get(countTree).setVertices(objectLoader.vertices);
-//        objects.get(countTree).setNormal(objectLoader.normals);
-//        objects.get(countTree).setIndicies(objectLoader.indicies);
-//
-//        //Edit
-//        objects.get(countTree).scaleObject(0.41f, 2.0f,0.41f);
-//        objects.get(countTree).translateObject(x, -6.0f, z);
-//
-//
-//
-//
-//        countTree +=1;
-//        //daun
-//        objects.add(new Sphere(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.0f, 0.3f, 0.0f, 1.0f),
-//                Arrays.asList(0.0f, 1.0f, 0.0f),
-//                0.125f,
-//                0.125f,
-//                0.125f,
-//                36,
-//                18
-//        ));
-//
-//        objectLoader = new ObjectLoader("resources/daun.fbx", "fbx");
-//        objects.get(countTree).setVertices(objectLoader.vertices);
-//        objects.get(countTree).setNormal(objectLoader.normals);
-//        objects.get(countTree).setIndicies(objectLoader.indicies);
-//
-//        //Edit
-//        objects.get(countTree).scaleObject(0.41f, 0.5f,0.41f);
-//        objects.get(countTree).translateObject(x, y, z);
-//
-//        countTree +=1;
-//        tempCount +=3.0f;
-//    }
-//
-//    public void drawMediumTree(float x, float y, float z){
-//        //batang
-//        objects.add(new Sphere(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.30f, 0.15f, 0.0f, 1.0f),
-//                Arrays.asList(0.0f, 1.0f, 0.0f),
-//                0.125f,
-//                0.125f,
-//                0.125f,
-//                36,
-//                18
-//        ));
-//
-//        ObjectLoader objectLoader = new ObjectLoader("resources/batang_v2.fbx", "fbx");
-//        objects.get(countTree).setVertices(objectLoader.vertices);
-//        objects.get(countTree).setNormal(objectLoader.normals);
-//        objects.get(countTree).setIndicies(objectLoader.indicies);
-//
-//        //Edit
-//        objects.get(countTree).scaleObject(0.03f, 0.04f,0.03f);
-//        objects.get(countTree).translateObject(x, y-7.0f, z);
-//
-//
-//
-//
-//        countTree +=1;
-//        //daun
-//        objects.add(new Sphere(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.0f, 0.3f, 0.0f, 1.0f),
-//                Arrays.asList(0.0f, 1.0f, 0.0f),
-//                0.125f,
-//                0.125f,
-//                0.125f,
-//                36,
-//                18
-//        ));
-//
-//        objectLoader = new ObjectLoader("resources/daun_v2.fbx", "fbx");
-//        objects.get(countTree).setVertices(objectLoader.vertices);
-//        objects.get(countTree).setNormal(objectLoader.normals);
-//        objects.get(countTree).setIndicies(objectLoader.indicies);
-//
-//        //Edit
-//        objects.get(countTree).scaleObject(0.03f, 0.03f,0.03f);
-//        objects.get(countTree).translateObject(x, y-3.5f, z);
-//
-//        countTree +=1;
-//        tempCount +=3.0f;
-//    }
-//
-//    public void drawBigTree(float x, float z){
-//        //batang
-//        objects.add(new Sphere(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.30f, 0.15f, 0.0f, 1.0f),
-//                Arrays.asList(0.0f, 1.0f, 0.0f),
-//                0.125f,
-//                0.125f,
-//                0.125f,
-//                36,
-//                18
-//        ));
-//
-//        ObjectLoader objectLoader = new ObjectLoader("resources/batang.fbx", "fbx");
-//        objects.get(countTree).setVertices(objectLoader.vertices);
-//        objects.get(countTree).setNormal(objectLoader.normals);
-//        objects.get(countTree).setIndicies(objectLoader.indicies);
-//
-//        //Edit
-//        objects.get(countTree).scaleObject(0.41f, 5.0f,0.41f);
-//        objects.get(countTree).translateObject(x, -3.0f, z);
-//
-//
-//        countTree +=1;
-//        //daun
-//        objects.add(new Sphere(
-//                Arrays.asList(
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
-//                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-//                ),
-//                new ArrayList<>(),
-//                new Vector4f(0.0f, 0.3f, 0.0f, 1.0f),
-//                Arrays.asList(0.0f, 1.0f, 0.0f),
-//                0.125f,
-//                0.125f,
-//                0.125f,
-//                36,
-//                18
-//        ));
-//
-//        objectLoader = new ObjectLoader("resources/daun.fbx", "fbx");
-//        objects.get(countTree).setVertices(objectLoader.vertices);
-//        objects.get(countTree).setNormal(objectLoader.normals);
-//        objects.get(countTree).setIndicies(objectLoader.indicies);
-//
-//        //Edit
-//        objects.get(countTree).scaleObject(0.6f, 1.8f,0.6f);
-//        objects.get(countTree).translateObject(x, -5.0f, z);
-//
-//        countTree +=1;
-//        tempCount +=3.0f;
+//        // KARAKTER DRONE (STILL ERROR?)
+        objects.add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0f, 0f, 0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(drone, "fbx");
+        objects.get(12).setVertices(objectLoader.vertices);
+        objects.get(12).setNormal(objectLoader.normals);
+        objects.get(12).setIndicies(objectLoader.indicies);
+        objects.get(12).scaleObject(0.1f, 0.1f, 0.1f);
+        objects.get(12).rotateObject((float)Math.toRadians(90f),0f,0f,1f);
+        objects.get(12).rotateObject((float)Math.toRadians(90f),1f,0f,0f);
+//        objects.get(12).rotateObject((float)Math.toRadians(180f),0f,1f,0f);
+        objects.get(12).translateObject(0.2f, 1.3f, 0.5f);
+
+        // KARAKTER CHICA
+        objects.add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0f, 0f, 0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(chica, "fbx");
+        objects.get(13).setVertices(objectLoader.vertices);
+        objects.get(13).setNormal(objectLoader.normals);
+        objects.get(13).setIndicies(objectLoader.indicies);
+        objects.get(13).scaleObject(0.5f, 0.5f, 0.5f);
+        objects.get(13).rotateObject((float)Math.toRadians(90f),1f,0f,0f);
+        objects.get(13).rotateObject((float)Math.toRadians(180f),0f,0f,1f);
+        objects.get(13).translateObject(1f, 0f, 11f);
+
+        objects.add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(150/255f, 75/255f, 0f, 1.0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(freddy, "fbx");
+        objects.get(14).setVertices(objectLoader.vertices);
+        objects.get(14).setNormal(objectLoader.normals);
+        objects.get(14).setIndicies(objectLoader.indicies);
+        objects.get(14).scaleObject(0.005f, 0.005f, 0.005f);
+        objects.get(14).rotateObject((float)Math.toRadians(90f),-1f,0f,0f);
+        objects.get(14).rotateObject((float)Math.toRadians(180f),0f,1f,0f);
+        objects.get(14).translateObject(-0.9f, 0f, 11f);
+
     }
 
 

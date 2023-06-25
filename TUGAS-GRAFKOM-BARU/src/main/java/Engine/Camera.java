@@ -208,8 +208,8 @@ public class Camera {
 
     public void move(Window window){
         firstPersonBuild(window);           //Camera untuk kita ngebuild
-        //thirdPerson(window);
-        //firstPerson(window);
+//        thirdPerson(window);
+//        firstPerson(window);
         recalculate();
     }
 
