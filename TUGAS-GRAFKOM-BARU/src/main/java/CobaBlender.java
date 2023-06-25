@@ -586,7 +586,7 @@ public class CobaBlender {
 //        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
         objects.get(0).getChildObject().get(11).translateObject(0.25f, 0.64f, 0.20f);
 
-        // roof
+        // ROOF FOR RUANG OFFICE TENGAH
         objects.get(0).getChildObject().add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
@@ -602,17 +602,13 @@ public class CobaBlender {
                 18
         ));
 
-        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_BALIHO.fbx", "fbx");
+        objectLoader = new ObjectLoader("C:\\Users\\James\\Documents\\TUGAS-GRAFKOM\\TUGAS-GRAFKOM-BARU\\resources\\Enviroment\\OFFICE\\ENVIRONMENT_OFFICE_FLOOR.fbx", "fbx");
         objects.get(0).getChildObject().get(12).setVertices(objectLoader.vertices);
         objects.get(0).getChildObject().get(12).setNormal(objectLoader.normals);
         objects.get(0).getChildObject().get(12).setIndicies(objectLoader.indicies);
 
-        objects.get(0).getChildObject().get(12).scaleObject(0.1f, 0.1f, 0.1f);
-//        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
-//        objects.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(90f), -1f, 0f, 0f);
-//        objects.get(0).getChildObject().get(9).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
-//        objects.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(90f), 0f, 1f, 0f);
-        objects.get(0).getChildObject().get(12).translateObject(0f, 3f, 0f);
+        objects.get(0).getChildObject().get(12).scaleObject(1f, 0.01f, 3.5f);
+        objects.get(0).getChildObject().get(12).translateObject(0f, 2f, 2f);
 
         // OFFICE RUANGAN KEDUA
         // WALL PENYAMBUNG DEPAN KIRI
