@@ -27,7 +27,7 @@ public class Object extends ShaderProgram{
     UniformsMap uniformsMap;
     ShaderManager shaderManager = new ShaderManager();
     Vector4f color;
-    Vector3f position = new Vector3f(0,0,0);
+    public Vector3f position = new Vector3f(0,0,0);
     Vector3f rotationWorld = new Vector3f(0,0,0);
 
     Matrix4f model;

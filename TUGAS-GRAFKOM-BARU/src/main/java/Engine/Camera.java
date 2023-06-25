@@ -96,8 +96,8 @@ public class Camera {
 
     float distanceFromSource = -1f;
     float camrotation = 0.125f;
-    float angleFromSource = 0;
-    float pitch = 5f;
+    public float angleFromSource = 0;
+    public float pitch = 5f;
     float yaw = 0f;
     private Vector3f direction;
     private Vector3f position;
@@ -207,8 +207,8 @@ public class Camera {
     }
 
     public void move(Window window){
-        firstPersonBuild(window);           //Camera untuk kita ngebuild
-        //thirdPerson(window);
+        //firstPersonBuild(window);           //Camera untuk kita ngebuild
+        thirdPerson(window);
         //firstPerson(window);
         recalculate();
     }
@@ -293,6 +293,7 @@ public class Camera {
         return (float) (distanceFromSource * Math.sin(Math.toRadians(pitch)));
     }
     public Vector3f getDirection() {
+
         return direction;
     }
 

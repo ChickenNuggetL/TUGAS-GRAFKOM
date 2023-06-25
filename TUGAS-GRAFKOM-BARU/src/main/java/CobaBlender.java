@@ -1,6 +1,7 @@
 import Engine.*;
 import Engine.Object;
 import org.joml.Vector2f;
+import org.joml.Vector3f;
 import org.joml.Vector4f;
 import org.lwjgl.opengl.GL;
 
@@ -108,8 +109,7 @@ public class CobaBlender {
                 18
         ));
 
-        //Camera control
-        camera = new Camera(mouseInput, objects.get(0));
+
 
         ObjectLoader objectLoader = new ObjectLoader(filepath1, "fbx");
         objects.get(0).setVertices(objectLoader.vertices);
@@ -3156,6 +3156,11 @@ public class CobaBlender {
 //
 //        countTree +=1;
 //        tempCount +=3.0f;
+
+
+
+        //Camera control
+        camera = new Camera(mouseInput, objects.get(0).getChildObject().get(12).getChildObject().get(3));
     }
 
 
@@ -3165,6 +3170,9 @@ public class CobaBlender {
 
         if (window.isKeyPressed(GLFW_KEY_W)) {
             camera.moveForward(move);
+            Object mario = objects.get(0).getChildObject().get(12).getChildObject().get(3);
+            mario.translateObject(-0.1f * (float)Math.sin(Math.toRadians(camera.angleFromSource)), 0f, -0.1f * (float)Math.cos(Math.toRadians(camera.angleFromSource)));
+
 
         }
         if (window.isKeyPressed(GLFW_KEY_A)) {
