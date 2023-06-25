@@ -807,7 +807,7 @@ public class CobaBlender {
 //        objects.get(0).getChildObject().get(10).getChildObject().get(2).rotateObject((float) Math.toRadians(90f), 1f, 0f, 0f);
 //        objects.get(0).getChildObject().get(10).getChildObject().get(2).rotateObject((float) Math.toRadians(30f), 0f, 1f, 0f);
         objects.get(0).getChildObject().get(10).getChildObject().get(6).translateObject(0.6f, 1.5f, 13f);
-        
+
 
         // botol1
         objects.get(0).getChildObject().add(new Sphere(
