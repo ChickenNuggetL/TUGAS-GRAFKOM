@@ -207,21 +207,6 @@ public class Camera {
     }
 
     public void move(Window window){
-        firstPersonBuild(window);           //Camera untuk kita ngebuild
-        //thirdPerson(window);
-        //firstPerson(window);
-        recalculate();
-    }
-
-
-    public void firstPerson(Window window){
-        calcZoom(window);
-        mouse.forceCenterMouse(true, window);
-        calcPitchAngle();
-        lockcamPosOnPart();
-    }
-
-    public void thirdPerson(Window window){
         calcZoom(window);
         mouse.forceCenterMouse(true, window);
         calcPitchAngle();
@@ -229,11 +214,7 @@ public class Camera {
         float horizDistance = calcHorizontalDistance();
         float vertDistance = calcVerticalDistance();
         calcCameraPosition(horizDistance, vertDistance);
-    }
-
-    public void firstPersonBuild(Window window){
-        mouse.forceCenterMouse(true, window);
-        calcPitchAngle();
+        recalculate();
     }
 
     public void calcZoom(Window window) {
@@ -276,12 +257,6 @@ public class Camera {
         position.x = player.position.x - offsetX;
         position.z = player.position.z - offsetZ;
         position.y = player.position.y + vertDist;
-    }
-
-    public void lockcamPosOnPart(){
-        position.x = player.position.x;
-        position.z = player.position.z;
-        position.y = player.position.y;
     }
 
     public float calcHorizontalDistance() {
