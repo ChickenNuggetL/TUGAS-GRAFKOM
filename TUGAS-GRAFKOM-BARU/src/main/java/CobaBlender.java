@@ -4,6 +4,9 @@ import org.joml.Vector2f;
 import org.joml.Vector4f;
 import org.lwjgl.opengl.GL;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -15,6 +18,7 @@ public class CobaBlender {
     int countTree =9;
     float tempCount = -16f;
     boolean keyRditekan = false;
+    boolean playingmusic = true;
     float derajatkamera;
     private Window window =
             new Window
@@ -30,17 +34,23 @@ public class CobaBlender {
     private MouseInput mouseInput;
 
     static float rot = 0f;
+    Music music;
     int countDegree = 0;
     Projection projection = new Projection(window.getWidth(), window.getHeight());
     Camera camera = new Camera();
 
-    public void init() {
+    public CobaBlender() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+    }
+
+    public void init() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         window.init();
         GL.createCapabilities();
         glEnable(GL_DEPTH_TEST);
         mouseInput = window.getMouseInput();
 //        camera.setPosition(0, 1f, 1.7f);
 //        camera.moveDown(0.6f);
+        music = new Music(-9f);
+
 
         //KUMPULAN FILEPATH
         //--------------------------------------------------------------------------------------
@@ -2662,7 +2672,7 @@ public class CobaBlender {
 
 
 
-    public void input() {
+    public void input() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         float move = 0.05f;
 
         if (window.isKeyPressed(GLFW_KEY_W)) {
@@ -2736,9 +2746,15 @@ public class CobaBlender {
             projection.setFOV(projection.getFOV() - (window.getMouseInput().getScroll().y * 0.01f));
             window.getMouseInput().setScroll(new Vector2f());
         }
+
+        if(window.isKeyPressed(GLFW_KEY_ESCAPE)){
+            playingmusic = false;
+            music.stop();
+        }
+
     }
 
-    public void loop() {
+    public void loop() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         while (window.isOpen()) {
             window.update();
             glClearColor(0.0f,
@@ -2771,15 +2787,20 @@ public class CobaBlender {
         }
     }
 
-    public void run() {
+    public void run() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
 
         init();
         loop();
+
 
         // Terminate GLFW and
         // free the error callback
         glfwTerminate();
         glfwSetErrorCallback(null).free();
+        if (playingmusic) {
+            music.playmusic();
+        }
+
     }
 
     public static float getRot() {
@@ -2790,7 +2811,7 @@ public class CobaBlender {
         Main.rot += rot;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         new CobaBlender().run();
     }
 }
