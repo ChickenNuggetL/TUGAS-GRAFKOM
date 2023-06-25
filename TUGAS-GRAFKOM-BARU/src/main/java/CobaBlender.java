@@ -2138,6 +2138,54 @@ public class CobaBlender {
         objects.get(3).getChildObject().get(4).scaleObject(1f, 0.01f, 1.7f);
         objects.get(3).getChildObject().get(4).translateObject(3.5f, 0f, 11.25f);
 
+        // MEJA RUANG TOPENG
+        objects.get(3).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(150/255f, 75/255f, 0f, 0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath26, "fbx");
+        objects.get(3).getChildObject().get(5).setVertices(objectLoader.vertices);
+        objects.get(3).getChildObject().get(5).setNormal(objectLoader.normals);
+        objects.get(3).getChildObject().get(5).setIndicies(objectLoader.indicies);
+        objects.get(3).getChildObject().get(5).scaleObject(0.3f, 0.7f, 0.01f);
+        objects.get(3).getChildObject().get(5).rotateObject((float)Math.toRadians(90f),-1f, 0f, 0f);
+        objects.get(3).getChildObject().get(5).translateObject(3.3f, 0.25f, 11.25f);
+
+        // RAK 1 RUANG TOPENG
+        objects.get(3).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData("resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(),
+                new Vector4f(0f, 0f, 0f, 0f),
+                Arrays.asList(0.0f, 1.0f, 0.0f),
+                0.125f,
+                0.125f,
+                0.125f,
+                36,
+                18
+        ));
+
+        objectLoader = new ObjectLoader(filepath23, "fbx");
+        objects.get(3).getChildObject().get(6).setVertices(objectLoader.vertices);
+        objects.get(3).getChildObject().get(6).setNormal(objectLoader.normals);
+        objects.get(3).getChildObject().get(6).setIndicies(objectLoader.indicies);
+        objects.get(3).getChildObject().get(6).scaleObject(0.3f, 0.7f, 0.01f);
+        objects.get(3).getChildObject().get(6).rotateObject((float)Math.toRadians(90f),-1f, 0f, 0f);
+        objects.get(3).getChildObject().get(6).translateObject(4.2f, 0.25f, 11f);
+
         //PARTY
         //floor
         objects.add(new Sphere(
