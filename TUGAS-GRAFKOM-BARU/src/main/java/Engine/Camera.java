@@ -211,8 +211,8 @@ public class Camera {
 //        thirdPerson(window);
 //        firstPerson(window);
 
-        //firstPersonBuild(window);           //Camera untuk kita ngebuild
-        thirdPerson(window);
+//        firstPersonBuild(window);           //Camera untuk kita ngebuild
+//        thirdPerson(window);
         //firstPerson(window);
 
         recalculate();

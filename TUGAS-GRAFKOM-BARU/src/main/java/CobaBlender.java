@@ -115,9 +115,6 @@ public class CobaBlender {
                 18
         ));
 
-        //Camera control
-
-        camera = new Camera(mouseInput, objects.get(0));
 
         ObjectLoader objectLoader = new ObjectLoader(filepath1, "fbx");
         objects.get(0).setVertices(objectLoader.vertices);
@@ -2885,6 +2882,8 @@ public class CobaBlender {
 //        objects.get(11).rotateObject((float)Math.toRadians(90f),-1f,0f,0f);
 //        objects.get(11).rotateObject((float)Math.toRadians(180f),0f,1f,0f);
         objects.get(11).translateObject(0.2f, 0f, -0.5f);
+
+
 //
 //        // KARAKTER DRONE (STILL ERROR?)
         objects.add(new Sphere(
@@ -2901,6 +2900,10 @@ public class CobaBlender {
                 36,
                 18
         ));
+
+        //Camera control
+
+        camera = new Camera(mouseInput, objects.get(11));
 
         objectLoader = new ObjectLoader(drone, "fbx");
         objects.get(12).setVertices(objectLoader.vertices);
@@ -2970,6 +2973,8 @@ public class CobaBlender {
 
         if (window.isKeyPressed(GLFW_KEY_W)) {
             camera.moveForward(move);
+            Object gregory = objects.get(11);
+            gregory.translateObject(-0.1f * (float)Math.sin(Math.toRadians(camera.angleFromSource)), 0f, -0.1f * (float)Math.cos(Math.toRadians(camera.angleFromSource)));
 
         }
         if (window.isKeyPressed(GLFW_KEY_A)) {
