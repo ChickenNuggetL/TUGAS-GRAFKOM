@@ -20,10 +20,6 @@ public class CobaBlender {
     boolean keyRditekan = false;
     boolean playingmusic = true;
     float derajatkamera;
-    int cameraMode;
-
-    Object mario;
-    boolean isCameraButtonOn = false;
     private Window window =
             new Window
                     (1920, 1080, "Hello World");
@@ -118,7 +114,6 @@ public class CobaBlender {
                 36,
                 18
         ));
-
 
 
         ObjectLoader objectLoader = new ObjectLoader(filepath1, "fbx");
@@ -2887,6 +2882,8 @@ public class CobaBlender {
 //        objects.get(11).rotateObject((float)Math.toRadians(90f),-1f,0f,0f);
 //        objects.get(11).rotateObject((float)Math.toRadians(180f),0f,1f,0f);
         objects.get(11).translateObject(0.2f, 0f, -0.5f);
+
+
 //
 //        // KARAKTER DRONE (STILL ERROR?)
         objects.add(new Sphere(
@@ -2903,6 +2900,10 @@ public class CobaBlender {
                 36,
                 18
         ));
+
+        //Camera control
+
+        camera = new Camera(mouseInput, objects.get(11));
 
         objectLoader = new ObjectLoader(drone, "fbx");
         objects.get(12).setVertices(objectLoader.vertices);
@@ -2963,11 +2964,6 @@ public class CobaBlender {
         objects.get(14).rotateObject((float)Math.toRadians(180f),0f,1f,0f);
         objects.get(14).translateObject(-0.9f, 0f, 11f);
 
-        //Camera control
-
-        camera = new Camera(mouseInput, objects.get(11));
-        cameraMode = 0;
-        mario = objects.get(11);
     }
 
 
@@ -2977,10 +2973,8 @@ public class CobaBlender {
 
         if (window.isKeyPressed(GLFW_KEY_W)) {
             camera.moveForward(move);
-            if (cameraMode == 1 || cameraMode == 2) {
-                mario.translateObject(-0.01f * (float) Math.sin(Math.toRadians(camera.angleFromSource)), 0f, -0.01f * (float) Math.cos(Math.toRadians(camera.angleFromSource)));
-            }
-            //mario.rotateObjectLokal(90f, (float)Math.sin(Math.toRadians(camera.angleFromSource)), 0f, (float)Math.cos(Math.toRadians(camera.angleFromSource)));
+            Object gregory = objects.get(11);
+            gregory.translateObject(-0.1f * (float)Math.sin(Math.toRadians(camera.angleFromSource)), 0f, -0.1f * (float)Math.cos(Math.toRadians(camera.angleFromSource)));
 
         }
         if (window.isKeyPressed(GLFW_KEY_A)) {
@@ -3015,30 +3009,6 @@ public class CobaBlender {
 //            }
         }
 
-        //CAMERA CHANGER
-        if(window.isKeyPressed(GLFW_KEY_R) && !isCameraButtonOn){
-            if (cameraMode == 1) {  //FIRST PERSON
-                mario = objects.get(12);
-                camera.setPlayer(objects.get(12));
-                cameraMode++;
-                isCameraButtonOn = true;
-            }
-            else if (cameraMode == 2) {//THIRD PERSON
-                mario = objects.get(11);
-                camera.setPlayer(objects.get(11));
-                cameraMode++;
-                isCameraButtonOn = true;
-            }
-            else {//BUILD
-                cameraMode = 1;
-                isCameraButtonOn = true;
-            }
-        }
-
-        if(window.isKeyReleased(GLFW_KEY_R)){
-            isCameraButtonOn = false;
-        }
-
         float move2 = 0.5f;
         if (keyRditekan) {
             float posisiX = camera.getPosition().x;
@@ -3069,7 +3039,7 @@ public class CobaBlender {
 
             input();
             //Camera control
-            camera.move(window, cameraMode);
+            camera.move(window);
 
             //code
             for (Object object : objects) {

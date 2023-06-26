@@ -95,7 +95,7 @@ import java.lang.Math;
 public class Camera {
 
     float distanceFromSource = -1f;
-    float camrotation = 0.0625f;
+    float camrotation = 0.125f;
     public float angleFromSource = 0;
     public float pitch = 5f;
     float yaw = 0f;
@@ -138,10 +138,6 @@ public class Camera {
         rotation = new Vector2f();
         mouse = mouseInput;
         player = A;
-    }
-
-    public void setPlayer(Object player) {
-        this.player = player;
     }
 
     public void addRotation(float x, float y) {
@@ -210,18 +206,13 @@ public class Camera {
         recalculate();
     }
 
-    public void move(Window window, Integer moveController){
-        if (moveController == 1) {
-            firstPerson(window);
-        }
-        else if (moveController == 2) {
-            thirdPerson(window);
-        }
-        else {
-            firstPersonBuild(window);           //Camera untuk kita ngebuild
-        }
-        //firstPersonBuild(window);           //Camera untuk kita ngebuild
-        //thirdPerson(window);
+    public void move(Window window){
+        firstPersonBuild(window);           //Camera untuk kita ngebuild
+//        thirdPerson(window);
+//        firstPerson(window);
+
+//        firstPersonBuild(window);           //Camera untuk kita ngebuild
+//        thirdPerson(window);
         //firstPerson(window);
 
         recalculate();
