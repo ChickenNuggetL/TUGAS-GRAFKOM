@@ -38,6 +38,7 @@ public class CobaBlender {
     int countDegree = 0;
     Projection projection = new Projection(window.getWidth(), window.getHeight());
     Camera camera = new Camera();
+    //test abiel
 
     public CobaBlender() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
     }
