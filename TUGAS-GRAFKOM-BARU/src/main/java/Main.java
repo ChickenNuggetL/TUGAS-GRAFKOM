@@ -329,7 +329,7 @@ public class Main {
             GL.createCapabilities();
 
             input();
-            camera.move(window);
+            //camera.move(window);
             //code
             for(Object object: objects){
                 object.draw(camera,projection);

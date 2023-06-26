@@ -160,8 +160,8 @@ vec3 CalcSpotLight(SpotLight light, vec3 normal, vec3 fragPos, vec3 viewDir)
 //MAINS
 void main()
 {
-    //ambient
-    float ambientStrength = 0.12f;
+    //ambientSTr
+    float ambientStrength = 0.21f;
     vec3 ambient = ambientStrength * lightColor;
 
 

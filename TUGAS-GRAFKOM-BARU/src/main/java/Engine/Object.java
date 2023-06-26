@@ -160,7 +160,9 @@ public class Object extends ShaderProgram{
     }
     public void drawSetup(Camera camera, Projection projection) throws Exception {
         bind();
-        pointLight = new PointLight(new Vector3f(1f,0.85f,0.85f), new Vector3f(camera.getPosition().x, camera.getPosition().y, camera.getPosition().z+0.1f), 1f);
+
+        //LIGHTING SETTINGS
+        pointLight = new PointLight(new Vector3f(0.76f,0.15f,0.55f), new Vector3f(camera.getPosition().x, camera.getPosition().y, camera.getPosition().z+0.1f), 1f);
         //pointLight = new PointLight(new Vector3f(0.9f,0.75f,0.75f), camera.lockSomethingInFrontofCam(), 1f);
 
         //UNIFORMS UNTUK LIGHTING
@@ -172,10 +174,12 @@ public class Object extends ShaderProgram{
                 "view", camera.getViewMatrix());
         uniformsMap.setUniform(
                 "projection", projection.getProjMatrix());
+
+        //LIGHTING SETTINGS
         uniformsMap.setUniform("dirLight.direction", new Vector3f(0.2f, 1.0f, 1.1f));
-        uniformsMap.setUniform("dirLight.diffuse", new Vector3f(1.1f, 1.4f, 1.4f));
-        uniformsMap.setUniform("dirLight.ambient", new Vector3f(159/255f, 43/255f, 104/255f));
-        uniformsMap.setUniform("dirLight.specular", new Vector3f(0.1f, 1.4f, 1.4f));
+        uniformsMap.setUniform("dirLight.diffuse", new Vector3f(1.4f, 1.7f, 1.7f));
+        uniformsMap.setUniform("dirLight.ambient", new Vector3f(159/255f, 88/255f, 104/255f));
+        uniformsMap.setUniform("dirLight.specular", new Vector3f(0.4f, 1.4f, 1.4f));
         uniformsMap.setUniform("viewPos", camera.getPosition());
 
         shaderManager.setPointLights("pointLight", uniformsMap, pointLight);
@@ -271,6 +275,15 @@ public class Object extends ShaderProgram{
     }
     public void rotateObject(Float degree, Float x,Float y,Float z){
         model = new Matrix4f().rotate(degree,x,y,z).mul(new Matrix4f(model));
+        updateCenterPoint();
+        for(Object child:childObject){
+            child.rotateObject(degree,x,y,z);
+        }
+
+    }
+
+    public void rotateObjectLokal(Float degree, Float x,Float y,Float z){
+        model = new Matrix4f().rotateLocal(degree,x,y,z).mul(new Matrix4f(model));
         updateCenterPoint();
         for(Object child:childObject){
             child.rotateObject(degree,x,y,z);
