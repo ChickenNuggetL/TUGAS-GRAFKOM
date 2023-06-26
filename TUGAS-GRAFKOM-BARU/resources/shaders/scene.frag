@@ -39,6 +39,7 @@ struct SpotLight{
 //UNIFORMS
 uniform DirLight dirLight;
 out vec4 fragColor;
+out vec4 fragColor2;
 uniform vec4 uni_color;
 uniform vec3 lightColor;
 uniform vec3 lightPos;
@@ -161,7 +162,7 @@ vec3 CalcSpotLight(SpotLight light, vec3 normal, vec3 fragPos, vec3 viewDir)
 void main()
 {
     //ambientSTr
-    float ambientStrength = 0.21f;
+    float ambientStrength = 0.9f;//0.086f;
     vec3 ambient = ambientStrength * lightColor;
 
 
@@ -181,8 +182,9 @@ void main()
     vec3 result = CalcDirLight(dirLight, normal, viewDir);
     vec4 result2 = calcPointLight(pointLight, ViewerPos, normal);
     //Gelap terangnay basically
-    float intensities = 0.95;
+    float intensities = 0.86f;
     fragColor = vec4(result * (ambient * vec3(uni_color)), intensities) + (result2 * (ambient * vec3(uni_color), intensities));
+    fragColor2 = vec4(result2 * (ambient * vec3(uni_color), intensities));
 
     //Point light OLD
     //for(int i = 0;i<NR_POINT_LIGHTS;i++){

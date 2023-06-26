@@ -32,7 +32,7 @@ public class Object extends ShaderProgram{
 
     Matrix4f model;
 
-    PointLight pointLight;
+    PointLight pointLight, pointLight2;
 
     int vboColor;
 
@@ -162,8 +162,12 @@ public class Object extends ShaderProgram{
         bind();
 
         //LIGHTING SETTINGS
-        pointLight = new PointLight(new Vector3f(0.76f,0.15f,0.55f), new Vector3f(camera.getPosition().x, camera.getPosition().y, camera.getPosition().z+0.1f), 1f);
-        //pointLight = new PointLight(new Vector3f(0.9f,0.75f,0.75f), camera.lockSomethingInFrontofCam(), 1f);
+        //pointLight = new PointLight(new Vector3f(0.69f,0.69f,0.69f), new Vector3f(camera.getPosition().x, camera.getPosition().y, camera.getPosition().z), 1f);
+
+        //pointLight2 = new PointLight(new Vector3f(0.89f,0.39f,0.39f), new Vector3f(-0.603098f, 1.8736482f, 8.406519f), 1f);
+
+        //Versi lain
+        pointLight = new PointLight(new Vector3f(0.16f,0.17f,0.85f), new Vector3f(camera.getPosition().x, camera.getPosition().y+0.05f, camera.getPosition().z), 1f);
 
         //UNIFORMS UNTUK LIGHTING
         uniformsMap.setUniform(
@@ -176,9 +180,9 @@ public class Object extends ShaderProgram{
                 "projection", projection.getProjMatrix());
 
         //LIGHTING SETTINGS
-        uniformsMap.setUniform("dirLight.direction", new Vector3f(0.2f, 1.0f, 1.1f));
+        uniformsMap.setUniform("dirLight.direction", new Vector3f(-0.743f, 2.206f, 9.906f));
         uniformsMap.setUniform("dirLight.diffuse", new Vector3f(1.4f, 1.7f, 1.7f));
-        uniformsMap.setUniform("dirLight.ambient", new Vector3f(159/255f, 88/255f, 104/255f));
+        uniformsMap.setUniform("dirLight.ambient", new Vector3f(159/255f, 138/255f, 134/255f));//Vector3f(159/255f, 88/255f, 104/255f));
         uniformsMap.setUniform("dirLight.specular", new Vector3f(0.4f, 1.4f, 1.4f));
         uniformsMap.setUniform("viewPos", camera.getPosition());
 

@@ -26,7 +26,7 @@ public class CobaBlender {
     boolean isCameraButtonOn = false;
     private Window window =
             new Window
-                    (1920, 1080, "Hello World");
+                    (1920, 1080, "FNAF");
     private ArrayList<Object> objects
             = new ArrayList<>();
     private ArrayList<Object> objectsRectangle
@@ -2837,7 +2837,7 @@ public class CobaBlender {
         objects.get(9).rotateObject((float)Math.toRadians(180f),0f,1f,0f);
         objects.get(9).translateObject(0f, 0.3f, 12.5f);
 
-//         KARAKTER FOXY (STILL ERROR)
+        //FOXY
         objects.add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData("resources/shaders/scene.vert", GL_VERTEX_SHADER),
@@ -2968,6 +2968,7 @@ public class CobaBlender {
         camera = new Camera(mouseInput, objects.get(11));
         cameraMode = 0;
         mario = objects.get(11);
+        camera.setPosition(-0.16087276f, 0.7192958f, -1.2125171f);
     }
 
 
@@ -3052,6 +3053,14 @@ public class CobaBlender {
             window.getMouseInput().setScroll(new Vector2f());
         }
 
+        if(window.isKeyPressed(GLFW_KEY_LEFT)){
+            music.setVOLUME(music.getVOLUME()-3f);
+        }
+
+        if(window.isKeyPressed(GLFW_KEY_RIGHT)){
+            music.setVOLUME(music.getVOLUME()+3f);
+        }
+
         if(window.isKeyPressed(GLFW_KEY_ESCAPE)){
             playingmusic = false;
             music.stop();
@@ -3062,8 +3071,10 @@ public class CobaBlender {
     public void loop() throws Exception {
         while (window.isOpen()) {
             window.update();
-            glClearColor(0.25f,
-                    0.25f, 0.25f,
+
+            //COLOR SKY
+            glClearColor(0.05f,
+                    0.05f, 0.05f,
                     0.3f);
             GL.createCapabilities();
 

@@ -232,7 +232,7 @@ public class Camera {
         calcZoom(window);
         mouse.forceCenterMouse(true, window);
         calcPitchAngle();
-        lockcamPosOnPart();
+        lockcamPosOnPart(1.6f);
     }
 
     public void thirdPerson(Window window){
@@ -293,10 +293,19 @@ public class Camera {
         position.y = player.position.y + vertDist;
     }
 
-    public void lockcamPosOnPart(){
+    public void calcCameraPositionCustomY(float horizDist, float vertDist, float yx) {
+        float theta = player.rotationWorld.y + angleFromSource;
+        float offsetX = (float) (horizDist * Math.sin(Math.toRadians(theta)));
+        float offsetZ = (float) (horizDist * Math.cos(Math.toRadians(theta)));
+        position.x = player.position.x - offsetX;
+        position.z = player.position.z - offsetZ;
+        position.y = player.position.y + yx + vertDist;
+    }
+
+    public void lockcamPosOnPart(float yz){
         position.x = player.position.x;
         position.z = player.position.z;
-        position.y = player.position.y;
+        position.y = player.position.y + yz;
     }
 
     public float calcHorizontalDistance() {

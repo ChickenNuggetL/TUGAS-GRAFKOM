@@ -52,6 +52,13 @@ public class Music {
         return playmusic();
     }
 
+    public float getVOLUME() {
+        return VOLUME;
+    }
+
+    public void setVOLUME(float VOLUME) {
+        this.VOLUME = VOLUME;
+    }
 
     // Work as the user enters his choice
 
